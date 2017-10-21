@@ -1,0 +1,18 @@
+{
+  "extends": "wordpress",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jquery": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "globals": {
+    "jQuery": true
+  },
+  "rules": {
+    "wrap-iife": [2, "inside"]
+  }
+}

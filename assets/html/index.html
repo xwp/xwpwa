@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html class="fonts-loading no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>PWA Name</title>
+	<meta name="description" content="All the tools you need to build and deploy your Progressive Web Apps.">
+	<meta name="application-name" content="Progressive Web Apps Builder">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Critical stylesheets -->
+	<link rel="stylesheet" href="../dist/css/main.css">
+	<!-- Lazy Load non-critical stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Source+Serif+Pro" rel="stylesheet" media="none" onload="if( media!='screen' ) media='screen' ">
+</head>
+<body>
+	<div class="l-header">
+		<h1>PWA Name</h1>
+	</div>
+
+	<main>
+		<h2>Serif font</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias architecto ducimus eaque eius expedita facere harum id ipsa nihil nisi odit omnis porro quae ratione repellat totam, ullam voluptate.</p>
+
+		<img src="../images/blank.png"
+		 	data-src="https://www.placehold.it/512/120"
+			data-srcset="
+				https://www.placehold.it/512x120 512w,
+				https://www.placehold.it/768x180 768w,
+				https://www.placehold.it/960x225 960w,
+				https://www.placehold.it/1280x300 1280w
+			"
+			sizes="
+				(min-width: 960px) 100vw,
+				(min-width: 768px) 100vw,
+				(min-width: 480px) 100vw,
+				100vw
+			"
+			alt="Cat">
+	</main>
+
+	<!-- Async avoids any wait for running this JS in order, since it has no dependencies -->
+	<script src="../dist/js/main.js" async></script>
+</body>
+</html>
+
+
+

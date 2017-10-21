@@ -1,0 +1,456 @@
+/* stylelint-disable number-no-trailing-zeros */
+/* stylelint-enable number-no-trailing-zeros */
+body {
+  font-family: Lato, Tahoma, Verdana, Segoe, sans-serif;
+}
+
+.fonts-loading body {
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.991166em;
+  letter-spacing: 0.012816em;
+  word-spacing: -0.143183em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;
+}
+
+.fonts-loading h1, .fonts-loading
+h2, .fonts-loading
+h3, .fonts-loading
+h4, .fonts-loading
+h5, .fonts-loading
+h6 {
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.978276em;
+  letter-spacing: 0.01805em;
+  word-spacing: -0.039556em;
+}
+
+/*
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  /* stylelint-disable plugin/no-unsupported-browser-features */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  /* stylelint-enable plugin/no-unsupported-browser-features */
+}
+
+/*
+ * 1. Remove the margin in all browsers (opinionated).
+ * 2. Font-smoothing declaration makes OS X fonts look more consistent
+ *    with other systems.
+ * 3. Set main font.
+ */
+body {
+  margin: 0;
+  /* 1 */
+  -moz-osx-font-smoothing: grayscale;
+  /* 2 */
+  -webkit-font-smoothing: antialiased;
+  /* 2 */
+  font-size: 1rem;
+  /* 3 */
+  line-height: 1.5;
+  /* 3 */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+/*
+ * Universal box sizing.
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+ * Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+  transition: color 120ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+/*
+ * Corrects some browsers defaulting to bolder.
+ */
+b,
+strong {
+  font-weight: 700;
+}
+
+/*
+ * Corrects overflow not hidden in IE 11.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/*
+ * Show the overflow in IE / Edge.
+ */
+button,
+input {
+  overflow: visible;
+}
+
+/*
+ * Remove default vertical scrollbar in IE 11.
+ */
+textarea {
+  overflow: auto;
+}
+
+/*
+ * Style form elements.
+ */
+select {
+  font-size: 0.8125rem;
+  padding: 0.1875rem 0.375rem;
+  border: 1px solid #ccc;
+  border-radius: 0.1875rem;
+  outline: none;
+  box-shadow: inset 0 1px 0.125rem rgba(0, 0, 0, .15);
+}
+
+/*
+ * Style blockquote.
+ */
+blockquote {
+  color: #666;
+  font-size: 1.125rem;
+  font-style: italic;
+  line-height: 1.7;
+  overflow: hidden;
+}
+
+blockquote cite {
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 0.625rem;
+}
+
+/*
+ * Various normalizations.
+ */
+dfn,
+cite,
+em,
+i {
+  font-style: italic;
+}
+
+abbr,
+acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+
+mark,
+ins {
+  background: #eee;
+  text-decoration: none;
+}
+
+small {
+  font-size: 80%;
+}
+
+big {
+  font-size: 125%;
+}
+
+/*
+ * Correct the odd appearance in Chrome and Safari.
+ */
+/* stylelint-disable plugin/no-unsupported-browser-features */
+[type='search'] {
+  -webkit-appearance: textfield;
+}
+
+[type='search']::-webkit-search-cancel-button, [type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* stylelint-enable plugin/no-unsupported-browser-features */
+/*
+ * Resets the button to consistent native appearance in all browsers.
+ */
+button {
+  overflow: visible;
+  border: 0;
+  font: inherit;
+  -webkit-font-smoothing: inherit;
+  letter-spacing: inherit;
+  background: none;
+  cursor: pointer;
+}
+
+/*
+ * Make images stay within the limits of their container.
+ */
+img {
+  height: auto;
+  max-width: 100%;
+  transition: opacity 0.3s;
+  opacity: 1;
+}
+
+img.lazy[data-src] {
+  opacity: 0;
+}
+
+img.lazy[data-src].visible {
+  opacity: 1;
+}
+
+/*
+ * Resetting margins and padding.
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+address,
+ol,
+ul,
+dl,
+li,
+dt,
+dd,
+button,
+input,
+optgroup,
+select,
+textarea,
+fieldset,
+legend {
+  margin: 0;
+  padding: 0;
+}
+
+fieldset {
+  padding: 0;
+  border: none;
+}
+
+legend {
+  display: block;
+}
+
+iframe {
+  border: none;
+}
+
+/*
+ * Tables
+ */
+table {
+  border: none;
+  border-top: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0 0 1.25rem;
+  width: 100%;
+}
+
+thead th {
+  border-bottom: 0.125rem solid #ccc;
+  padding-bottom: 0.625rem;
+}
+
+th {
+  padding: 0.5rem 0;
+  text-align: left;
+  border: none;
+}
+
+td {
+  padding: 0.5rem;
+  border: none;
+}
+
+tr {
+  border-bottom: 1px solid #ccc;
+}
+
+/*
+ * Hidden element.
+ */
+.is-hidden,
+.hidden {
+  display: none !important;
+}
+
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.25rem;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.25rem;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.alignleft,
+img.alignright {
+  float: none;
+  margin: 0;
+}
+
+@media (min-width: 30rem) {
+  img.alignleft {
+    float: left;
+    margin-right: 1.25rem;
+  }
+  img.alignright {
+    float: right;
+    margin-left: 1.25rem;
+  }
+}
+
+embed,
+iframe,
+object {
+  margin: 0;
+  max-width: 100%;
+}
+
+.wp-caption,
+.gallery-caption {
+  color: #666;
+  font-size: 0.8125rem;
+  font-style: italic;
+  margin-bottom: 1.25rem;
+  max-width: 100%;
+}
+
+.wp-caption img[class*='wp-image-'] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+  margin: 0.8125rem 0;
+}
+
+.screen-reader-text {
+  /* stylelint-disable plugin/no-unsupported-browser-features */
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+          clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  /* stylelint-enable plugin/no-unsupported-browser-features */
+  position: absolute !important;
+  white-space: nowrap;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 0.1875rem;
+  box-shadow: 0 0 0.125rem 0.125rem rgba(0, 0, 0, .6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  height: auto;
+  left: 0.3125rem;
+  line-height: normal;
+  padding: 0.9375rem 1.4375rem 0.875rem;
+  text-decoration: none;
+  top: 0.3125rem;
+  width: auto;
+  z-index: 100000;
+}
+
+/*
+ * WPCom Globals
+ */
+img.latex {
+  border: none;
+  vertical-align: middle;
+}
+
+.video-player {
+  border: 0;
+  margin: auto;
+  padding: 0.3125rem;
+  text-align: center;
+  max-width: 100%;
+}
+
+.screen-reader-text {
+  position: absolute;
+  left: -1000em;
+}
+
+.comment object,
+.comment embed,
+.embed-vimeo iframe,
+.embed-youtube iframe {
+  max-width: 100%;
+}
+
+.simple-homepage {
+  display: none;
+}
+
+.c-logo {
+  max-width: 100%;
+}
+
+.l-header {
+  position: relative;
+}
+
+/*# sourceMappingURL=main.css.map */

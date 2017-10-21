@@ -1,0 +1,92 @@
+{
+  "name": "pwa_name",
+  "version": "1.0.0",
+  "description": "PWA Name",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:xwp/pwa-template.git"
+  },
+  "author": "XWP",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xwp/pwa-template/issues"
+  },
+  "scripts": {
+    "theme": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=prod --workflow=theme",
+    "theme:dev": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=dev --workflow=theme"
+  },
+  "workflows": {
+    "theme": {
+      "cwd": "assets",
+      "schema": "theme",
+      "tasks": {
+        "clean": {
+          "src": [
+            "dist/**",
+            "!dist"
+          ]
+        },
+        "copy": {
+          "src": [
+            "src/vendor/**/*"
+          ],
+          "base": "src",
+          "dest": "dist"
+        },
+        "images": {
+          "src": "images/**/*.+(png|jpg|jpeg|gif|bmp|svg)",
+          "base": "images",
+          "dest": "images"
+        }
+      }
+    }
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions",
+    "last 2 iOS versions",
+    "last 1 Android version",
+    "last 1 ChromeAndroid version",
+    "ie 11",
+    "> 3%"
+  ],
+  "stylelint": {
+    "extends": "stylelint-config-xwp/scss",
+    "plugins": [
+      "stylelint-no-unsupported-browser-features"
+    ],
+    "rules": {
+      "media-feature-name-no-unknown": [
+        true,
+        {
+          "ignoreMediaFeatureNames": [
+            "/query/"
+          ]
+        }
+      ],
+      "plugin/no-unsupported-browser-features": [
+        true,
+        {
+          "ignore": [
+            "flexbox",
+            "outline",
+            "viewport-units",
+            "will-change"
+          ]
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "fe-dev-lib": "github:xwp/fe-dev-lib",
+    "scss-query": "^1.0.1"
+  },
+  "dependencies": {
+    "fontfaceobserver": "^2.0.13",
+    "intersection-observer": "^0.4.2",
+    "promise-polyfill": "^6.0.2",
+    "whatwg-fetch": "^2.0.3"
+  }
+}

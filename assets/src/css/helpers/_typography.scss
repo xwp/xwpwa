@@ -1,0 +1,41 @@
+// Typography
+//
+// Font stacks and typography styles used site-wide
+
+//
+// Font weights
+//
+
+$normal: 400;
+$bold: 700;
+
+//
+// Font families
+// Fallback generated with: https://shtrihstr.github.io/font-fallback/
+//
+
+%g-font-family-sans {
+	font-family: Lato, Tahoma, Verdana, Segoe, sans-serif;
+
+	.fonts-loading & {
+		font-family: Tahoma, Verdana, Segoe, sans-serif;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 0.991166em;
+		letter-spacing: 0.012816em;
+		word-spacing: -0.143183em;
+	}
+}
+
+%g-font-family-serif {
+	font-family: 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;
+
+	.fonts-loading & {
+		font-family: Georgia, Times, 'Times New Roman', serif;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 0.978276em;
+		letter-spacing: 0.01805em;
+		word-spacing: -0.039556em;
+	}
+}
