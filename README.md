@@ -26,7 +26,7 @@ Change the **pwa_name** inside the package.json along the git URLs.
 
 #### Choose background color hex ( #ffffff ). 
 
-Replace it in **assets/tasks/icons.js** to line 14 `const brandBackgroundColor`.
+Replace it in **assets/tasks/icons.js** to line 18 `const brandBackgroundColor`.
 
 Replace it in **assets/manifest.json** to line 4 `"background_color"`.
 
@@ -34,7 +34,7 @@ Replace it in **assets/manifest.json** to line 4 `"background_color"`.
 
 Replace it in **assets/manifest.json** to line 5 `"theme_color"`.
 
-Replace it in **assets/html/index.html** to lines 21 `"theme-color"`.
+Replace it in **assets/html/index.html** to lines 20 `"theme-color"`.
 
 Replace it in **assets/html/index.html** to lines 42 `"mask-icon"`. You can improve the visibility of the Safari Pinned Tab Icons by avoiding light colors such as white, bright yellow, or light gray.
 
@@ -42,7 +42,7 @@ Replace it in **assets/html/index.html** to lines 42 `"mask-icon"`. You can impr
 
 Pick from [Metro UI Colors](https://colorlib.com/etc/metro-colors/).
 
-Replace it in **assets/html/index.html** to line 33 `"msapplication-TileColor"`.
+Replace it in **assets/html/index.html** to line 32 `"msapplication-TileColor"`.
 
 ### Icons
 

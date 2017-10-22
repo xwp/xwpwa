@@ -12,6 +12,7 @@
  */
 
 const gulp = require( 'gulp' );
+const del = require( 'del' );
 const realFavicon = require ('gulp-real-favicon');
 
 const brandBackgroundColor = '#ffffff';
@@ -79,4 +80,10 @@ const generateIcons = function(done) {
 	} );
 };
 
-module.exports = gulp.series( generateIcons );
+const delRedundantManifest = function(done) {
+	del( [ iconDest + 'manifest.json' ]).then( function() {
+		done();
+	} );
+};
+
+module.exports = gulp.series( generateIcons, delRedundantManifest );
