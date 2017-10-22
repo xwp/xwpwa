@@ -12,6 +12,7 @@
     "url": "https://github.com/xwp/pwa-template/issues"
   },
   "scripts": {
+    "icons": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=dev --workflow=icons",
     "theme": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=prod --workflow=theme",
     "theme:dev": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=dev --workflow=theme"
   },
@@ -37,6 +38,13 @@
           "src": "images/**/*.+(png|jpg|jpeg|gif|bmp|svg)",
           "base": "images",
           "dest": "images"
+        }
+      }
+    },
+    "icons": {
+      "tasks": {
+        "generate-icons-wrapper": {
+          "taskSrc": "./assets/tasks/icons.js"
         }
       }
     }
@@ -81,6 +89,7 @@
   },
   "devDependencies": {
     "fe-dev-lib": "github:xwp/fe-dev-lib",
+    "gulp-real-favicon": "^0.2.2",
     "scss-query": "^1.0.1"
   },
   "dependencies": {
