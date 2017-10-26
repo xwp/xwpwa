@@ -56,3 +56,15 @@ npm run icons
 ```
 
 Verify the path to /assets/manifest.json file in the Icons section of the template file has the correct paths to the icons and check them in Chrome Inspector's Application tab.
+
+## Service Worker
+
+The *assets/src/js/sw.js* gets compiled using the workbox cli to the root of the project. The configuration of the source and destination paths is inside *workbox-cli-config.js*.
+
+### Precache
+
+The cache-first strategy will be applied to all assets which match the **workbox-cli-config.js**. These will be pre-cached upon SW installation.
+This is where the paths to the offline template should get defined, by adding a new item in the globPatterns array like:
+```"assets/html/index.html"```
+
+### 

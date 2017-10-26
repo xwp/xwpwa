@@ -13,8 +13,9 @@
   },
   "scripts": {
     "icons": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=dev --workflow=icons",
-    "theme": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=prod --workflow=theme",
-    "theme:dev": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=dev --workflow=theme"
+    "theme": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=prod --workflow=theme && workbox inject:manifest",
+    "theme:dev": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=dev --workflow=theme && workbox inject:manifest",
+    "sw": "workbox inject:manifest"
   },
   "workflows": {
     "theme": {
@@ -33,6 +34,14 @@
           ],
           "base": "src",
           "dest": "dist"
+        },
+        "js": {
+          "src": "src/js/**/*.js",
+          "base": "src/js",
+          "dest": "dist/js",
+          "entry": {
+            "main": "./main.js"
+          }
         },
         "images": {
           "src": "images/**/*.+(png|jpg|jpeg|gif|bmp|svg)",
@@ -90,12 +99,14 @@
   "devDependencies": {
     "fe-dev-lib": "github:xwp/fe-dev-lib",
     "gulp-real-favicon": "^0.2.2",
-    "scss-query": "^1.0.1"
+    "scss-query": "^1.0.1",
+    "workbox-cli": "^2.1.0"
   },
   "dependencies": {
     "fontfaceobserver": "^2.0.13",
     "intersection-observer": "^0.4.2",
     "promise-polyfill": "^6.0.2",
-    "whatwg-fetch": "^2.0.3"
+    "whatwg-fetch": "^2.0.3",
+    "workbox-sw": "^2.1.0"
   }
 }
