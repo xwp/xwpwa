@@ -11,11 +11,15 @@
   "bugs": {
     "url": "https://github.com/xwp/pwa-template/issues"
   },
+  "watch": {
+    "sw-inject-manifest": "assets/src/js/sw.js"
+  },
   "scripts": {
-    "icons": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=dev --workflow=icons",
     "theme": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=prod --workflow=theme && workbox inject:manifest",
-    "theme:dev": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=dev --workflow=theme && workbox inject:manifest",
-    "sw": "workbox inject:manifest"
+    "theme:dev": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=dev --workflow=theme",
+    "icons": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=dev --workflow=icons",
+    "sw": "npm-watch",
+    "sw-inject-manifest": "workbox inject:manifest"
   },
   "workflows": {
     "theme": {
@@ -99,6 +103,7 @@
   "devDependencies": {
     "fe-dev-lib": "github:xwp/fe-dev-lib",
     "gulp-real-favicon": "^0.2.2",
+    "npm-watch": "^0.3.0",
     "scss-query": "^1.0.1",
     "workbox-cli": "^2.1.0"
   },
