@@ -75,10 +75,43 @@ Turning the sw_debug to true enables the workbox debugging mode by loading the d
 const sw_debug = true;
 ```
 
-### Precache
+## SW Caching Strategies
 
-The cache-first strategy will be applied to all assets which match the **workbox-cli-config.js**. These will be pre-cached upon SW installation.
+### 1. Cache-Only (Precache)
+
+The cache-first strategy will be applied to all internal assets which match the **workbox-cli-config.js**. These will be pre-cached upon SW installation.
 This is where the paths to the offline template should get defined, by adding a new item in the globPatterns array like:
 ```"assets/html/index.html"```
 
-### 
+### 2. Cache First, Network Fallback
+
+Defining the regular expression for the external web fonts URL enables the webfonts cache for storing them using the cache-first strategy. 
+The regular expression can contain multiple domains for the fonts, like this example with fonts loading from both Typography and Google APIs.
+
+Regular content imagery can be cached using the same strategy. Recommend this over stale while revalidate because newly upload imagery receives new URLs. Precached image assets won't be cached a second time.
+```js
+const webfontsRegex = 'https://(fonts.googleapis.com|cloud.typography.com)/(.*)';
+const localImagesRegex = '/\\.(?:png|gif|jpg|jpeg)$/';
+const cdnImagesRegex = '/\\.(?:png|gif|jpg|jpeg)$/';
+```
+
+Application icons defined in the manifest can't get intercepted by the service worker, hence there's no need to define caching strategies for them. 
+
+### 3. Cache-Network race (Stale while Revalidate)
+
+This strategy is to be used for the assets which can change frequently, but are non-essential to the user experience to show the latest right away.  
+
+Defining the avatars regular expression enables the cache for storing them using the stale while revalidate (cache-network race) strategy.
+```js
+const avatarsRegex = 'https://(.*).gravatar.com/(.*)';
+```
+
+### 4. Network First, Cache Fallback
+
+Some content must always be kept up-to-date, and with this strategy we fetch the newest content first, and only if that fails the sw delivers old content from the cache.
+
+The ```htmlRegex``` is setup as a final catch all for local paths that don't fall inside of the wp-admin path.
+ 
+ ### 5. Network only
+ 
+ Without setting up a specific caching strategy to an outside domain, any other external domains won't get their assets cached by the service worker. 
