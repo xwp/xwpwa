@@ -12,14 +12,15 @@
     "url": "https://github.com/xwp/pwa-template/issues"
   },
   "watch": {
-    "sw-inject-manifest": "assets/src/js/sw.js"
+    "sw-inject-manifest": [ "assets/src/js/sw.js", "workbox-cli-config.js" ]
   },
   "scripts": {
     "theme": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=prod --workflow=theme && workbox inject:manifest",
     "theme:dev": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=dev --workflow=theme",
-    "icons": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=dev --workflow=icons",
+    "icons": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --workflow=icons",
     "sw": "npm-watch",
-    "sw-inject-manifest": "workbox inject:manifest"
+    "sw-inject-manifest": "workbox inject:manifest",
+    "server": "node server.js"
   },
   "workflows": {
     "theme": {
@@ -101,6 +102,7 @@
     }
   },
   "devDependencies": {
+    "express": "^4.16.2",
     "fe-dev-lib": "github:xwp/fe-dev-lib",
     "gulp-real-favicon": "^0.2.2",
     "npm-watch": "^0.3.0",
