@@ -1,63 +1,113 @@
-importScripts('node_modules/workbox-sw/build/importScripts/workbox-sw.dev.v2.1.0.js');
+const sw_debug = true;
+const sw_version = sw_debug ? 'dev' : 'prod';
+importScripts( 'node_modules/workbox-sw/build/importScripts/workbox-sw.' + sw_version + '.v2.1.0.js' );
 
 const workboxSW = new WorkboxSW();
-// The precache array gets filled with npm run theme recipe using the configuration inside  workbox-cli-config.js file.
+
+const webfontsRegex = 'https://(fonts.googleapis.com|fonts.gstatic.com)/(.*)';
+const localImagesRegex = '/(.*).(?:png|gif|jpg|jpeg)$/';
+const cdnImagesRegex = 'https://i(0|1|2).wp.com/(.*)/';
+const avatarsRegex = 'https://(.*).gravatar.com/(.*)/';
+/* TODO: Ignore URLs starting with /wp-admin. */
+const htmlRegex = '/(.*)';
+
+/*
+ 1. Cache-Only (Precache)
+ Used for the site's critical assets.
+ The precache array gets filled by workbox-cli using the configuration inside workbox-cli-config.js.
+  */
 workboxSW.precache([
   {
     "url": "assets/dist/css/main.css",
-    "revision": "f0243b0aef373c787a695d2140a8a956"
-  },
-  {
-    "url": "assets/html/index.html",
-    "revision": "c9b2c0632b65c8af38195c6acf9720e1"
+    "revision": "355cfd4c7248ba7a22249bdf1dddd2ee"
   },
   {
     "url": "assets/dist/js/main.js",
-    "revision": "df96e617638095f26dc15ca2165274da"
+    "revision": "06231d8584f923e605ef03d67a37cda6"
+  },
+  {
+    "url": "assets/images/blank.png",
+    "revision": "272e7fe9a92e7d800df94406429e31b5"
+  },
+  {
+    "url": "assets/manifest.json",
+    "revision": "c43cc4c4179bd68891fd85e576bff89d"
   }
 ]);
 
 /*
+ 2. Cache First, Network Fallback
+ Store in cache all external web fonts, if a regex is defined.
+ */
+if ( !! webfontsRegex ) {
+	workboxSW.router.registerRoute( webfontsRegex ,
+		workboxSW.strategies.cacheFirst( {
+			cacheName: 'webfonts',
+			cacheExpiration: {
+				maxEntries: 20
+			},
+			cacheableResponse: {statuses: [0, 200]}
+		})
+	);
+}
 
-workboxSW.router.registerRoute('https://fonts.googleapis.com/(.*)',
-  workboxSW.strategies.cacheFirst({
-    cacheName: 'googleapis',
-    cacheExpiration: {
-      maxEntries: 20
-    },
-    cacheableResponse: {statuses: [0, 200]}
-  })
-);
+if ( !! localImagesRegex ) {
+	workboxSW.router.registerRoute( localImagesRegex,
+		workboxSW.strategies.cacheFirst({
+			cacheName: 'images',
+			cacheExpiration: {
+				maxEntries: 100,
+				maxAgeSeconds: 14 * 24 * 60 * 60
+			}
+		})
+	);
+}
 
-workboxSW.router.registerRoute(/\.(?:png|gif|jpg)$/,
-  workboxSW.strategies.cacheFirst({
-    cacheName: 'images-cache',
-    cacheExpiration: {
-      maxEntries: 50
-    }
-  })
-);
+if ( !! cdnImagesRegex ) {
+	workboxSW.router.registerRoute( cdnImagesRegex,
+		workboxSW.strategies.cacheFirst({
+			cacheName: 'images',
+			cacheExpiration: {
+				maxEntries: 100,
+				maxAgeSeconds: 14 * 24 * 60 * 60
+			}
+		})
+	);
+}
 
-workboxSW.router.registerRoute('http://weloveiconfonts.com/(.*)',
-  workboxSW.strategies.cacheFirst({
-    cacheName: 'iconfonts',
-    cacheExpiration: {
-      maxEntries: 20,
-      maxAgeSeconds: 7 * 24 * 60 * 60
-    },
-    cacheableResponse: {statuses: [0, 200]}
-  })
-);
+/*
+ 3. Cache-Network race (Stale while Revalidate)
+ Store in cache external assets which can change frequently, like avatars,
+ which are non-essential to the user experience.
+ */
+if ( !! avatarsRegex ) {
+	workboxSW.router.registerRoute( avatarsRegex ,
+		workboxSW.strategies.staleWhileRevalidate( {
+			cacheName: 'avatars',
+			cacheExpiration: {
+				maxEntries: 40
+			},
+			cacheableResponse: {statuses: [0, 200]}
+		})
+	);
+}
 
-workboxSW.router.registerRoute('/images/icon/*',
-  workboxSW.strategies.staleWhileRevalidate({
-    cacheName: 'icon-cache',
-    cacheExpiration: {
-      maxEntries: 20
-    }
-  })
-);
+/*
+ 4. Network First, Cache Fallback
+ Store in cache content which always needs to be shown up-to-date.
+ */
+if ( !! htmlRegex ) {
+	workboxSW.router.registerRoute( htmlRegex ,
+		workboxSW.strategies.networkFirst( {
+			cacheName: 'html',
+			cacheExpiration: {
+				maxEntries: 50
+			}
+		})
+	);
+}
 
+/*
 var articleHandler = workboxSW.strategies.networkFirst({
   cacheName: 'articles-cache',
   cacheExpiration: {
@@ -94,5 +144,4 @@ workboxSW.router.registerRoute('/pages/post*.html', args => {
     return caches.match('pages/offline.html');
   });
 });
-
 */
