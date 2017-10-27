@@ -81,7 +81,7 @@ const generateIcons = function(done) {
 };
 
 const delRedundantManifest = function(done) {
-	del( [ iconDest + 'manifest.json' ]).then( function() {
+	del( [ iconDest + 'manifest.json', iconDest + 'faviconData.json' ]).then( function() {
 		done();
 	} );
 };
