@@ -59,7 +59,21 @@ Verify the path to /assets/manifest.json file in the Icons section of the templa
 
 ## Service Worker
 
-The *assets/src/js/sw.js* gets compiled using the workbox cli to the root of the project. The configuration of the source and destination paths is inside *workbox-cli-config.js*.
+The *assets/src/js/sw.js* gets compiled using the workbox-cli to the root of the project. The configuration of the source and destination paths is inside *workbox-cli-config.js*.
+
+Compile the service worker automatically with the following command:
+```bash
+npm run sw
+```
+
+Building for production compiles the service worker automatically.
+
+### Debugging
+
+Turning the sw_debug to true enables the workbox debugging mode by loading the development service worker.
+```js
+const sw_debug = true;
+```
 
 ### Precache
 

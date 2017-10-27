@@ -1,8 +1,12 @@
-importScripts('node_modules/workbox-sw/build/importScripts/workbox-sw.dev.v2.1.0.js');
+const sw_debug = false;
+const sw_version = sw_debug ? 'dev' : 'prod';
+importScripts( 'node_modules/workbox-sw/build/importScripts/workbox-sw.' + sw_version + '.v2.1.0.js' );
 
 const workboxSW = new WorkboxSW();
 
-// The precache array gets filled within npm run sw recipe using the configuration inside  workbox-cli-config.js file. This is also called when running npm run theme.
+/*
+ The precache array gets filled by workbox-cli using the configuration inside workbox-cli-config.js.
+  */
 workboxSW.precache([]);
 
 /*
