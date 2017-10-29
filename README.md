@@ -91,7 +91,7 @@ The regular expression can contain multiple domains for the fonts, like this exa
 Regular content imagery can be cached using the same strategy. Recommend this over stale while revalidate because newly upload imagery receives new URLs. Precached image assets won't be cached a second time.
 ```js
 const webfontsRegex = 'https://(fonts.googleapis.com|cloud.typography.com)/(.*)';
-const localImagesRegex = '/(.*).(png|gif|jpg|jpeg)';
+const uploadsRegex = '/wp-content/uploads/(.*)';
 const cdnImagesRegex = 'https://i(0|1|2).wp.com/(.*)/';
 ```
 
@@ -104,8 +104,12 @@ Application icons defined in the manifest can't get intercepted by the service w
 This strategy is to be used for the assets which can change frequently, but are non-essential to the user experience to show the latest right away.  
 
 Defining the avatars regular expression enables the cache for storing them using the stale while revalidate (cache-network race) strategy.
+
+Only a check for the presence of an updated assets is done, and does not re-downloading the entire assets.
+
 ```js
 const avatarsRegex = 'https://(.*).gravatar.com/(.*)';
+const pluginsRegex = '/wp-content/plugins/(.*)';
 ```
 
 ### 4. Network First, Cache Fallback
