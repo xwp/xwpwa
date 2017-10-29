@@ -91,11 +91,13 @@ The regular expression can contain multiple domains for the fonts, like this exa
 Regular content imagery can be cached using the same strategy. Recommend this over stale while revalidate because newly upload imagery receives new URLs. Precached image assets won't be cached a second time.
 ```js
 const webfontsRegex = 'https://(fonts.googleapis.com|cloud.typography.com)/(.*)';
-const localImagesRegex = '/\\.(?:png|gif|jpg|jpeg)$/';
-const cdnImagesRegex = '/\\.(?:png|gif|jpg|jpeg)$/';
+const localImagesRegex = '/(.*).(png|gif|jpg|jpeg)';
+const cdnImagesRegex = 'https://i(0|1|2).wp.com/(.*)/';
 ```
 
-Application icons defined in the manifest can't get intercepted by the service worker, hence there's no need to define caching strategies for them. 
+External image assets sometimes do not show up in the Cache Storage due to the browser deciding to store them in the main disk cache instead. Successful caching is confirmed by their presence in the corresponding IndexedDB and by the request not failing with the browser in offline mode.
+
+Application icons defined in the manifest can't get intercepted by the service worker, hence there's no need to define custom caching strategies for them.  
 
 ### 3. Cache-Network race (Stale while Revalidate)
 
@@ -111,6 +113,8 @@ const avatarsRegex = 'https://(.*).gravatar.com/(.*)';
 Some content must always be kept up-to-date, and with this strategy we fetch the newest content first, and only if that fails the sw delivers old content from the cache.
 
 The ```htmlRegex``` is setup as a final catch all for local paths that don't fall inside of the wp-admin path.
+
+The 404 and Offline pages are defined in the manifest and referenced to the cached files from inside the service worker's networkFirst strategy.
  
  ### 5. Network only
  
