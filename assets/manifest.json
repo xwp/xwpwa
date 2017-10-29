@@ -4,8 +4,18 @@
   "background_color": "#ffffff",
   "theme_color": "#000000",
   "display": "standalone",
-  "start_url": "/",
+  "start_url": "/assets/html/index.html",
   "icons": [
+    {
+      "src": "/assets/images/icons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icons/favicon-194x194.png",
+      "sizes": "194x194",
+      "type": "image/png"
+    },
     {
       "src": "/assets/images/icons/android-chrome-36x36.png",
       "sizes": "36x36",
