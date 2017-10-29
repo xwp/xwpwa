@@ -1,19 +1,17 @@
 const sw_debug = true;
 const sw_version = sw_debug ? 'dev' : 'prod';
 importScripts( 'node_modules/workbox-sw/build/importScripts/workbox-sw.' + sw_version + '.v2.1.0.js' );
-
 const workboxSW = new WorkboxSW();
 
+/* Cache first */
 const webfontsRegex = 'https://(fonts.googleapis.com|fonts.gstatic.com)/(.*)';
-const localImagesRegex = '/(.*).(png|gif|jpg|jpeg)';
+const uploadsRegex = '/wp-content/uploads/(.*)';
 const cdnImagesRegex = 'https://i(0|1|2).wp.com/(.*)/';
+/* Stale with revalidate */
 const avatarsRegex = 'https://(.*).gravatar.com/(.*)/';
-
-/*
-	TODO: Use http://forbeslindesay.github.io/express-route-tester/ to only \
-  TODO: cache pages outside of the /wp-admin.
-  */
-const htmlRegex = '/assets/html/(.*)';
+const pluginsRegex = '/wp-content/plugins/(.*)';
+/* Network First */
+const htmlRegex = new RegExp( location.origin + '(.(?!(wp-admin|wp-content)))+' );
 
 /*
  1. Cache-Only (Precache)
@@ -38,8 +36,8 @@ if ( webfontsRegex ) {
 	);
 }
 
-if ( localImagesRegex ) {
-	workboxSW.router.registerRoute( localImagesRegex,
+if ( uploadsRegex ) {
+	workboxSW.router.registerRoute( uploadsRegex,
 		workboxSW.strategies.cacheFirst({
 			cacheName: 'images',
 			cacheExpiration: {
@@ -76,6 +74,17 @@ if ( avatarsRegex ) {
 				maxEntries: 40
 			},
 			cacheableResponse: { statuses: [0, 200] }
+		})
+	);
+}
+
+if ( pluginsRegex ) {
+	workboxSW.router.registerRoute( pluginsRegex ,
+		workboxSW.strategies.staleWhileRevalidate( {
+			cacheName: 'plugins',
+			cacheExpiration: {
+				maxEntries: 100
+			}
 		})
 	);
 }
