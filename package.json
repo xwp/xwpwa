@@ -75,7 +75,7 @@
   },
   "devDependencies": {
     "express": "^4.16.2",
-    "undercurrent": "github:xwp/undercurrent",
+    "undercurrent": "^0.1.0",
     "gulp-real-favicon": "^0.2.2",
     "npm-watch": "^0.3.0",
     "scss-query": "^1.0.1",
