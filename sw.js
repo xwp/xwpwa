@@ -21,11 +21,11 @@ const htmlRegex = new RegExp( location.origin + '(.(?!(wp-admin|wp-content)))+' 
 workboxSW.precache([
   {
     "url": "assets/dist/css/main.css",
-    "revision": "355cfd4c7248ba7a22249bdf1dddd2ee"
+    "revision": "137bf814710dbd85e68b65caf635b6c1"
   },
   {
     "url": "assets/dist/js/main.js",
-    "revision": "06231d8584f923e605ef03d67a37cda6"
+    "revision": "003a600f3c95c650102c37de46712078"
   },
   {
     "url": "assets/images/blank.png",

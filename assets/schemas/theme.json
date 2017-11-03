@@ -1,0 +1,58 @@
+{
+  "clean": {
+    "src": [
+      "dist/**",
+      "!dist"
+    ],
+    "series": "before"
+  },
+  "copy": {
+    "src": [
+      "src/vendor/**/*"
+    ],
+    "base": "src",
+    "dest": "dist"
+  },
+  "css": {
+    "src": "src/css/**/*.scss",
+    "base": "src/css",
+    "dest": "dist/css",
+    "includePaths": [
+      "node_modules"
+    ],
+    "enableLinter": true,
+    "postcssProcessors": {
+      "cssnext": {
+        "warnForDuplicates": false
+      },
+      "autoprefixer": {},
+      "pxtorem": {
+        "rootValue": 16,
+        "unitPrecision": 5,
+        "propList": [ "*" ],
+        "selectorBlackList": [],
+        "replace": true,
+        "mediaQuery": true,
+        "minPixelValue": 2
+      },
+      "assets": {
+        "relative": true
+      }
+    }
+  },
+  "js": {
+    "src": "src/js/**/*.js",
+    "base": "src/js",
+    "dest": "dist/js",
+    "entry": {
+      "main": "./main.js"
+    },
+    "series": "after"
+  },
+  "images": {
+    "src": "images/**/*.+(png|jpg|jpeg|gif|bmp|svg)",
+    "base": "images",
+    "dest": "images",
+    "series": "after"
+  }
+}

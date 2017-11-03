@@ -15,8 +15,8 @@
     "sw-inject-manifest": [ "assets/src/js/sw.js", "workbox-cli-config.js" ]
   },
   "scripts": {
-    "theme": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=prod --workflow=theme && workbox inject:manifest",
-    "theme:dev": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --env=dev --workflow=theme",
+    "dev": "cross-env NODE_ENV=development gulp --gulpfile $(npm root)/undercurrent/src/index.js --cwd $(npm prefix) --workflow theme",
+    "build": "cross-env NODE_ENV=production gulp --gulpfile $(npm root)/undercurrent/src/index.js --cwd $(npm prefix) --workflow theme && workbox inject:manifest",
     "icons": "gulp --gulpfile ./node_modules/fe-dev-lib/dist/gulpfile.js --cwd ./ --workflow=icons",
     "sw": "npm-watch",
     "sw-inject-manifest": "workbox inject:manifest",
@@ -25,35 +25,7 @@
   "workflows": {
     "theme": {
       "cwd": "assets",
-      "schema": "theme",
-      "tasks": {
-        "clean": {
-          "src": [
-            "dist/**",
-            "!dist"
-          ]
-        },
-        "copy": {
-          "src": [
-            "src/vendor/**/*"
-          ],
-          "base": "src",
-          "dest": "dist"
-        },
-        "js": {
-          "src": "src/js/**/*.js",
-          "base": "src/js",
-          "dest": "dist/js",
-          "entry": {
-            "main": "./main.js"
-          }
-        },
-        "images": {
-          "src": "images/**/*.+(png|jpg|jpeg|gif|bmp|svg)",
-          "base": "images",
-          "dest": "images"
-        }
-      }
+      "schema": "./assets/schemas/theme.json"
     },
     "icons": {
       "tasks": {
@@ -103,7 +75,7 @@
   },
   "devDependencies": {
     "express": "^4.16.2",
-    "fe-dev-lib": "github:xwp/fe-dev-lib",
+    "undercurrent": "^0.1.0",
     "gulp-real-favicon": "^0.2.2",
     "npm-watch": "^0.3.0",
     "scss-query": "^1.0.1",
