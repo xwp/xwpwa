@@ -1,4 +1,4 @@
-import '../vendor/io-lazyload/iolazy.js';
+import IOlazy from '../vendor/io-lazyload/iolazy.js';
 
 const LazyLoad = {
 
@@ -19,18 +19,27 @@ const LazyLoad = {
 	/**
 	 * Initialize.
 	 *
+	 * @param {string} lazySelector The lazy loaded images selector.
 	 * @returns {void}
 	 */
-	init() {
+	init( lazySelector ) {
 		this.html = document.querySelector( 'html' );
 		this.html.classList.remove( 'no-js' );
 
+		if ( lazySelector ) {
+			this.lazySelector = lazySelector;
+		} else {
+			this.lazySelector = 'img';
+		}
+
 		if ( 'undefined' !== typeof IOlazy ) {
 			document.addEventListener( 'DOMContentLoaded', () => {
-				new IOlazy({
+				/* eslint-disable no-new */
+				new IOlazy( {
 					image: this.lazySelector
-				});
-			});
+				} );
+				/* eslint-enable no-new */
+			} );
 		} else {
 			this.basicLazyLoad();
 		}
@@ -54,7 +63,7 @@ const LazyLoad = {
 				img.removeAttribute( 'data-src' );
 				img.removeAttribute( 'data-srcset' );
 			};
-		});
+		} );
 	}
 };
 
