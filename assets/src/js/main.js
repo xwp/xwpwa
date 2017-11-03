@@ -8,11 +8,12 @@ import Fetch from '../../../node_modules/whatwg-fetch/fetch.js';
 /* Custom Modules */
 import LazyLoad from './LazyLoad';
 import FontsDetection from './FontsDetection';
-import ServiceWorkerRegistration from './ServiceWorkerRegistration';
+
+// import ServiceWorkerRegistration from './ServiceWorkerRegistration';
 
 ( function() {
 	LazyLoad.init( 'img' );
-	FontsDetection.init();
+	FontsDetection.init( [ 'Lato', 'Source Serif Pro' ] );
 
-	ServiceWorkerRegistration.init( '/sw.js' );
+	// ServiceWorkerRegistration.init( '/sw.js' );
 } )();

@@ -3,27 +3,6 @@ import FontFaceObserver from '../../../node_modules/fontfaceobserver/fontfaceobs
 const FontsDetection = {
 
 	/**
-	 * Sans-serif Font Family.
-	 *
-	 * @type {string}
-	 */
-	sansFont: 'Lato',
-
-	/**
-	 * Primary Font Family.
-	 *
-	 * @type {string}
-	 */
-	mainFont: 'Lato',
-
-	/**
-	 * Secondary Font Family.
-	 *
-	 * @type {string}
-	 */
-	secondaryFont: 'Source Serif Pro',
-
-	/**
 	 * HTML element.
 	 *
 	 * @type {object}
@@ -33,19 +12,24 @@ const FontsDetection = {
 	/**
 	 * Initialize.
 	 *
+	 * @param {Array} fontNames Array of critical fonts to load.
 	 * @returns {void}
 	 */
-	init() {
+	init( fontNames ) {
 		this.html = document.querySelector( 'html' );
 
 		// Setting up the cookie avoids the flash of fallback font on subsequent page views.
-		if ( (  -1 !== document.cookie.indexOf( 'fonts-loaded' ) ) && ( 'undefined' !== typeof FontFaceObserver ) ) {
-			const fontObserverMain = new FontFaceObserver( this.mainFont );
-			const fontObserverSecondary = new FontFaceObserver( this.secondaryFont );
-			Promise.all([ fontObserverMain.load(), fontObserverSecondary.load() ]).then( () => {
+		if ( -1 === document.cookie.indexOf( 'fonts-loaded' ) && 'undefined' !== typeof FontFaceObserver ) {
+			const fontObserverPromises = [];
+			fontNames.forEach( ( fontName ) => {
+				const fontObserver = new FontFaceObserver( fontName );
+				fontObserverPromises.push( fontObserver.load() );
+			} );
+
+			Promise.all( fontObserverPromises ).then( () => {
 				this.displayCustomFonts();
 				document.cookie	= 'fonts-loaded=';
-			});
+			} );
 		} else {
 
 			// WebFonts are already cached, as the cookie is set - display them.
