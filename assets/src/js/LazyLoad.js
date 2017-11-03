@@ -1,4 +1,5 @@
-import IOlazy from '../vendor/io-lazyload/iolazy.js';
+/* global IOlazy */
+import '../vendor/io-lazyload/iolazy.js';
 
 const LazyLoad = {
 
