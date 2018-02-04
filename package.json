@@ -12,7 +12,10 @@
     "url": "https://github.com/xwp/pwa-template/issues"
   },
   "watch": {
-    "sw-inject-manifest": [ "assets/src/js/sw.js", "workbox-cli-config.js" ]
+    "sw-inject-manifest": [
+      "assets/src/js/sw.js",
+      "workbox-cli-config.js"
+    ]
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development gulp --gulpfile $(npm root)/undercurrent/src/index.js --cwd $(npm prefix) --workflow theme",
