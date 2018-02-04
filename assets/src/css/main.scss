@@ -4,19 +4,18 @@
 //
 // ----------------------------------------
 
-// Helpers
-
+// Helpers and variables. Styleguides 0.x
 @import 'helpers/index';
 
-// Base
-
-@import 'base/global';
-@import 'base/wp-core';
+// Resets and defaults. Styleguide 1.x
+// @import 'base/index';
 
 // Components
-
-@import 'components/c-logo';
+//
+// Styleguide 2.x
+// @import 'components/c-logo';
 
 // Layouts
-
-@import 'layouts/l-header';
+//
+// Styleguide 3.x
+// @import 'layouts/l-header';

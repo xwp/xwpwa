@@ -1,11 +1,12 @@
-// ----------------------------------------
+// Helpers
 //
-// FM Radio helpers and variables.
-// No CSS outputted.
+// This contains core SCSS variables and mixins that can be loaded into section
+// CSS files. It contains no outputting SCSS.
 //
-// ----------------------------------------
+// Styleguide 0.0
 
 @import 'variables';
+@import 'colors'; // 0.1
 @import 'typography';
 @import 'scss-query/query';
 @import 'mixins';
