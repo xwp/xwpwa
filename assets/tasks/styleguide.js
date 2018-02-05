@@ -2,9 +2,9 @@ const gulp = require('gulp');
 const styleguide = require('sc5-styleguide/lib/modules/cli/styleguide-cli');
 
 gulp.task( 'buildStyleguide', function() {
-	let development_mode_active = true;
+	let is_development_mode = true;
 	if ( 'production' === process.env.NODE_ENV ) {
-		development_mode_active = false;
+		is_development_mode = false;
 	}
 	styleguide({
 
@@ -18,8 +18,6 @@ gulp.task( 'buildStyleguide', function() {
 		kssSource: 'assets/src/css/**/*.scss',
 
 		// Stylesheets to include
-		// global.css: primary site styles
-		// styleguide.css: styleguide-only styles
 		styleSource: [
 			'assets/dist/css/main.css'
 		],
@@ -32,7 +30,7 @@ gulp.task( 'buildStyleguide', function() {
 		output: 'assets/styleguide',
 
 		// Watch for changes
-		watch: development_mode_active,
+		watch: is_development_mode,
 
 		// Serve
 		server: false
