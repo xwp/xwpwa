@@ -8,14 +8,10 @@
 @import 'helpers/index';
 
 // Resets and defaults. Styleguide 1.x
-// @import 'base/index';
+@import 'base/index';
 
-// Components
-//
-// Styleguide 2.x
-// @import 'components/c-logo';
+// Components. Styleguide 2.x
+@import 'components/c-logo';
 
-// Layouts
-//
-// Styleguide 3.x
-// @import 'layouts/l-header';
+// Layouts. Styleguide 3.x
+@import 'layouts/l-header';

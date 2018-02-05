@@ -1,6 +1,20 @@
 // Typography
 //
-// Font stacks and typography styles used site-wide
+// Font families and typography styles used site-wide
+//
+// $g-font-family-sans - Lato, Tahoma, Verdana, Segoe, sans-serif
+// $g-font-family-serif - 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif
+//
+// markup:
+// <h1 style="font-family: {$modifiers}">The quick brown fox jumps over the lazy dog.</h1>
+// <h2 style="font-family: {$modifiers}">The quick brown fox jumps over the lazy dog.</h2>
+// <h3 style="font-family: {$modifiers}">The quick brown fox jumps over the lazy dog.</h3>
+// <h4 style="font-family: {$modifiers}">The quick brown fox jumps over the lazy dog.</h4>
+// <h5 style="font-family: {$modifiers}">The quick brown fox jumps over the lazy dog.</h5>
+// <h6 style="font-family: {$modifiers}">The quick brown fox jumps over the lazy dog.</h6>
+// <p style="font-family: {$modifiers}">The quick brown fox jumps over the lazy dog.</p>
+//
+// Styleguide 0.2
 
 //
 // Font weights
@@ -14,8 +28,10 @@ $bold: 700;
 // Fallback generated with: https://shtrihstr.github.io/font-fallback/
 //
 
+$g-font-family-sans: Lato, Tahoma, Verdana, Segoe, sans-serif;
+
 %g-font-family-sans {
-	font-family: Lato, Tahoma, Verdana, Segoe, sans-serif;
+	font-family: $g-font-family-sans;
 
 	.fonts-loading & {
 		font-family: Tahoma, Verdana, Segoe, sans-serif;
@@ -26,6 +42,8 @@ $bold: 700;
 		word-spacing: -0.143183em;
 	}
 }
+
+$g-font-family-serif: 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;
 
 %g-font-family-serif {
 	font-family: 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;
