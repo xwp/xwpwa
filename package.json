@@ -77,7 +77,7 @@
     "scss-query": "^1.0.1",
     "workbox-cli": "^2.1.0",
     "gulp": "~3.9.0",
-    "sc5-styleguide": "^2.0.4"
+    "sc5-styleguide": "github:SC5/sc5-styleguide"
   },
   "dependencies": {
     "fontfaceobserver": "^2.0.13",
