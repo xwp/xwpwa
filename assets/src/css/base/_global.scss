@@ -134,7 +134,7 @@ i {
 
 abbr,
 acronym {
-	border-bottom: 1px dotted #666;
+	text-decoration: underline dotted;
 	cursor: help;
 }
 
@@ -278,5 +278,3 @@ tr {
 .hidden {
 	display: none !important;
 }
-
-
