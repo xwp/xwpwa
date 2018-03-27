@@ -245,15 +245,14 @@ iframe {
  */
 table {
 	border: none;
-	border-top: 1px solid #ccc;
 	border-collapse: collapse;
+	table-layout: fixed;
 	margin: 0 0 20px;
 	width: 100%;
 }
 
 thead th {
-	border-bottom: 2px solid #ccc;
-	padding-bottom: 10px;
+	border: none;
 }
 
 th {
@@ -268,7 +267,7 @@ td {
 }
 
 tr {
-	border-bottom: 1px solid #ccc;
+	border: none;
 }
 
 /*
