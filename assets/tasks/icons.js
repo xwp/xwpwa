@@ -74,16 +74,12 @@ const iconConfig = {
 	markupFile: faviconDataFile
 };
 
-const generateIcons = function(done) {
-	realFavicon.generateFavicon( iconConfig, function() {
-		done();
-	} );
-};
+gulp.task( 'generateIcons', function() {
+	realFavicon.generateFavicon( iconConfig );
+} );
 
-const delRedundantManifest = function(done) {
-	del( [ iconDest + 'manifest.json', iconDest + 'faviconData.json' ]).then( function() {
-		done();
-	} );
-};
+gulp.task( 'delRedundantManifest', function() {
+	del( [ iconDest + 'manifest.json', iconDest + 'faviconData.json' ]);
+} );
 
-module.exports = gulp.series( generateIcons, delRedundantManifest );
+gulp.task('default', [ 'generateIcons', 'delRedundantManifest' ]);
