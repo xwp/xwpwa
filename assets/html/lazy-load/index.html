@@ -52,21 +52,43 @@
 	</style>
 </head>
 <body>
-	<div class="l-header center">
-		<h1>Lazy loading images</h1>
-	</div>
+	<header class="l-header center">
 
-	<main class="stack center">
-		<article></article>
+		<nav class="nav">
+			<p class="nav__logo">XWP scripts</p>
+			<ul class="nav__items">
+				<li class="nav__item">
+					<a class="nav__link" href="../">PWA</a>
+				</li>
+				<li class="nav__item">
+					<a class="nav__link is-active" href="#">Lazy Loading</a>
+				</li>
+				<li class="nav__item">
+					<a class="nav__link" href="../idle-queue">Idle Queue</a>
+				</li>
+				<li class="nav__item">
+					<a class="nav__link" href="../lazy-embeds">Third Party Embeds</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+
+	<main class="center">
+		<article class="stack">
+			<h1>Lazy loading images</h1>
+
 			<h2>HTML</h2>
 
-			<p>The solution is using <code>loading="lazy"</code> as attribute on the image. <br />
-				But it's an hybrid solution for the browser how don't support this attribute. <br />
-				So the <code>src</code> of the image is remplaced by <code>data-src</code> <br />
-				A class is also used by the JS fallback solution.
+			<p>The solution is using <code>loading="lazy"</code> as an attribute on the image. <br />
+				But it's a hybrid solution for the browser how don't support this attribute. <br />
+				So the <code>src</code> of the image is replaced by <code>data-src</code> <br />
+				A class (not modifiable) is also used by the JS fallback solution.
 			</p>
 			<h2>HTML required</h2>
-			<xmp><img data-src="unicorn.jpg" loading="lazy" alt=".." class="lazyload"/></xmp>
+			<xmp>
+<img data-src="unicorn.jpg" loading="lazy" alt=".." class="lazyload"/>
+			</xmp>
 			<h2>CSS required</h2>
 			<p>None</p>
 			<h3>Source</h3>

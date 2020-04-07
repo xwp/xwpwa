@@ -46,15 +46,38 @@
 </head>
 <body>
 	<div class="l-header center">
-		<h1>PWA Long Name</h1>
+
 	</div>
+	<header class="l-header center">
+
+		<nav class="nav">
+			<p class="nav__logo">XWP scripts</p>
+			<ul class="nav__items">
+				<li class="nav__item">
+					<a class="nav__link is-active" href="#">PWA</a>
+				</li>
+				<li class="nav__item">
+					<a class="nav__line" href="lazy-load">Lazy Loading</a>
+				</li>
+				<li class="nav__item">
+					<a class="nav__link" href="#">Idle Queue</a>
+				</li>
+				<li class="nav__item">
+					<a class="nav__link" href="lazy-embeds">Third Party Embeds</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
 
 	<main class="stack center">
+		<h1>PWA Long Name</h1>
 		<h2>Serif font</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias architecto ducimus eaque eius expedita facere harum id ipsa nihil nisi odit omnis porro quae ratione repellat totam, ullam voluptate.</p>
 
 		<p>External image (not cached):</p>
-		<img src="../images/blank.png"
+		<img loading="lazy"
+			class="lazyload"
+			src="../images/blank.png"
 		 	data-src="https://www.placehold.it/512/120"
 			data-srcset="
 				https://www.placehold.it/512x120 512w,
@@ -71,13 +94,13 @@
 			alt="Cat">
 
 		<p>Avatar:</p>
-		<img src="../images/blank.png" data-src="https://0.gravatar.com/avatar/f3c5bdea23e1cce8cd23ecd0b2d773ae?s=100&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D25&amp;r=PG" alt="Gravatar" />
+		<img src="../images/blank.png" data-src="https://0.gravatar.com/avatar/f3c5bdea23e1cce8cd23ecd0b2d773ae?s=100&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D25&amp;r=PG" alt="Gravatar" loading="lazy" class="lazyload" />
 
 		<p>Local image:</p>
-		<img src="../images/blank.png" data-src="/assets/images/icon.png" alt="">
+		<img src="../images/blank.png" data-src="/assets/images/icon.png" alt="" loading="lazy" class="lazyload">
 
 		<p>External image:</p>
-		<img src="../images/blank.png" data-src="http://files.urldocs.com/share/test/test.jpg" alt="Plant">
+		<img src="../images/blank.png" data-src="http://files.urldocs.com/share/test/test.jpg" alt="Plant" loading="lazy" class="lazyload">
 
 	</main>
 

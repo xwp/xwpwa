@@ -37,6 +37,26 @@ h6 {
   word-spacing: -0.039556em;
 }
 
+h1 {
+  font-size: 1.802em;
+}
+
+h2 {
+  font-size: 1.602em;
+}
+
+h3 {
+  font-size: 1.424em;
+}
+
+h4 {
+  font-size: 1.266em;
+}
+
+h5 {
+  font-size: 1.125em;
+}
+
 /*
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in
@@ -98,10 +118,12 @@ a {
   /* 2 */
   transition: color 120ms cubic-bezier(0.215, 0.61, 0.355, 1);
   text-decoration: none;
+  color: #2351c4;
 }
 
 a:hover, a:focus {
   text-decoration: underline;
+  color: #1a3c93;
 }
 
 /*
@@ -452,6 +474,34 @@ img.latex {
   position: relative;
 }
 
+.nav {
+  display: flex;
+  align-items: flex-end;
+  margin: 16px 0;
+}
+
+.nav__logo {
+  background-image: url("../../images/XWP_logo.svg");
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  height: 45px;
+  width: 150px;
+}
+
+.nav__items {
+  list-style: none;
+  display: flex;
+  margin-left: auto;
+}
+
+.nav__item + .nav__item {
+  margin-left: 16px;
+}
+
+.nav__link.is-active {
+  text-decoration: underline;
+}
+
 main {
   padding-top: var(--space);
   margin-bottom: var(--space);
@@ -484,6 +534,13 @@ main {
   margin-right: auto;
   padding-left: 18px;
   padding-right: 18px;
+}
+
+xmp {
+  background-color: beige;
+  padding: 0 18px;
+  border-radius: 4px;
+  overflow: scroll;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -3,3 +3,35 @@
 .l-header {
 	position: relative;
 }
+
+.nav {
+    display: flex;
+	align-items: flex-end;
+	margin: 16px 0;
+
+	&__logo {
+		background-image: url("../../images/XWP_logo.svg");
+		background-repeat: no-repeat;
+		text-indent: -9999px;
+		height: 45px;
+		width: 150px;
+
+	}
+
+	&__items {
+		list-style: none;
+		display: flex;
+		margin-left: auto;
+	}
+
+	&__item + .nav__item {
+		margin-left: 16px;
+	}
+
+	&__link {
+
+		&.is-active {
+			text-decoration: underline;
+		}
+	}
+}
