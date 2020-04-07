@@ -18,7 +18,7 @@ npm run dev
 ```
 
 ## Server
-You can run a server with
+You can run a server, for reading the documentation or testing.
 ```bash
 npm run server
 ```
