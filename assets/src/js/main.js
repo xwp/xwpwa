@@ -12,7 +12,7 @@ import FontsDetection from './FontsDetection';
 // import ServiceWorkerRegistration from './ServiceWorkerRegistration';
 
 ( function() {
-	LazyLoad.init( 'img' );
+	LazyLoad.init();
 	FontsDetection.init( [ 'Lato', 'Source Serif Pro' ] );
 
 	// ServiceWorkerRegistration.init( '/sw.js' );
