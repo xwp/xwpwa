@@ -12,19 +12,30 @@ or, using [Yarn](https://yarnpkg.com):
 yarn install
 ```
 
+Then
+```bash
+npm run dev
+```
+
+## Server
+You can run a server with
+```bash
+npm run server
+```
+
 ## Configuration
 
 ### Application Titles
 
 Find **PWA Long Name** and replace by the application title.
 
-Find **PWA Name** and replace by your own application short title. This title is used when bookmarking the app to the home screen, and should not be longer than 11-15 characters to avoid cropping. 
+Find **PWA Name** and replace by your own application short title. This title is used when bookmarking the app to the home screen, and should not be longer than 11-15 characters to avoid cropping.
 
 Change the **pwa_name** inside the package.json along the git URLs.
 
 ### Branding Colors
 
-#### Choose background color hex ( #ffffff ). 
+#### Choose background color hex ( #ffffff ).
 
 Replace it in **assets/tasks/icons.js** to line 18 `const brandBackgroundColor`.
 
@@ -46,7 +57,7 @@ Replace it in **assets/html/index.html** to line 32 `"msapplication-TileColor"`.
 
 ### Icons
 
-Update **assets/images/icon.png** with a high resolution, square PNG graphic. 
+Update **assets/images/icon.png** with a high resolution, square PNG graphic.
 SVGs are supported, and can be provided by updating `const iconSrc` inside **assets/tasks/icons.js**.
 
 Run the following command to generate all icon sizes from NPM using the [RealFaviconGenerator API](https://realfavicongenerator.net/):
@@ -85,7 +96,7 @@ This is where the paths to the offline template should get defined, by adding a 
 
 ### 2. Cache First, Network Fallback
 
-Defining the regular expression for the external web fonts URL enables the webfonts cache for storing them using the cache-first strategy. 
+Defining the regular expression for the external web fonts URL enables the webfonts cache for storing them using the cache-first strategy.
 The regular expression can contain multiple domains for the fonts, like this example with fonts loading from both Typography and Google APIs.
 
 Regular content imagery can be cached using the same strategy. Recommend this over stale while revalidate because newly upload imagery receives new URLs. Precached image assets won't be cached a second time.
@@ -97,11 +108,11 @@ const cdnImagesRegex = 'https://i(0|1|2).wp.com/(.*)/';
 
 External image assets sometimes do not show up in the Cache Storage due to the browser deciding to store them in the main disk cache instead. Successful caching is confirmed by their presence in the corresponding IndexedDB and by the request not failing with the browser in offline mode.
 
-Application icons defined in the manifest can't get intercepted by the service worker, hence there's no need to define custom caching strategies for them.  
+Application icons defined in the manifest can't get intercepted by the service worker, hence there's no need to define custom caching strategies for them.
 
 ### 3. Cache-Network race (Stale while Revalidate)
 
-This strategy is to be used for the assets which can change frequently, but are non-essential to the user experience to show the latest right away.  
+This strategy is to be used for the assets which can change frequently, but are non-essential to the user experience to show the latest right away.
 
 Defining the avatars regular expression enables the cache for storing them using the stale while revalidate (cache-network race) strategy.
 
@@ -119,7 +130,7 @@ Some content must always be kept up-to-date, and with this strategy we fetch the
 The ```htmlRegex``` is setup as a final catch all for local paths that don't fall inside of the wp-admin path.
 
 The 404 and Offline pages are defined in the manifest and referenced to the cached files from inside the service worker's networkFirst strategy.
- 
+
  ### 5. Network only
- 
- Without setting up a specific caching strategy to an outside domain, any other external domains won't get their assets cached by the service worker. 
+
+ Without setting up a specific caching strategy to an outside domain, any other external domains won't get their assets cached by the service worker.
