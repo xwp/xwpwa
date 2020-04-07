@@ -19,7 +19,7 @@ import FontsDetection from './FontsDetection';
 	LazyLoadEmbeds.init( {
 		twitter: '.embed-twitter',
 		instagram: '.embed-instagram',
-		scribd: '.embed-scribd'
+		facebook: '.embed-facebook'
 	} );
 	FontsDetection.init( [ 'Lato', 'Source Serif Pro' ] );
 
