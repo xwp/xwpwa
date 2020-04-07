@@ -76,11 +76,12 @@
     "npm-watch": "^0.3.0",
     "scss-query": "^1.0.1",
     "workbox-cli": "^2.1.0",
-    "gulp": "~3.9.0",
+    "gulp": "~4.0.2",
     "sc5-styleguide": "~1.8.1"
   },
   "dependencies": {
     "fontfaceobserver": "^2.0.13",
+    "idlize": "^0.1.1",
     "intersection-observer": "^0.4.2",
     "promise-polyfill": "^6.0.2",
     "whatwg-fetch": "^2.0.3",
