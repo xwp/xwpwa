@@ -1,70 +1,29 @@
-/* global IOlazy */
-import '../vendor/io-lazyload/iolazy.js';
-
 const LazyLoad = {
 
-	/**
-	 * Lazy images selector.
-	 *
-	 * @type {string}
-	 */
-	lazySelector: 'img',
+	checkLazyLoadAttribute() {
 
-	/**
-	 * HTML element.
-	 *
-	 * @type {object}
-	 */
-	html: {},
-
-	/**
-	 * Initialize.
-	 *
-	 * @param {string} lazySelector The lazy loaded images selector.
-	 * @returns {void}
-	 */
-	init( lazySelector ) {
-		this.html = document.querySelector( 'html' );
-		this.html.classList.remove( 'no-js' );
-
-		if ( lazySelector ) {
-			this.lazySelector = lazySelector;
+		// If the browser support native-lazy-loading.
+		// Each image get the data-src as src.
+		if ( 'loading' in HTMLImageElement.prototype ) {
+			console.log( 'inside' ); // eslint-disable-line no-console
+			const img = document.querySelectorAll( 'img.lazyload' );
+			img.forEach( ( image ) => {
+				console.log( image ); // eslint-disable-line no-console
+				image.src = image.dataset.src;
+			});// eslint-disable-line space-in-parens
 		} else {
-			this.lazySelector = 'img';
-		}
 
-		if ( 'undefined' !== typeof IOlazy ) {
-			document.addEventListener( 'DOMContentLoaded', () => {
-				/* eslint-disable no-new */
-				new IOlazy( {
-					image: this.lazySelector
-				} );
-				/* eslint-enable no-new */
-			} );
-		} else {
-			this.basicLazyLoad();
+			// Dynamically import the LazySizes library
+			// to be able to use a await import, Babel must be updated to version 7
+			let script = document.createElement( 'script' );
+			script.async = true;
+			script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.8/lazysizes.min.js';
+			document.body.appendChild( script );
 		}
 	},
 
-	/**
-	 * Basic lazy load fallback.
-	 * Inspired from: https://davidwalsh.name/lazyload-image-fade
-	 *
-	 * @returns {void}
-	 */
-	basicLazyLoad() {
-		[].forEach.call( document.querySelectorAll( this.lazySelector ), function( img ) {
-			if ( img.getAttribute( 'data-src' ) ) {
-				img.setAttribute( 'src', img.getAttribute( 'data-src' ) );
-			}
-			if ( img.getAttribute( 'data-srcset' ) ) {
-				img.setAttribute( 'srcset', img.getAttribute( 'data-srcset' ) );
-			}
-			img.onload = function() {
-				img.removeAttribute( 'data-src' );
-				img.removeAttribute( 'data-srcset' );
-			};
-		} );
+	init() {
+		this.checkLazyLoadAttribute();
 	}
 };
 
