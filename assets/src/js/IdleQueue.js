@@ -1,4 +1,4 @@
-// https://github.com/GoogleChromeLabs/idlize/blob/master/docs/IdleQueue.m
+// https://github.com/GoogleChromeLabs/idlize/blob/master/docs/IdleQueue.md
 import {IdleQueue} from 'idlize/IdleQueue.mjs';
 
 const XwpIdleQueue = {
@@ -19,6 +19,9 @@ const XwpIdleQueue = {
 
 	/**
 	 * Get src of script to queue.
+	 * Write these source in a function to write script in the head.
+	 * Push these functions in the queue.
+	 * Launch the queue
 	 *
 	 * @param {string} src The lazy sript src.
 	 * @returns {void}
@@ -45,9 +48,8 @@ const XwpIdleQueue = {
 	},
 
 	/**
-	 * Get src of script to queue.
+	 * Send all functions in the queue.
 	 *
-	 * @param {string} src The lazy sript src.
 	 * @returns {void}
 	 */
 	pushInlineScripts() {
