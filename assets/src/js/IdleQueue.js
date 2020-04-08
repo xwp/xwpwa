@@ -18,27 +18,6 @@ const XwpIdleQueue = {
 	listSrc: [],
 
 	/**
-	 * Array with all function to write scripts.
-	 *
-	 * @type {array}
-	 */
-	queueLinkScripts: [],
-
-	/**
-	 * Write js script.
-	 *
-	 * @param {string} src The lazy sript src.
-	 * @returns {void}
-	 */
-	setScript( src ) {
-		let s = document.createElement( 'script' ),
-			el = document.getElementsByTagName( 'script' )[0];
-		s.async = 'true';
-		s.src = src;
-		el.parentNode.insertBefore( s, el );
-	},
-
-	/**
 	 * Get src of script to queue.
 	 *
 	 * @param {string} src The lazy sript src.
@@ -52,15 +31,17 @@ const XwpIdleQueue = {
 		} );
 
 		this.listSrc.forEach( ( source ) => {
-			window.xwpQueue.push( function() {
-				this.setScript( source );
-			} );
+			const fun = function() {
+				let s = document.createElement( 'script' ),
+					el = document.getElementsByTagName( 'script' )[0];
+				s.async = 'true';
+				s.src = source;
+				el.parentNode.insertBefore( s, el );
+			};
+			window.xwpQueue.push( fun );
 		} );
 
-		const queue = new IdleQueue();
-		window.xwpQueue.forEach( task =>
-			queue.pushTask( task, { time: 1000 } )
-		);
+		this.pushInlineScripts();
 	},
 
 	/**
@@ -83,9 +64,7 @@ const XwpIdleQueue = {
 	},
 
 	init() {
-
-		//this.pushLinkScripts();
-		this.pushInlineScripts();
+		this.pushLinkScripts();
 	}
 };
 
