@@ -73,11 +73,10 @@
 	<main class="center">
 		<article class="stack">
 			<h1>Idle Queue</h1>
-			<h2>HTML</h2>
+			<h2>Goal</h2>
 
 			<p>
-				We want to delay third party js. To achieve this goal, a solution based on <code>idle-until-urgent</code> idea developed by <a href="https://philipwalton.com/articles/idle-until-urgent/">Philip Walton</a> <br />
-				So the solution use his <code>IdleQueue</code> class.
+				We want to delay third party js. To achieve this goal, we use a solution based on <code>idle-until-urgent</code> idea developed by <a href="https://philipwalton.com/articles/idle-until-urgent/">Philip Walton</a> <br />
 			</p>
 			<h2>HTML required</h2>
 			<p>We want to create a queue for two different cases.</p>
@@ -94,7 +93,7 @@
 	}(document, 'script', 'facebook-jssdk'));
 </script>
 			</xmp>
-			<p>We don't want this js, we want a named function that will be launched once in the queue.</p>
+			<p>We need to modify this script, to have a named function that will be launched once in the queue.</p>
 			<xmp>
 <script>
 	function facebookSdk() {
@@ -119,11 +118,11 @@
 			</xmp>
 
 			<h3>Script links</h3>
-			<p>In the HTML, we will find script link to library or script like this.</p>
+			<p>In the HTML, we will find script link to library or scripts like this.</p>
 			<xmp>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77255286-1"></script>
 			</xmp>
-			<p>We will modify the source to not launch the script, remplacing the <code>src</code> by an attribute: <code>data-queue-src</code> <br />
+			<p>We will modify the source to not launch the script, replacing the <code>src</code> by an attribute: <code>data-queue-src</code> <br />
 				And we can remove the <code>async</code> attribute because our queue will call the script when the browser is available.
 			</p>
 			<xmp>
