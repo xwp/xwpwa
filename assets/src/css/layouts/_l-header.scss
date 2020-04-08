@@ -5,8 +5,6 @@
 }
 
 .nav {
-    display: flex;
-	align-items: flex-end;
 	margin: 16px 0;
 
 	&__logo {
@@ -15,23 +13,41 @@
 		text-indent: -9999px;
 		height: 45px;
 		width: 150px;
-
+		margin: 0 auto 16px;
 	}
 
 	&__items {
 		list-style: none;
 		display: flex;
-		margin-left: auto;
-	}
-
-	&__item + .nav__item {
-		margin-left: 16px;
+		flex-wrap: wrap;
+		justify-content: space-around;
 	}
 
 	&__link {
 
 		&.is-active {
 			text-decoration: underline;
+		}
+	}
+}
+
+@media (min-width: 760px) {
+	.nav {
+		display: flex;
+		align-items: flex-end;
+
+		&__logo {
+
+			margin: initial;
+		}
+
+		&__items {
+			margin-left: auto;
+			justify-content: normal;
+		}
+
+		&__item + .nav__item {
+			margin-left: 16px;
 		}
 	}
 }

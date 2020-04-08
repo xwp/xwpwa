@@ -475,8 +475,6 @@ img.latex {
 }
 
 .nav {
-  display: flex;
-  align-items: flex-end;
   margin: 16px 0;
 }
 
@@ -486,20 +484,35 @@ img.latex {
   text-indent: -9999px;
   height: 45px;
   width: 150px;
+  margin: 0 auto 16px;
 }
 
 .nav__items {
   list-style: none;
   display: flex;
-  margin-left: auto;
-}
-
-.nav__item + .nav__item {
-  margin-left: 16px;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .nav__link.is-active {
   text-decoration: underline;
+}
+
+@media (min-width: 760px) {
+  .nav {
+    display: flex;
+    align-items: flex-end;
+  }
+  .nav__logo {
+    margin: initial;
+  }
+  .nav__items {
+    margin-left: auto;
+    justify-content: normal;
+  }
+  .nav__item + .nav__item {
+    margin-left: 16px;
+  }
 }
 
 main {
