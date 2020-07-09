@@ -56,7 +56,7 @@ const XwpIdleQueue = {
 		const queue = new IdleQueue();
 		if ( window.xwpQueue ) {
 			window.xwpQueue.forEach( task =>
-				queue.pushTask( task, { time: 1000 } )
+				queue.pushTask( task )
 			);
 		} else {
 			/* eslint-disable no-console */
