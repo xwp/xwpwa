@@ -82,8 +82,8 @@
 			<p>We want to create a queue for two different cases.</p>
 			<h3>Inline self-executable functions</h3>
 			<p>Let's looks at this Facebook function</p>
-			<xmp>
-<script>
+			<pre><code>
+&lt;script&gt;
 	(function(d, s, id) {
 		var js, fjs = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id)) return;
@@ -91,11 +91,11 @@
 		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
-</script>
-			</xmp>
+&lt;/script&gt;
+</code></pre>
 			<p>We need to modify this script, to have a named function that will be launched once in the queue.</p>
-			<xmp>
-<script>
+			<pre><code>
+&lt;script&gt;
 	function facebookSdk() {
 		var js, fjs = document.getElementsByTagName('script')[0];
 		if (document.getElementById('facebook-jssdk')) return;
@@ -104,30 +104,30 @@
 		fjs.parentNode.insertBefore(js, fjs);
 	};
 	window.xwpQueue.push(facebookSdk);
-</script>
-			</xmp>
+&lt;/script&gt;
+			</code></pre>
 			<p>So now the function is not anonymous and self-executable anymore.  <br />
 				And we can notice a new line of code <code>window.xwpQueue.push(facebookSdk);</code><br />
 				This is our queue, an array that we must declare in the DOM before pushing the function inside. <br />
 				So in the head, we need:
 			</p>
-			<xmp>
-<script>
+			<pre><code>
+&lt;script&gt;
 	window.xwpQueue = [];
-</script>
-			</xmp>
+&lt;/script&gt;
+			</code></pre>
 
 			<h3>Script links</h3>
 			<p>In the HTML, we will find script link to library or scripts like this.</p>
-			<xmp>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-77255286-1"></script>
-			</xmp>
+			<pre><code>
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=UA-77255286-1"&gt;&lt;/script&gt;
+			</pre></code>
 			<p>We will modify the source to not launch the script, replacing the <code>src</code> by an attribute: <code>data-queue-src</code> <br />
 				And we can remove the <code>async</code> attribute because our queue will call the script when the browser is available.
 			</p>
-			<xmp>
-<script data-queue-src="https://www.googletagmanager.com/gtag/js?id=UA-77255286-1"></script>
-			</xmp>
+			<pre><code>
+&lt;script data-queue-src="https://www.googletagmanager.com/gtag/js?id=UA-77255286-1"&gt;&lt;/script&gt;
+			</code></pre>
 			<p>Then in our js code, we will rewrite the script in a function to launch this link the head, then pushing this function in our queue.</p>
 
 			<h3>Source</h3>

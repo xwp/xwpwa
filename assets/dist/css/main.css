@@ -549,11 +549,12 @@ main {
   padding-right: 18px;
 }
 
-xmp {
+pre code {
   background-color: beige;
   padding: 0 18px;
   border-radius: 4px;
   overflow: scroll;
+  display: block;
 }
 
 /*# sourceMappingURL=main.css.map */
