@@ -248,16 +248,6 @@ button {
 img {
   height: auto;
   max-width: 100%;
-  transition: opacity 0.3s;
-  opacity: 1;
-}
-
-img.lazy[data-src] {
-  opacity: 0;
-}
-
-img.lazy[data-src].visible {
-  opacity: 1;
 }
 
 /*

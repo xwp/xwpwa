@@ -187,16 +187,16 @@ button {
 img {
 	height: auto;
 	max-width: 100%;
-	transition: opacity 0.3s;
-	opacity: 1;
+	// transition: opacity 0.3s;
+	// opacity: 1;
 
-	&.lazy[data-src] {
-		opacity: 0;
+	// &.lazy[data-src] {
+	// 	opacity: 0;
 
-		&.visible {
-			opacity: 1;
-		}
-	}
+	// 	&.visible {
+	// 		opacity: 1;
+	// 	}
+	// }
 }
 
 /*
