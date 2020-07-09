@@ -8,7 +8,7 @@ const LazyLoad = {
 			const img = document.querySelectorAll( 'img.lazyload' );
 			img.forEach( ( image ) => {
 				image.src = image.dataset.src;
-			});
+			} );
 		} else {
 
 			// Dynamically import the LazySizes library
