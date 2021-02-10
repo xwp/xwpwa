@@ -19,9 +19,8 @@
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development gulp --gulpfile $(npm root)/undercurrent/src/index.js --cwd $(npm prefix) --workflow theme",
-    "build": "cross-env NODE_ENV=production gulp --gulpfile $(npm root)/undercurrent/src/index.js --cwd $(npm prefix) --workflow theme && workbox inject:manifest && cross-env NODE_ENV=production npm run styleguide",
+    "build": "cross-env NODE_ENV=production gulp --gulpfile $(npm root)/undercurrent/src/index.js --cwd $(npm prefix) --workflow theme && workbox inject:manifest",
     "icons": "gulp --gulpfile ./assets/tasks/icons.js --cwd ./",
-    "styleguide": "gulp --gulpfile ./assets/tasks/styleguide.js --cwd ./",
     "sw": "npm-watch",
     "sw-inject-manifest": "workbox inject:manifest",
     "server": "node server.js"
