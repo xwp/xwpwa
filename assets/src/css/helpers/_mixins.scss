@@ -29,3 +29,17 @@
 
 	@return map-get($z-layers, $layer);
 }
+
+// Create colors classes from a map
+@mixin modifiers($map, $attribute, $prefix: '-', $separator: '--', $base: 'base') {
+	@each $key, $value in $map {
+		&#{if($key != $base, #{$prefix}#{$key}, '')} {
+			@if type-of($value) == 'map' {
+				@include modifiers($value, $attribute, $separator);
+			}
+			@else {
+				#{$attribute}: $value;
+			}
+		}
+	}
+}

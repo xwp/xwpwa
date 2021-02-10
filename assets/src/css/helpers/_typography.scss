@@ -5,16 +5,8 @@
 // $g-font-family-sans - Lato, Tahoma, Verdana, Segoe, sans-serif
 // $g-font-family-serif - 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif
 //
-// markup:
-// <h1 style="font-family: {$modifiers}">The quick brown fox jumps over the lazy dog.</h1>
-// <h2 style="font-family: {$modifiers}">The quick brown fox jumps over the lazy dog.</h2>
-// <h3 style="font-family: {$modifiers}">The quick brown fox jumps over the lazy dog.</h3>
-// <h4 style="font-family: {$modifiers}">The quick brown fox jumps over the lazy dog.</h4>
-// <h5 style="font-family: {$modifiers}">The quick brown fox jumps over the lazy dog.</h5>
-// <h6 style="font-family: {$modifiers}">The quick brown fox jumps over the lazy dog.</h6>
-// <p style="font-family: {$modifiers}">The quick brown fox jumps over the lazy dog.</p>
-//
-// Styleguide 0.2
+
+@import 'mixins';
 
 //
 // Font weights
@@ -57,3 +49,44 @@ $g-font-family-serif: 'Source Serif Pro', Georgia, Times, 'Times New Roman', ser
 		word-spacing: -0.039556em;
 	}
 }
+//
+// A mixin associated with a map of color will be use to generate all the color classes
+// These classes will be used in the HTML, to avoid to set the color in the CSS file
+// The structure of the class will be like color--primary
+//
+
+
+// Text color map
+$colors: (
+  red: $g-color-red,
+  grey: (
+    100: $g-color-grey--100,
+    500: $g-color-grey--500
+  ),
+  primary: (
+    base: $g-color-primary
+  ),
+  secondary: (
+    base: $g-color-secondary
+  )
+);
+
+//
+// Font sizes used throughout the site
+// By having a map, we can keep the number of the different font size used low.
+$font-sizes: (
+  small: 12px,
+  medium: 14px,
+  large: 16px,
+  x-large: 18px,
+  xx-large: 20px
+);
+
+.color {
+  @include modifiers($colors, 'color');
+}
+
+.font {
+	@include modifiers($font-sizes, 'font-size');
+}
+

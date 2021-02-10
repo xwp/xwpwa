@@ -1,0 +1,27 @@
+// Background
+//
+// Background color styles used site-wide
+//
+// $g-font-family-sans - Lato, Tahoma, Verdana, Segoe, sans-serif
+// $g-font-family-serif - 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif
+//
+
+@import 'mixins';
+
+// Background color map
+$background: (
+  grey: (
+    100: $g-color-grey--100,
+    500: $g-color-grey--500
+  ),
+  primary: (
+    base: $g-color-primary
+  ),
+  secondary: (
+    base: $g-color-secondary
+  )
+);
+
+.bg {
+  @include modifiers($background, 'background-color', $separator: '-');
+}

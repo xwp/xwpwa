@@ -1,15 +1,27 @@
 // Site Colors
 //
 // Colors used throughout the site
+// These variables will be used in the maps to generate the text color
+// and the background color classes.
+// The goal is the keep the number of color minimal and optimized.
 //
-// $g-color-black - black
-// $g-color-white - white
-//
-// markup:
-// <div proto-ignore style="background-color:{$modifiers};height:50px;"><span style="font-family:monospace;padding:10px;background-color:#fff;">{$modifiers}</span></div>
-//
-// Styleguide 0.1
+
 
 $g-color-black: black;
 $g-color-white: white;
 $g-color-red: #f00;
+
+// Brand color
+$g-color-primary: #065F46;
+$g-color-secondary: #C4B5FD;
+
+// Grey tint
+$g-color-grey--50: #F9FAFB;
+$g-color-grey--100: #F3F4F6;
+$g-color-grey--200: #E5E7EB;
+$g-color-grey--300: #D1D5DB;
+$g-color-grey--400: #9CA3AF;
+$g-color-grey--500: #6B7280;
+$g-color-grey--600: #4B5563;
+$g-color-grey--700: #374151;
+$g-color-grey--800 :#1F2937;
