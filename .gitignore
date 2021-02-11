@@ -59,4 +59,3 @@ yarn.lock
 
 # front-end
 *.css.map
-assets/dist/css/*
