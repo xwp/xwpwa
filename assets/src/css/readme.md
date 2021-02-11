@@ -23,7 +23,7 @@ This package will be used for @media queries.
 
 All the colors used throughout the site must set as variable in that file.
 These colors variables are used inside the maps to create the `color` and `background` classes.
-The current variables are only an indication and must be updated from the design value.
+The current variables are only an indication and must be updated with the design values.
 
 #### Mixins
 
@@ -31,12 +31,19 @@ The location for the scss mixins
 
 #### Typography
 
-Some reset for the font-weight and some style for the loading fonts.
+Some reset for the **font-weight** and some style for the **loading fonts**.
 
-The `color` classes are generated from that file, with a mixin and map.
+The scss variable for the **font-family** is set in that file.
+
+The variable for the default **font-size** of the body is also set here.
+A good practice will be to use the default font-size of the article, to avoid to set it again in the HTML (with the `text-xxx` class)
+
+These variables are used to set the font-family & the font-size values on the body inside `base/_global.scss`
+
+The `color` classes are generated from that file, with a mixin (imported from the mixins file) and a colors map.
 The map must use the color variables coming from the color file.
 The **colors map** and the **color variables** are set as an example and must be updated with the value coming from the design.
-The goal of the `color-xxx` classes is to add the color to each text element inside the HTML and not as a CSS property.
+The goal of the `color-xxx` classes is to add the color to each text element inside the HTML and not as a CSS property.  Like that, we can avoid duplicating value in the CSS file and keep the colors limited.
 The name will be based on the map and the output will be like `color-primary` or `color-grey-100`
 
 From the same logic, this file will generate the `text-xxx` classes.
@@ -53,21 +60,28 @@ So the element will be like:  `<section class="bg-primary">…</section>`
 
 Breakpoints, Z-Index named layers, easings, transition
 
+---
+
 ### Base
 
 #### Global
 
 The reset is done in that file.
+The reset has been based on a recent code done by [Andy Bell](https://dev.to/hankchizljaw/a-modern-css-reset-6p3)
 
 #### wp-core
 
 Some default style for Wordpress are also available.
+
+---
 
 ### Components
 
 Components classes are prefixed with `c-`
 
 #### logo
+
+---
 
 ### Layouts
 
