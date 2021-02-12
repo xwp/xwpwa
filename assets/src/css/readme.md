@@ -4,8 +4,8 @@
 
 To watching the scss files and generate the main.min.css file into `assets/dist/css` run `npm run css`.
 
-Node 8 must be used, by using [NVM](https://github.com/nvm-sh/nvm/blob/master/README.md)
-`nvm install 8`
+Node 8 must be used, by using [NVM](https://github.com/nvm-sh/nvm/blob/master/README.md)  
+`nvm install 8`  
 `nvm use 8`
 
 You may need to install `node-sass` for the version 10 of node with the command:
@@ -17,8 +17,8 @@ You may need to install `node-sass` for the version 10 of node with the command:
 
 #### Colors variables
 
-All the colors used throughout the site must set as variable in that file.
-These colors variables are used inside the maps to create the `color` and `background` classes.
+All the colors used throughout the site must set as variable in that file.  
+These colors variables are used inside the maps to create the `color` and `background` classes.  
 The current variables are only an indication and must be updated with the design values.
 
 #### Variables
@@ -63,21 +63,21 @@ The location for the scss mixins available
 - **z-index**
 - **rem** transform a pixel value in rem.
 - **modifiers** used to create a list of classes based on a map.
-- **spacer** a function to return the grid point value, can be used with a multiplier.
-The goal is to set a vertical and horizontal rhythm.
-If the design use different values for the spacing (sometimes a multiple of 10 and a multiple of 8 too), the grid point value must be set with the designer.
+- **spacer** a function to return the grid point value, can be used with a multiplier.  
+The goal is to set a vertical and horizontal rhythm.  
+If the design use different values for the spacing (sometimes a multiple of 10 and a multiple of 8 too), the grid point value must be set with the designer.  
 This value is set in the mixin file.
 
 ---
 
 ### 3-Elements
 
-Some elements have a reset or a style by defaut. Feel free to comment the components that are not used in the theme.
+Some elements have a reset or a style by defaut. Feel free to comment the components that are not used in the theme.  
 For example, if there is no **table** used.
 
 #### Reset
 
-The reset is done in that file.
+The reset is done in that file.  
 The reset has been based on a recent code done by [Andy Bell](https://dev.to/hankchizljaw/a-modern-css-reset-6p3) and Boostrap 5
 
 #### Body
@@ -86,7 +86,7 @@ The body properties are based on the code done by [Andy Bell](https://dev.to/han
 
 #### Links
 
-Default style for the link without class, i.e. the one used in a article
+Default style for the link without class, i.e. the one used in a article.
 
 ---
 
@@ -110,23 +110,24 @@ Layout classes are prefixed with `l-`.
 
 #### Background
 
-This file is used to generated the different classes used to set the background color of an element.
-So the element will be like:
+This file is used to generated the different classes used to set the background color of an element.  
+So the element will be like:  
 `<section class="bg-primary">…</section>`
 
 #### Color
 
-The `color` classes are generated from that file, with a mixin (imported from the mixins file) and a colors map.
-The map must use the color variables coming from the color file.
+The `color` classes are generated from that file, with a mixin (imported from the mixins file) and a colors map.  
+The map must use the color variables coming from the color file.  
 The **colors map** and the **color variables** are set as an example and must be updated with the value coming from the design.
+
 The goal of the `color-xxx` classes is to add the color to each text element inside the HTML and not as a CSS property. Like that, we can avoid duplicating value in the CSS file and keep the colors limited.
 The name will be based on the map and the output will be like `color-primary` or `color-grey-100`
 
 #### Text
 
-From the same logic, this file will generate the `text-xxx` classes.
-Based on a map of the font sized used inside the site, multiple classes will be generated.
-So a text element will be like that in the HTML:
+From the same logic, this file will generate the `text-xxx` classes.  
+Based on a map of the font sized used inside the site, multiple classes will be generated.  
+So a text element will be like that in the HTML:  
 `<h1 class="color-primary text-xx-large">Title</h1>`
 
 ---
