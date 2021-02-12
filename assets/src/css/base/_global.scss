@@ -1,32 +1,95 @@
 // Global styles
+//
+// Reset style based on https://dev.to/hankchizljaw/a-modern-css-reset-6p3
+
 
 /*
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in
- *    IE on Windows Phone and in iOS.
+ * Universal box sizing.
  */
-html {
-	line-height: 1.15; /* 1 */
-	/* stylelint-disable plugin/no-unsupported-browser-features */
-	-ms-text-size-adjust: 100%; /* 2 */
-	-webkit-text-size-adjust: 100%; /* 2 */
-	/* stylelint-enable plugin/no-unsupported-browser-features */
+ *,
+ *::before,
+ *::after {
+	box-sizing: border-box;
 }
 
+/* Remove default padding */
+ul[class],
+ol[class] {
+	padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+
 /*
- * 1. Remove the margin in all browsers (opinionated).
- * 2. Font-smoothing declaration makes OS X fonts look more consistent
+ * 1. Font-smoothing declaration makes OS X fonts look more consistent
  *    with other systems.
- * 3. Set main font.
+ * 2. Set main font.
+ * 3. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 4. As a best practice, apply a default `background-color`.
+ * 5. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+
  */
 body {
-	margin: 0; /* 1 */
-	-moz-osx-font-smoothing: grayscale; /* 2 */
-	-webkit-font-smoothing: antialiased; /* 2 */
-	font-size: 16px; /* 3 */
-	line-height: 1.5; /* 3 */
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	-moz-osx-font-smoothing: grayscale; /* 1 */
+	-webkit-font-smoothing: antialiased; /* 1 */
+	text-rendering: optimizeSpeed;
+	font-size: $g-font-size; /* 2 */
+	line-height: 1.5; /* 2 */
+	overflow-y: scroll; /* 3 */
+	background-color: $g-bg-color; /* 4 */
+	-ms-text-size-adjust: 100%; /* 5 */
+	-webkit-text-size-adjust: 100%; /* 5 */
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
 	@extend %g-font-family-sans;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+	list-style: none;
+}
+
+
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
 
 h1,
@@ -37,29 +100,6 @@ h5,
 h6 {
 	@extend %g-font-family-serif;
 	font-weight: $normal;
-}
-
-/*
- * Universal box sizing.
- */
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
-/*
- * Remove gaps in links underline in iOS 8+ and Safari 8+.
- */
-a {
-	-webkit-text-decoration-skip: objects; /* 2 */
-	transition: color $g-transition-color;
-	text-decoration: none;
-
-	&:hover,
-	&:focus {
-		text-decoration: underline;
-	}
 }
 
 /*
@@ -181,10 +221,12 @@ button {
 
 /*
  * Make images stay within the limits of their container.
+ * Remove the space under with display block.
  */
 img {
 	height: auto;
 	max-width: 100%;
+	display: block;
 	transition: opacity 0.3s;
 	opacity: 1;
 
@@ -195,36 +237,6 @@ img {
 			opacity: 1;
 		}
 	}
-}
-
-/*
- * Resetting margins and padding.
- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-figure,
-address,
-ol,
-ul,
-dl,
-li,
-dt,
-dd,
-button,
-input,
-optgroup,
-select,
-textarea,
-fieldset,
-legend {
-	margin: 0;
-	padding: 0;
 }
 
 fieldset {

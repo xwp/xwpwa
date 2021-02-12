@@ -13,11 +13,7 @@ You may need to install `node-sass` for the version 10 of node with the command:
 
 ## Structure of the CSS folder
 
-### Helpers
-
-#### scss-query
-
-This package will be used for @media queries.
+### 1-Settings
 
 #### Colors variables
 
@@ -25,9 +21,18 @@ All the colors used throughout the site must set as variable in that file.
 These colors variables are used inside the maps to create the `color` and `background` classes.
 The current variables are only an indication and must be updated with the design values.
 
-#### Mixins
+#### Variables
 
-The location for the scss mixins
+The colors variables are ready to be used in that file.
+
+**Variables available**:
+
+- Breakpoints,
+- Z-Index named layers,
+- default link
+- body properties
+- easings,
+- transition
 
 #### Typography
 
@@ -36,55 +41,85 @@ Some reset for the **font-weight** and some style for the **loading fonts**.
 The scss variable for the **font-family** is set in that file.
 
 The variable for the default **font-size** of the body is also set here.
-A good practice will be to use the default font-size of the article, to avoid to set it again in the HTML (with the `text-xxx` class)
+A good practice will be to use the default font-size of the article, to avoid to set it again in the HTML (with the `text-xxx` class).
 
-These variables are used to set the font-family & the font-size values on the body inside `base/_global.scss`
+These variables are used to set the font-family & the font-size values on the body inside `3-elements/_body.scss`
 
-The `color` classes are generated from that file, with a mixin (imported from the mixins file) and a colors map.
-The map must use the color variables coming from the color file.
-The **colors map** and the **color variables** are set as an example and must be updated with the value coming from the design.
-The goal of the `color-xxx` classes is to add the color to each text element inside the HTML and not as a CSS property.  Like that, we can avoid duplicating value in the CSS file and keep the colors limited.
-The name will be based on the map and the output will be like `color-primary` or `color-grey-100`
+---
 
-From the same logic, this file will generate the `text-xxx` classes.
-Based on a map of the font sized used inside the site, multiple classes will be generated.
+### 2-Tools
 
-So a text element will be like that in the HTML:   `<h1 class="color-primary text-xx-large">Title</h1>`
+#### scss-query
+
+This package will be used for @media queries.
+
+#### Mixins
+
+The location for the scss mixins available
+
+- **clearfix** hack, better to use `display: flow-root;` if we don't to support IE11
+- **h-container** create a centered wrapper with min & max width.
+  These values are set from the `variables` file
+- **z-index**
+- **rem** transform a pixel value in rem.
+- **modifiers** used to create a list of classes based on a map.
+
+---
+
+### 3-Elements
+
+#### Reset
+
+The reset is done in that file.
+The reset has been based on a recent code done by [Andy Bell](https://dev.to/hankchizljaw/a-modern-css-reset-6p3) and Boostrap 5
+
+#### Body
+
+The body properties are based on the code done by [Andy Bell](https://dev.to/hankchizljaw/a-modern-css-reset-6p3) and Boostrap 5.
+
+#### Links
+
+Default style for the link without class, i.e. the one used in a article
+
+---
+
+### 4-Blocks
+
+---
+
+### 5-Components
+
+Components classes are prefixed with `c-`.
+
+---
+
+### 6-layout
+
+Layout classes are prefixed with `l-`.
+
+---
+
+### Utilities
 
 #### Background
 
 This file is used to generated the different classes used to set the background color of an element.
-So the element will be like:  `<section class="bg-primary">…</section>`
+So the element will be like:
+`<section class="bg-primary">…</section>`
 
-#### Variables
+#### Color
 
-Breakpoints, Z-Index named layers, easings, transition
+The `color` classes are generated from that file, with a mixin (imported from the mixins file) and a colors map.
+The map must use the color variables coming from the color file.
+The **colors map** and the **color variables** are set as an example and must be updated with the value coming from the design.
+The goal of the `color-xxx` classes is to add the color to each text element inside the HTML and not as a CSS property. Like that, we can avoid duplicating value in the CSS file and keep the colors limited.
+The name will be based on the map and the output will be like `color-primary` or `color-grey-100`
 
----
+#### Text
 
-### Base
-
-#### Global
-
-The reset is done in that file.
-The reset has been based on a recent code done by [Andy Bell](https://dev.to/hankchizljaw/a-modern-css-reset-6p3)
-
-#### wp-core
-
-Some default style for Wordpress are also available.
-
----
-
-### Components
-
-Components classes are prefixed with `c-`
-
-#### logo
+From the same logic, this file will generate the `text-xxx` classes.
+Based on a map of the font sized used inside the site, multiple classes will be generated.
+So a text element will be like that in the HTML:
+`<h1 class="color-primary text-xx-large">Title</h1>`
 
 ---
-
-### Layouts
-
-Layout classes are prefixed with `l-`
-
-#### Header

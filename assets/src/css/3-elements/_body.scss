@@ -1,0 +1,28 @@
+/*
+ * 1. Font-smoothing declaration makes OS X fonts look more consistent
+ *    with other systems.
+ * 2. Set main font.
+ * 3. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 4. As a best practice, apply a default `background-color`.
+ * 5. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+
+ */
+ body {
+	min-height: 120vh;
+	scroll-behavior: smooth;
+	-moz-osx-font-smoothing: grayscale; /* 1 */
+	-webkit-font-smoothing: antialiased; /* 1 */
+	text-rendering: optimizeSpeed;
+	font-size: $g-font-size; /* 2 */
+	line-height: 1.5; /* 2 */
+	overflow-y: scroll; /* 3 */
+	background-color: $g-bg-color; /* 4 */
+	-ms-text-size-adjust: 100%; /* 5 */
+	-webkit-text-size-adjust: 100%; /* 5 */
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+	@extend %g-font-family-sans;
+}

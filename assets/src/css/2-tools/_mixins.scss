@@ -1,7 +1,9 @@
 // Mixins
 //
-// No styleguide
 
+// A better solution would be to use display: flow-root;
+// https://rachelandrew.co.uk/archives/2017/01/24/the-end-of-the-clearfix-hack/
+// No support for IE11 https://caniuse.com/?search=flow-root
 @mixin clearfix {
 
 	&::after {
@@ -22,12 +24,40 @@
 	@include h-container;
 }
 
+// Mixin to manage z-index
+// Read more: https://www.sitepoint.com/better-solution-managing-z-index-sass/
+//
+// .usage {
+//   // ...
+//   z-index: z("modal");
+// }
+
+// .usage-overlay {
+//   // ...
+//   z-index: z("modal") - 1;
+// }
 @function z($layer) {
 	@if not map-has-key($z-layers, $layer) {
 		@warn 'No layer found for `#{$layer}` in $z-layers map. Property omitted.';
 	}
 
 	@return map-get($z-layers, $layer);
+}
+
+//
+// rem
+// transform a value in pixel to rem
+// Usage:
+// .component {
+// 	font-size: rem(14px); // or rem(14)
+// }
+//
+$html-font-size: 16px;
+@function stripUnit($value) {
+		@return $value / ($value * 0 + 1);
+}
+@function rem($pxValue) {
+		@return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
 }
 
 // Create colors classes from a map
