@@ -1,0 +1,29 @@
+/**
+ * 1. Ensure tables fill up as much space as possible.
+ */
+
+table {
+	width: 100%; /* [1] */
+	border-collapse: collapse;
+	border-spacing: 0;
+	table-layout: fixed;
+}
+
+thead th {
+	border: none;
+}
+
+th {
+	padding: spacer(.5) 0;
+	text-align: left;
+	border: none;
+}
+
+td {
+	padding: spacer(.5);
+	border: none;
+}
+
+tr {
+	border: none;
+}

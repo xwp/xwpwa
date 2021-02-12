@@ -59,14 +59,21 @@ The location for the scss mixins available
 
 - **clearfix** hack, better to use `display: flow-root;` if we don't to support IE11
 - **h-container** create a centered wrapper with min & max width.
-  These values are set from the `variables` file
+  These values are set from the `variables` file.
 - **z-index**
 - **rem** transform a pixel value in rem.
 - **modifiers** used to create a list of classes based on a map.
+- **spacer** a function to return the grid point value, can be used with a multiplier.
+The goal is to set a vertical and horizontal rhythm.
+If the design use different values for the spacing (sometimes a multiple of 10 and a multiple of 8 too), the grid point value must be set with the designer.
+This value is set in the mixin file.
 
 ---
 
 ### 3-Elements
+
+Some elements have a reset or a style by defaut. Feel free to comment the components that are not used in the theme.
+For example, if there is no **table** used.
 
 #### Reset
 
