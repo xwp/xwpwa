@@ -88,9 +88,22 @@ The body properties are based on the code done by [Andy Bell](https://dev.to/han
 
 Default style for the link without class, i.e. the one used in a article.
 
+#### Images
+
+Default/reset style to fluid images.  
+Transition for lazy images done by JS.
+
+#### Tables
+
+Default/reset style to table.  
+If there no tables used in the theme, this file can be commented from the index file.
+
+
 ---
 
 ### 4-Blocks
+
+WordPress Blocks
 
 ---
 
@@ -129,5 +142,11 @@ From the same logic, this file will generate the `text-xxx` classes.
 Based on a map of the font sized used inside the site, multiple classes will be generated.  
 So a text element will be like that in the HTML:  
 `<h1 class="color-primary text-xx-large">Title</h1>`
+
+#### Flow
+
+An utility to set the space between children elements.  
+The goal is to style the context (parent), not the elements (children).
+Could be used in any case: card, article, etc…
 
 ---

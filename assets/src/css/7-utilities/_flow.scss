@@ -1,5 +1,15 @@
+//
+// Flow utility
+// See https://every-layout.dev/layouts/stack/ for usage
+//
+
 .flow {
-  --space: 1.5rem;
+  --space: spacer(1);
+}
+
+.flow > * {
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .flow > * + * {
