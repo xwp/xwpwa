@@ -93,11 +93,25 @@ Default style for the link without class, i.e. the one used in a article.
 Default/reset style to fluid images.  
 Transition for lazy images done by JS.
 
+#### Forms
+
+Default/reset style for form elements: input, select, button, textarea, optgroup.  
+A common border is set for all the elements, the value can be changed with the variables declared at the top of the file.  
+The focus style is set in that file too, with a box-shadow to respect the border-radius if there is one.  
+The button got only a reset and must be style as a component.
+
+#### Typography tags
+
+Some reset/default style for typographic elements. The file contains the variables associated.
+
 #### Tables
 
 Default/reset style to table.  
 If there no tables used in the theme, this file can be commented from the index file.
 
+#### Embeds
+
+Default/reset style to embeds elements (embed, iframe,object).
 
 ---
 
@@ -109,7 +123,10 @@ WordPress Blocks
 
 ### 5-Components
 
-Components classes are prefixed with `c-`.
+Components classes are prefixed with `c-`.  
+The CSS for a plugin can be added in that folder. In that case, there is no prefix.
+
+By default, **Gravity form** is added, but commented to not be added to the CSS file.
 
 ---
 
