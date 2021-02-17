@@ -2,20 +2,21 @@
 //
 // Variables used site-wide.
 
-@import 'colors';
-
 // Breakpoints
 $g-breakpoint-mobile: 480px;
 $g-breakpoint-tablet: 768px;
 $g-breakpoint-desktop: 960px;
+
 $g-site-min-width: 320px;
 $g-site-max-width: 1200px;
 
+// Usage: https://github.com/nicolasmn/scss-mediaquery/blob/master/README.md
 $query-breakpoints: (
 	'mobile': $g-breakpoint-mobile,
 	'tablet': $g-breakpoint-tablet,
-	'desktop': $g-breakpoint-desktop
+	'desktop': $g-breakpoint-desktop,
 );
+
 
 // Z-Index named layers
 $z-layers: (
@@ -24,13 +25,6 @@ $z-layers: (
 	'default': 1,
 	'depression': -100
 );
-
-// Default link in article
-$g-link-decoration: underline;
-$g-color-link: currentColor;
-
-// Body properties
-$g-bg-color: $g-color-white;
 
 // Easings
 /* stylelint-disable number-no-trailing-zeros */
