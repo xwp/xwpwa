@@ -3,9 +3,7 @@
 // See https://every-layout.dev/layouts/stack/ for usage
 //
 
-.flow {
-  --space: spacer(1);
-}
+$flow-space: spacer(1);
 
 .flow > * {
 	margin-top: 0;
@@ -13,5 +11,5 @@
 }
 
 .flow > * + * {
-  margin-top: var(--space);
+  margin-top: $flow-space;
 }
