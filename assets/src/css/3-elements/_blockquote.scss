@@ -1,0 +1,46 @@
+/*
+ * Blockquote design.
+ */
+
+/*
+ * Local variables.
+ */
+
+$-blockquote-color: currentColor;
+$-blockquote-font: $g-font-family-serif;
+$-blockquote-bg: $g-color-secondary;
+$-blockquote-padding: spacer(1);
+$-blockquote-border-width: 0 0 0 10px;
+$-blockquote-border-color: darken($g-color-secondary, 20);
+$-blockquote-border-style: solid;
+$-blockquote-cite-margin-top: spacer(.5);
+$-blockquote-cite-font-style: italic;
+$-blockquote-cite-font-size: rem(14px);
+
+blockquote {
+	font-family: $-blockquote-font;
+	background-color: $-blockquote-bg;
+	padding: $-blockquote-padding;
+	border-width: $-blockquote-border-width;
+	border-color: $-blockquote-border-color;
+	border-style: $-blockquote-border-style;
+}
+
+blockquote,
+blockquote > p {
+
+	//@include g-font-family-serif;
+	color: $-blockquote-color;
+	overflow: hidden;
+
+	cite {
+		display: block;
+		font-style: $-blockquote-cite-font-style;
+		font-size: $-blockquote-cite-font-size;
+		margin-top: 1em;
+	}
+}
+
+blockquote > p:last-of-type {
+	margin-bottom: 0;
+}
