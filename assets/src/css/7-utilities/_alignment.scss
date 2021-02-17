@@ -1,0 +1,59 @@
+// Gutter to container class
+$site-gutter-sm: spacer(.5); // mobile
+$site-gutter-md: spacer(2); // tablet
+$align-float-gutter: spacer(1);
+
+.container {
+
+	@include h-container;
+	padding-left: $site-gutter-sm;
+	padding-right: $site-gutter-sm;
+
+	@media (query(min, tablet)) {
+		padding-left: $site-gutter-md;
+		padding-right: $site-gutter-md;
+	}
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.align-left {
+
+	/*rtl:ignore*/
+	float: left;
+
+	/*rtl:ignore*/
+	margin-right: $align-float-gutter;
+}
+
+.align-right {
+
+	/*rtl:ignore*/
+	float: right;
+
+	/*rtl:ignore*/
+	margin-left: $align-float-gutter;
+}
+
+.align-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	clear: both;
+}
+
+.align-full {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+}
+
