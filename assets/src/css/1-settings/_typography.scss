@@ -6,17 +6,20 @@
 // $g-font-family-serif - 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif
 //
 
+
+@import '../2-tools/mixins';
+
+//
+// Default font-size
+// A recommandation is to use the default font-size of the paragraph from the article
+$g-font-size: rem(16px);
+
 //
 // Font weights
 //
 
 $normal: 400;
 $bold: 700;
-
-//
-// Default font-size
-// A recommandation is to use the default font-size of the paragraph from the article
-$g-font-size: rem(16px);
 
 //
 // Font families
