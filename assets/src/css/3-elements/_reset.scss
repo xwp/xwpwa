@@ -43,23 +43,6 @@ ol[class] {
 	list-style: none;
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-select,
-optgroup,
-textarea {
-	margin: 0;
-	font-family: inherit;
-	font-size: inherit;
-	line-height: inherit;
-}
-
-button,
-select {
-	text-transform: none;
-}
-
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
 	* {
