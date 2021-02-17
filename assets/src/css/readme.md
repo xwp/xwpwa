@@ -86,7 +86,8 @@ The body properties are based on the code done by [Andy Bell](https://dev.to/han
 
 #### Links
 
-Default style for the link without class, i.e. the one used in a article.
+Default style for the link without class, i.e. the one used in a article.  
+The variables to style it are in the file.
 
 #### Images
 
@@ -138,6 +139,9 @@ Layout classes are prefixed with `l-`.
 
 ### Utilities
 
+Using the utilities classes is a choice.  
+The one that you don't use must be commented in the index file, or removed from the file.
+
 #### Background
 
 This file is used to generated the different classes used to set the background color of an element.  
@@ -165,5 +169,22 @@ So a text element will be like that in the HTML:
 An utility to set the space between children elements.  
 The goal is to style the context (parent), not the elements (children).
 Could be used in any case: card, article, etc…
+
+#### Alignment
+
+Some classes to make some aligments, like center, full-width, text-align.  
+
+- `container` class make a layout with `container` mixin and padding left & right based on local `gutter` variable
+- `text-right`, `text-center`, `text-left` classes let you align the text.
+- `align-left` class to have a left floating element with a right-margin.
+- `align-right` class to have a right floating element with a left-margin.
+- `align-center` class let you align a block in the middle.
+- `align-full` class to take all the width of the page.
+
+#### Hide
+
+Hide visually and from screen readers.  
+Hide visually an element (screenreader).  
+Some classes to hide an element based on different breakpoints.  
 
 ---
