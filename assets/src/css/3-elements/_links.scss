@@ -1,7 +1,27 @@
 /* A elements that don't have a class get default styles */
 /* This link will be the one used inside an article */
-a:not([class]) {
-	color: $g-color-link;
-	text-decoration: $g-link-decoration;
+
+// Default link in article
+$link-decoration: none;
+$link-decoration-hover: underline;
+$link-color: $g-color-primary;
+$link-color-hover: currentColor;
+
+a:not([class]),
+a.external-link {
+	color: $link-color;
+	text-decoration: $link-decoration;
 	transition: color $g-transition-color;
+
+	&:focus,
+	&:hover {
+		color: $link-color-hover;
+		text-decoration: $link-decoration-hover;
+	}
+}
+
+// external link inside an article
+a.external-link::after {
+	content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+	margin: 0 0.5em;
 }
