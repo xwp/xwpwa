@@ -1,19 +1,4 @@
-// Gutter to container class
-$site-gutter-sm: spacer(.5); // mobile
-$site-gutter-md: spacer(2); // tablet
 $align-float-gutter: spacer();
-
-.container {
-
-	@include h-container;
-	padding-left: $site-gutter-sm;
-	padding-right: $site-gutter-sm;
-
-	@media (query(min, tablet)) {
-		padding-left: $site-gutter-md;
-		padding-right: $site-gutter-md;
-	}
-}
 
 .text-right {
 	text-align: right;
