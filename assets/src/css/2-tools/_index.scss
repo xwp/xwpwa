@@ -1,7 +1,11 @@
-// Tools
+// ----------------------------------------
+//
+// Tools.
 //
 // Globally used mixins and helper functions.
 // It contains no outputting SCSS.
+//
+// ----------------------------------------
 
 @import "scss-query/query"; /* see https://www.npmjs.com/package/scss-query */
 @import "mixins";
