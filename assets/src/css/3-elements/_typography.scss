@@ -5,7 +5,7 @@
 $color-background-pre: $g-color-grey--200;
 $font-pre: "Courier 10 Pitch", courier, monospace;
 $font-line-height-pre: 1.2;
-$padding-pre: spacer(1);
+$padding-pre: spacer();
 $color-background-ins: $g-color-grey--400;
 $color-border-abbr: $g-color-grey--400;
 $font-code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
@@ -54,7 +54,7 @@ $font-small: 80%;
  }
 
  address {
-	 margin-bottom: spacer(1);
+	 margin-bottom: spacer();
 	 font-style: normal;
 	 line-height: inherit;
  }
@@ -63,7 +63,7 @@ $font-small: 80%;
 	 background: $color-background-pre;
 	 font-family: $font-pre;
 	 line-height: $font-line-height-pre;
-	 margin-bottom: spacer(1);
+	 margin-bottom: spacer();
 	 max-width: 100%;
 	 overflow: auto;
 	 padding: $padding-pre;

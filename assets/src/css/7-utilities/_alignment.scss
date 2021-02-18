@@ -1,7 +1,7 @@
 // Gutter to container class
 $site-gutter-sm: spacer(.5); // mobile
 $site-gutter-md: spacer(2); // tablet
-$align-float-gutter: spacer(1);
+$align-float-gutter: spacer();
 
 .container {
 

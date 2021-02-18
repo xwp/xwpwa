@@ -9,7 +9,7 @@
 $-blockquote-color: currentColor;
 $-blockquote-font: $g-font-family-serif;
 $-blockquote-bg: $g-color-secondary;
-$-blockquote-padding: spacer(1);
+$-blockquote-padding: spacer();
 $-blockquote-border-width: 0 0 0 10px;
 $-blockquote-border-color: darken($g-color-secondary, 20);
 $-blockquote-border-style: solid;

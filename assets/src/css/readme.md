@@ -63,7 +63,8 @@ The location for the scss mixins available
 - **z-index**
 - **rem** transform a pixel value in rem.
 - **modifiers** used to create a list of classes based on a map.
-- **spacer** a function to return the grid point value, can be used with a multiplier.  
+- **spacer** a function to return the grid point value, can be used with a multiplier. Like `spacer(2)` or `spacer(.25)`.  
+Used without an argument `spacer()` it will return the default value 1.  
 The goal is to set a vertical and horizontal rhythm.  
 If the design use different values for the spacing (sometimes a multiple of 10 and a multiple of 8 too), the grid point value must be set with the designer.  
 This value is set in the mixin file.
