@@ -1,6 +1,13 @@
 /*
 * Gravity Forms
 */
+
+/*
+* Local variables
+*/
+
+$color-background-input: $g-color-grey--300;
+
 .gform_wrapper {
 
 	form {
@@ -15,12 +22,12 @@
 
 				label {
 
-					@include font-family-sans;
+					@include g-font-family-sans;
 					position: relative;
 					font-style: normal;
 					font-weight: $medium;
 					font-size: 14px;
-					color: $color-black;
+					color: $g-color-black;
 					display: block;
 					margin-bottom: 5px;
 
@@ -84,7 +91,7 @@
 					background-size: 0.65em auto;
 
 					&.user-invalid {
-						box-shadow: inset 0 -1px 0 0 $color-red;
+						box-shadow: inset 0 -1px 0 0 $g-color-red;
 					}
 				}
 
@@ -93,7 +100,7 @@
 				}
 
 				select:focus {
-					box-shadow: inset 0 -1px 0 0 $color-black;
+					box-shadow: inset 0 -1px 0 0 $g-color-black;
 					outline: none;
 				}
 
@@ -106,7 +113,7 @@
 		input:not(.button),
 		textarea {
 
-			@include font-family-sans;
+			@include g-font-family-sans;
 			background: $color-background-input;
 			border: none;
 			width: 100%;
@@ -116,11 +123,11 @@
 			padding: spacer();
 
 			&.user-invalid {
-				box-shadow: inset 0 -1px 0 0 $color-red;
+				box-shadow: inset 0 -1px 0 0 $g-color-red;
 			}
 
 			&:focus {
-				box-shadow: inset 0 -1px 0 0 $color-black;
+				box-shadow: inset 0 -1px 0 0 $g-color-black;
 			}
 		}
 
@@ -138,9 +145,9 @@
 		input.button,
 		input[type="submit"] {
 
-			@include font-family-sans;
+			@include g-font-family-sans;
 			@extend .c-button;
-			@extend .c-button--green;
+			@extend .c-button--secondary;
 			cursor: pointer;
 			padding: 10px 30px !important;
 			font-style: normal;
@@ -153,8 +160,8 @@
 		margin-top: spacer(2);
 
 		&[submit-error] > p {
-			background-color: $color-error;
-			color: $color-white;
+			background-color: $g-color-red;
+			color: $g-color-white;
 		}
 
 		&[submit-success] > p:not(.amp-wp-form-redirecting) {
@@ -167,9 +174,9 @@
 	}
 
 	.form-error {
-		background-color: $color-error;
-		border-color: darken($color-error, 50%);
-		color: $color-white;
+		background-color: $g-color-red;
+		border-color: darken($g-color-red, 50%);
+		color: $g-color-white;
 		margin-top: spacer(2); // = 30px;
 
 		p {
