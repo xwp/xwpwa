@@ -30,5 +30,5 @@ body {
 	-webkit-text-size-adjust: 100%; /* 5 */
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-	@extend %g-font-family-sans;
+	@include g-font-family-sans;
 }
