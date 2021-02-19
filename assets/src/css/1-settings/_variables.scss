@@ -26,6 +26,10 @@ $z-layers: (
 	'depression': -100
 );
 
+// Border radius
+$g-border-radius: 4px;
+$g-border-radius--large: 8px;
+
 // Easings
 /* stylelint-disable number-no-trailing-zeros */
 $linear: cubic-bezier( 0.250, 0.250, 0.750, 0.750 );
