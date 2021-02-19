@@ -6,14 +6,14 @@
 // $g-font-family-serif - 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif
 //
 
-// mixins are used for the 'rem' one
-@import '../2-tools/mixins';
-
 //
 // Font weights
 //
 
+$light: 300;
 $normal: 400;
+$medium: 500;
+$semi-bold: 600;
 $bold: 700;
 
 //
@@ -23,7 +23,7 @@ $bold: 700;
 
 $g-font-family-sans: Lato, Tahoma, Verdana, Segoe, sans-serif;
 
-%g-font-family-sans {
+@mixin g-font-family-sans {
 	font-family: $g-font-family-sans;
 
 	.fonts-loading & {
@@ -38,7 +38,7 @@ $g-font-family-sans: Lato, Tahoma, Verdana, Segoe, sans-serif;
 
 $g-font-family-serif: 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;
 
-%g-font-family-serif {
+@mixin g-font-family-serif {
 	font-family: 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;
 
 	.fonts-loading & {
