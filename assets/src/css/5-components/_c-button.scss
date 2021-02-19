@@ -1,0 +1,167 @@
+/*
+ * Local variables.
+ */
+
+// Default: height of 40px.
+$color: $g-color-white;
+$background-color: $g-color-primary;
+$background-color-hover: darken($background-color, 5);
+$border: none; // Removed by default, not output in the CSS if not set in the mixin call.
+$border-radius: $g-border-radius; // 0 by default, not output in the CSS if not set in the mixin call.
+$font-weight: $bold;
+// Don't use line-height to set the height of the button,
+// it may have more than one line in mobile
+// or with large language (like finnish).
+// But instead play with the vertical padding.
+//
+// The button height must be a multiple of the grid point,
+// like the line-height.
+$line-height: rem(24px);
+// To have a button of 40px (a multiple of 8px grid point)
+// vertical padding must be 40-24 = 16/2 = 8
+$padding: rem(8px) spacer();
+$font-size: rem(18px);
+$text-decoration: none;
+$text-transform: uppercase;
+$transition: all $g-transition-fade;
+$transform: scale(1.05);
+$buttons-margin: spacer(1); // space between two buttons on the same line.
+
+// Secondary.
+$secondary-color: $g-color-black;
+$secondary-background-color: $g-color-secondary;
+$secondary-background-color-hover: darken($secondary-background-color, 5);
+
+// Ghost: transparent with the text underline.
+$ghost-color: $g-color-black;
+$ghost-background-color: transparent;
+$ghost-background-color-hover: transparent;
+$ghost-text-decoration: underline;
+
+// Large button: height of 48px.
+$large-font-size: rem(20px);
+$large-line-height: rem(32);
+$large-padding: rem(8px) spacer(1.5);
+
+// Small button: height of 32px.
+$small-font-size: rem(12px);
+$small-line-height: rem(16px);
+$small-padding: rem(8px) spacer(.5);
+
+/*
+ * Mixins.
+ */
+
+@mixin button(
+	$bg,
+	$bg-hover,
+	$font-size,
+	$line-height,
+	$padding,
+	$transition,
+	$text-decoration,
+	$color: null,
+	$font-weight: null,
+	$text-transform: null,
+	$border: null,
+	$border-radius: null,
+	$hover-effect: null) {
+		background-color: $bg;
+		color: $color;
+		font-size: $font-size;
+		font-weight: $font-weight;
+		line-height: $line-height;
+		padding: $padding;
+		text-transform: $text-transform;
+		border: $border;
+		border-radius: $border-radius;
+		text-decoration: none; // when used as a link, to avoid the default underline.
+		transition: $transition;
+
+		&:hover,
+		&:focus {
+			background-color:$bg-hover;
+			transform: $hover-effect;
+		}
+}
+
+@mixin button-variant($bg, $bg-hover, $color: null, $text-decoration: null) {
+	background-color: $bg;
+	color: $color;
+	text-decoration: $text-decoration;
+
+	&:hover,
+	&:focus {
+		background-color:$bg-hover;
+	}
+}
+
+@mixin button-size($font-size, $line-height, $padding) {
+	font-size: $font-size;
+	line-height: $line-height;
+	padding: $padding;
+}
+
+.c-button {
+	display: inline-block;
+
+	@include button(
+		$background-color,
+		$background-color-hover,
+		$font-size,
+		$line-height,
+		$padding,
+		$transition,
+		$text-decoration,
+		$color,
+		$font-weight,
+		$text-transform,
+		$border-radius: $border-radius,
+		$hover-effect: $transform
+	);
+
+	// Two buttons next to each other, with some extra space.
+	& + & {
+		margin-left: $buttons-margin;
+	}
+}
+
+.c-button--secondary {
+
+	@include button-variant(
+		$secondary-background-color,
+		$secondary-background-color-hover,
+		$secondary-color
+	);
+}
+
+.c-button--ghost {
+
+	@include button-variant(
+		$ghost-background-color,
+		$ghost-background-color-hover,
+		$ghost-color,
+		$ghost-text-decoration
+	);
+}
+
+//
+// Sizes
+//
+.c-button--large {
+
+	@include button-size(
+		$large-font-size,
+		$large-line-height,
+		$large-padding
+	)
+}
+
+.c-button--small {
+
+	@include button-size(
+		$small-font-size,
+		$small-line-height,
+		$small-padding
+	)
+}

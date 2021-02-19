@@ -55,9 +55,10 @@ This package will be used for @media queries.
 
 #### Mixins
 
-The location for the scss mixins available
+The location for the scss mixins available.
+A [recommendation](https://csswizardry.com/2016/02/mixins-better-for-performance/) would be to avoid the usage of `@extend` but well using `@mixin`.  
 
-- **clearfix** hack, better to use `display: flow-root;` if we don't to support IE11
+- **clearfix** hack, better to use `display: flow-root;` if [IE11 is not supported](https://caniuse.com/flow-root)
 - **h-container** create a centered wrapper with min & max width.
   These values are set from the `variables` file.
 - **z-index**
@@ -129,6 +130,11 @@ Components classes are prefixed with `c-`.
 The CSS for a plugin can be added in that folder. In that case, there is no prefix.
 
 By default, **Gravity form** is added, but commented to not be added to the CSS file.
+
+#### Button
+
+Default style, secondary & ghost style available. And different sizes: **small** & **large**.  
+The classes can be added on links too.
 
 ---
 

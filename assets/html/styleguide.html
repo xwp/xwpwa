@@ -49,7 +49,7 @@
 		<h1>Styleguide</h1>
 	</div>
 
-	<main class="l-container">
+	<main class="l-container flow">
 		<h2>Form elements</h2>
 		<form action="" class="flow">
 			<legend>This is the form legend</legend>
@@ -86,11 +86,32 @@
 				<label for="rad">input type radio</label>
 				<input type="radio" id="rad">
 			</div>
-			<button>Submit</button>
+			<button class="c-button">Submit</button>
 
 		</form>
 
 		<hr>
+
+		<section class="flow">
+			<h2>Buttons</h2>
+			<button type="button" class="c-button">button default</button>
+			<br>
+			<a href="#" class="c-button">button default as link</a>
+			<br>
+			<button type="button" class="c-button c-button--secondary">button secondary</button>
+			<br>
+			<button type="button" class="c-button c-button--ghost">button ghost</button>
+			<br>
+			<button type="button" class="c-button c-button--small">button small</button>
+			<br>
+			<button type="button" class="c-button c-button--large">button large</button>
+			<br>
+
+			<h3>Button selection</h3>
+			<p>When there is more than one button, there is a space between</p>
+			<button type="button" class="c-button">button default</button>
+			<button type="button" class="c-button c-button--secondary">button secondary</button>
+		</section>
 
 		<h2>Table</h2>
 		<table>
