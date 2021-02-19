@@ -1,14 +1,16 @@
 /*
- * Variables.
+ * Local variables.
  */
-$focus-color: $g-color-grey--500;
-$focus-width: 0 0 0 2px;
+
 $form-elements-border-color: $g-color-grey--300;
 $form-elements-border-width: 1px;
 $form-elements-border-style: solid;
-$form-elements-border-radius: 3px;
+$form-elements-border-radius: $g-border-radius;
+$focus-color: $g-color-grey--500;
+$focus-width: 0 0 0 2px;
 $select-font-size: rem(13px);
 $select-padding: spacer(.25) spacer(.5);
+$select-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
 
 /*
  * Show the overflow in IE / Edge.
@@ -100,7 +102,6 @@ input:not([type="checkbox"]):not([type="radio"]) {
  select {
 	font-size: $select-font-size;
 	padding: $select-padding;
-	outline: none;
-	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+	box-shadow: $select-box-shadow;
 	word-wrap: normal;
 }
