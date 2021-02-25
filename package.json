@@ -22,7 +22,6 @@
     "build": "cross-env NODE_ENV=production gulp --gulpfile $(npm root)/undercurrent/src/index.js --cwd $(npm prefix) --workflow theme && workbox inject:manifest",
     "icons": "gulp --gulpfile ./assets/tasks/icons.js --cwd ./",
     "css": "gulp --gulpfile ./assets/tasks/css.js --cwd ./",
-    "postcss": "postcss assets/src/css/main.scss -o assets/dist/css/main.css",
     "sw": "npm-watch",
     "sw-inject-manifest": "workbox inject:manifest",
     "server": "node server.js"
@@ -74,7 +73,7 @@
     "@csstools/postcss-sass": "^4.0.0",
     "express": "^4.16.2",
     "gulp": "~4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
+    "gulp-postcss": "^9.0.0",
     "gulp-real-favicon": "^0.2.2",
     "npm-watch": "^0.3.0",
     "postcss": "^8.2.6",
