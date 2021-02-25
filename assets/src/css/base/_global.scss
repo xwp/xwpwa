@@ -230,7 +230,7 @@ img {
 	transition: opacity 0.3s;
 	opacity: 1;
 
-	&.lazy[data-src] {
+	&.lazyload[data-src] {
 		opacity: 0;
 
 		&.visible {

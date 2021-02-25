@@ -12,6 +12,17 @@ or, using [Yarn](https://yarnpkg.com):
 yarn install
 ```
 
+Then
+```bash
+npm run dev
+```
+
+## Server
+You can run a server, for reading the documentation or testing.
+```bash
+npm run server
+```
+
 ## Configuration
 
 ### Application Titles
