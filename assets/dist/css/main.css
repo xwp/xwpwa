@@ -1,1 +1,550 @@
-body{font-family:Lato, Tahoma, Verdana, Segoe, sans-serif}.fonts-loading body{font-family:Tahoma, Verdana, Segoe, sans-serif;font-weight:400;font-style:normal;font-size:0.991166em;letter-spacing:0.012816em;word-spacing:-0.143183em}h1,h2,h3,h4,h5,h6{font-family:'Source Serif Pro', Georgia, Times, 'Times New Roman', serif}.fonts-loading h1,.fonts-loading h2,.fonts-loading h3,.fonts-loading h4,.fonts-loading h5,.fonts-loading h6{font-family:Georgia, Times, 'Times New Roman', serif;font-weight:400;font-style:normal;font-size:0.978276em;letter-spacing:0.01805em;word-spacing:-0.039556em}html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.5}h1,h2,h3,h4,h5,h6{font-weight:400}*,*::before,*::after{box-sizing:border-box}a{-webkit-text-decoration-skip:objects;transition:color 120ms cubic-bezier(0.215, 0.61, 0.355, 1);text-decoration:none}a:hover,a:focus{text-decoration:underline}b,strong{font-weight:700}svg:not(:root){overflow:hidden}button,input{overflow:visible}textarea{overflow:auto}select{font-size:13px;padding:3px 6px;border:1px solid #ccc;border-radius:3px;outline:none;box-shadow:inset 0 1px 2px rgba(0,0,0,0.15)}blockquote{color:#666;font-size:18px;font-style:italic;line-height:1.7;overflow:hidden}blockquote cite{display:block;font-style:normal;font-weight:700;margin-top:10px}dfn,cite,em,i{font-style:italic}abbr,acronym{border-bottom:1px dotted #666;cursor:help}mark,ins{background:#eee;text-decoration:none}small{font-size:80%}big{font-size:125%}[type='search']{-webkit-appearance:textfield}[type='search']::-webkit-search-cancel-button,[type='search']::-webkit-search-decoration{-webkit-appearance:none}button{overflow:visible;border:0;font:inherit;-webkit-font-smoothing:inherit;letter-spacing:inherit;background:none;cursor:pointer}img{height:auto;max-width:100%;transition:opacity 0.3s;opacity:1}img.lazy[data-src]{opacity:0}img.lazy[data-src].visible{opacity:1}h1,h2,h3,h4,h5,h6,p,blockquote,figure,address,ol,ul,dl,li,dt,dd,button,input,optgroup,select,textarea,fieldset,legend{margin:0;padding:0}fieldset{padding:0;border:none}legend{display:block}iframe{border:none}table{border:none;border-top:1px solid #ccc;border-collapse:collapse;margin:0 0 20px;width:100%}thead th{border-bottom:2px solid #ccc;padding-bottom:10px}th{padding:8px 0;text-align:left;border:none}td{padding:8px;border:none}tr{border-bottom:1px solid #ccc}.is-hidden,.hidden{display:none !important}.alignleft{display:inline;float:left;margin-right:20px}.alignright{display:inline;float:right;margin-left:20px}.aligncenter{clear:both;display:block;margin-left:auto;margin-right:auto}img.alignleft,img.alignright{float:none;margin:0}@media (min-width: 480px){img.alignleft{float:left;margin-right:20px}img.alignright{float:right;margin-left:20px}}embed,iframe,object{margin:0;max-width:100%}.wp-caption,.gallery-caption{color:#666;font-size:13px;font-style:italic;margin-bottom:20px;max-width:100%}.wp-caption img[class*='wp-image-']{display:block;margin-left:auto;margin-right:auto}.wp-caption .wp-caption-text{margin:13px 0}.screen-reader-text{clip:rect(1px, 1px, 1px, 1px);clip-path:polygon(0 0, 0 0, 0 0, 0 0);position:absolute !important;white-space:nowrap;height:1px;width:1px;overflow:hidden}.screen-reader-text:focus{background-color:#f1f1f1;border-radius:3px;box-shadow:0 0 2px 2px rgba(0,0,0,0.6);clip:auto !important;color:#21759b;display:block;font-size:14px;font-weight:700;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}img.latex{border:none;vertical-align:middle}.video-player{border:0;margin:auto;padding:5px;text-align:center;max-width:100%}.screen-reader-text{position:absolute;left:-1000em}.comment object,.comment embed,.embed-vimeo iframe,.embed-youtube iframe{max-width:100%}.simple-homepage{display:none}.c-logo{max-width:100%}.l-header{position:relative}
+@charset "UTF-8";
+/* stylelint-disable number-no-trailing-zeros */
+/* stylelint-enable number-no-trailing-zeros */
+body {
+  font-family: Lato, Tahoma, Verdana, Segoe, sans-serif;
+}
+
+.fonts-loading body {
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.991166em;
+  letter-spacing: 0.012816em;
+  word-spacing: -0.143183em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;
+}
+
+.fonts-loading h1,
+.fonts-loading h2,
+.fonts-loading h3,
+.fonts-loading h4,
+.fonts-loading h5,
+.fonts-loading h6 {
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.978276em;
+  letter-spacing: 0.01805em;
+  word-spacing: -0.039556em;
+}
+
+h1 {
+  font-size: 1.802em;
+}
+
+h2 {
+  font-size: 1.602em;
+}
+
+h3 {
+  font-size: 1.424em;
+}
+
+h4 {
+  font-size: 1.266em;
+}
+
+h5 {
+  font-size: 1.125em;
+}
+
+/*
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  /* stylelint-disable plugin/no-unsupported-browser-features */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  /* stylelint-enable plugin/no-unsupported-browser-features */
+}
+
+/*
+ * 1. Remove the margin in all browsers (opinionated).
+ * 2. Font-smoothing declaration makes OS X fonts look more consistent
+ *    with other systems.
+ * 3. Set main font.
+ */
+body {
+  margin: 0;
+  /* 1 */
+  -moz-osx-font-smoothing: grayscale;
+  /* 2 */
+  -webkit-font-smoothing: antialiased;
+  /* 2 */
+  font-size: 16px;
+  /* 3 */
+  line-height: 1.5;
+  /* 3 */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+/*
+ * Universal box sizing.
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+ * Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+  transition: color 120ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  text-decoration: none;
+  color: #2351c4;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+  color: #1a3c93;
+}
+
+/*
+ * Corrects some browsers defaulting to bolder.
+ */
+b,
+strong {
+  font-weight: 700;
+}
+
+/*
+ * Corrects overflow not hidden in IE 11.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/*
+ * Show the overflow in IE / Edge.
+ */
+button,
+input {
+  overflow: visible;
+}
+
+/*
+ * Remove default vertical scrollbar in IE 11.
+ */
+textarea {
+  overflow: auto;
+}
+
+/*
+ * Style form elements.
+ */
+select {
+  font-size: 13px;
+  padding: 3px 6px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/*
+ * Style blockquote.
+ */
+blockquote {
+  color: #666;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.7;
+  overflow: hidden;
+}
+
+blockquote cite {
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+/*
+ * Various normalizations.
+ */
+dfn,
+cite,
+em,
+i {
+  font-style: italic;
+}
+
+abbr,
+acronym {
+  text-decoration: underline dotted;
+  cursor: help;
+}
+
+mark,
+ins {
+  background: #eee;
+  text-decoration: none;
+}
+
+small {
+  font-size: 80%;
+}
+
+big {
+  font-size: 125%;
+}
+
+/*
+ * Correct the odd appearance in Chrome and Safari.
+ */
+/* stylelint-disable plugin/no-unsupported-browser-features */
+[type='search'] {
+  -webkit-appearance: textfield;
+}
+
+[type='search']::-webkit-search-cancel-button, [type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* stylelint-enable plugin/no-unsupported-browser-features */
+/*
+ * Resets the button to consistent native appearance in all browsers.
+ */
+button {
+  overflow: visible;
+  border: 0;
+  font: inherit;
+  -webkit-font-smoothing: inherit;
+  letter-spacing: inherit;
+  background: none;
+  cursor: pointer;
+}
+
+/*
+ * Make images stay within the limits of their container.
+ */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/*
+ * Resetting margins and padding.
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+address,
+ol,
+ul,
+dl,
+li,
+dt,
+dd,
+button,
+input,
+optgroup,
+select,
+textarea,
+fieldset,
+legend {
+  margin: 0;
+  padding: 0;
+}
+
+fieldset {
+  padding: 0;
+  border: none;
+}
+
+legend {
+  display: block;
+}
+
+iframe {
+  border: none;
+}
+
+/*
+ * Tables
+ */
+table {
+  border: none;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: 0 0 20px;
+  width: 100%;
+}
+
+thead th {
+  border: none;
+}
+
+th {
+  padding: 8px 0;
+  text-align: left;
+  border: none;
+}
+
+td {
+  padding: 8px;
+  border: none;
+}
+
+tr {
+  border: none;
+}
+
+/*
+ * Hidden element.
+ */
+.is-hidden,
+.hidden {
+  display: none !important;
+}
+
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 20px;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 20px;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.alignleft,
+img.alignright {
+  float: none;
+  margin: 0;
+}
+
+@media (min-width: 480px) {
+  img.alignleft {
+    float: left;
+    margin-right: 20px;
+  }
+  img.alignright {
+    float: right;
+    margin-left: 20px;
+  }
+}
+
+embed,
+iframe,
+object {
+  margin: 0;
+  max-width: 100%;
+}
+
+.wp-caption,
+.gallery-caption {
+  color: #666;
+  font-size: 13px;
+  font-style: italic;
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+
+.wp-caption img[class*='wp-image-'] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+  margin: 13px 0;
+}
+
+.screen-reader-text {
+  /* stylelint-disable plugin/no-unsupported-browser-features */
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  /* stylelint-enable plugin/no-unsupported-browser-features */
+  position: absolute !important;
+  white-space: nowrap;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+
+/*
+ * WPCom Globals
+ */
+img.latex {
+  border: none;
+  vertical-align: middle;
+}
+
+.video-player {
+  border: 0;
+  margin: auto;
+  padding: 5px;
+  text-align: center;
+  max-width: 100%;
+}
+
+.screen-reader-text {
+  position: absolute;
+  left: -1000em;
+}
+
+.comment object,
+.comment embed,
+.embed-vimeo iframe,
+.embed-youtube iframe {
+  max-width: 100%;
+}
+
+.simple-homepage {
+  display: none;
+}
+
+.c-logo {
+  max-width: 100%;
+}
+
+.l-header {
+  position: relative;
+}
+
+.nav {
+  margin: 16px 0;
+}
+
+.nav__logo {
+  background-image: url("../../images/XWP_logo.svg");
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  height: 45px;
+  width: 150px;
+  margin: 0 auto 16px;
+}
+
+.nav__items {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.nav__link.is-active {
+  text-decoration: underline;
+}
+
+@media (min-width: 760px) {
+  .nav {
+    display: flex;
+    align-items: flex-end;
+  }
+  .nav__logo {
+    margin: initial;
+  }
+  .nav__items {
+    margin-left: auto;
+    justify-content: normal;
+  }
+  .nav__item + .nav__item {
+    margin-left: 16px;
+  }
+}
+
+main {
+  padding-top: var(--space);
+  margin-bottom: var(--space);
+}
+
+:root {
+  --space: 1.5rem
+;
+}
+
+.stack {
+  /* ↓ The space is set as a custom property */
+  --space: 1.5rem;
+}
+
+.stack > * {
+  /* ↓ Any extant vertical margins are removed */
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stack > * + * {
+  /* ↓ Top margin is only applied to successive elements */
+  margin-top: var(--space);
+}
+
+.center {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+pre code {
+  background-color: beige;
+  padding: 0 18px;
+  border-radius: 4px;
+  overflow: scroll;
+  display: block;
+}
+
+/*# sourceMappingURL=main.css.map */

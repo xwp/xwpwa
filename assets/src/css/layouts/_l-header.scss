@@ -3,3 +3,51 @@
 .l-header {
 	position: relative;
 }
+
+.nav {
+	margin: 16px 0;
+
+	&__logo {
+		background-image: url("../../images/XWP_logo.svg");
+		background-repeat: no-repeat;
+		text-indent: -9999px;
+		height: 45px;
+		width: 150px;
+		margin: 0 auto 16px;
+	}
+
+	&__items {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+
+	&__link {
+
+		&.is-active {
+			text-decoration: underline;
+		}
+	}
+}
+
+@media (min-width: 760px) {
+	.nav {
+		display: flex;
+		align-items: flex-end;
+
+		&__logo {
+
+			margin: initial;
+		}
+
+		&__items {
+			margin-left: auto;
+			justify-content: normal;
+		}
+
+		&__item + .nav__item {
+			margin-left: 16px;
+		}
+	}
+}

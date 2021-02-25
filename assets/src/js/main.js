@@ -7,12 +7,20 @@ import Fetch from '../../../node_modules/whatwg-fetch/fetch.js';
 
 /* Custom Modules */
 import LazyLoad from './LazyLoad';
+import XwpIdleQueue from './IdleQueue';
+import LazyLoadEmbeds from './LazyLoadEmbeds';
 import FontsDetection from './FontsDetection';
 
 // import ServiceWorkerRegistration from './ServiceWorkerRegistration';
 
 ( function() {
-	LazyLoad.init( 'img' );
+	LazyLoad.init();
+	XwpIdleQueue.init();
+	LazyLoadEmbeds.init( {
+		twitter: '.embed-twitter',
+		instagram: '.embed-instagram',
+		facebook: '.embed-facebook'
+	} );
 	FontsDetection.init( [ 'Lato', 'Source Serif Pro' ] );
 
 	// ServiceWorkerRegistration.init( '/sw.js' );

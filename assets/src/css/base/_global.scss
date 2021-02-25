@@ -55,10 +55,12 @@ a {
 	-webkit-text-decoration-skip: objects; /* 2 */
 	transition: color $g-transition-color;
 	text-decoration: none;
+	color: #2351c4;
 
 	&:hover,
 	&:focus {
 		text-decoration: underline;
+		color: #1a3c93;
 	}
 }
 
@@ -185,16 +187,16 @@ button {
 img {
 	height: auto;
 	max-width: 100%;
-	transition: opacity 0.3s;
-	opacity: 1;
+	// transition: opacity 0.3s;
+	// opacity: 1;
 
-	&.lazy[data-src] {
-		opacity: 0;
+	// &.lazy[data-src] {
+	// 	opacity: 0;
 
-		&.visible {
-			opacity: 1;
-		}
-	}
+	// 	&.visible {
+	// 		opacity: 1;
+	// 	}
+	// }
 }
 
 /*
