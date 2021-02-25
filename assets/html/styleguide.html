@@ -41,8 +41,15 @@
 	<!-- CSS -->
 		<link rel="stylesheet" href="../dist/css/main.min.css">
 		<!-- Lazy Load non-critical stylesheets -->
-		<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Source+Serif+Pro" rel="stylesheet" media="none" onload="if( media!='screen' ) media='screen' ">
+		<!-- CSS -->
+		<link rel="stylesheet" href="../dist/css/main.css">
+		<!-- Lazy Load non-critical stylesheets -->
+		<link href="../dist/css/lazy.css" rel="stylesheet" media="none" onload="if( media!='screen' ) media='screen' ">
 	<!-- CSS:end -->
+
+	<!-- Preload webfonts at regular font-weights -->
+		<link rel="preload" href="../fonts/lato-v17-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="../fonts/source-serif-pro-v10-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
 	<div class="l-header">

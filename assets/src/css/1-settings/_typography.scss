@@ -16,10 +16,31 @@ $medium: 500;
 $semi-bold: 600;
 $bold: 700;
 
-//
-// Font families
-// Fallback generated with: https://shtrihstr.github.io/font-fallback/
-//
+/* Self-host webfonts. Tool for
+ * https://google-webfonts-helper.herokuapp.com/fonts
+ */
+
+/* lato-regular - latin */
+@font-face {
+	font-family: Lato;
+	font-style: normal;
+	font-weight: 400;
+	font-display: optional;
+	src: local( 'Lato' ),
+		url( '../../fonts/lato-v17-latin-regular.woff2' ) format( 'woff2' ),
+		url( '../../fonts/lato-v17-latin-regular.woff' ) format( 'woff' );
+}
+
+/* lato-700 - latin */
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 700;
+	font-display: optional;
+  src: local( 'Lato' ),
+       url( '../../fonts/lato-v17-latin-700.woff2' ) format( 'woff2' ),
+       url( '../../fonts/lato-v17-latin-700.woff' ) format( 'woff' );
+}
 
 $g-font-family-sans: Lato, Tahoma, Verdana, Segoe, sans-serif;
 
@@ -27,11 +48,36 @@ $g-font-family-sans: Lato, Tahoma, Verdana, Segoe, sans-serif;
 	font-family: $g-font-family-sans;
 }
 
+/* source-serif-pro-regular - latin */
+@font-face {
+	font-family: 'Source Serif Pro';
+	font-style: normal;
+	font-weight: 400;
+	font-display: optional;
+	src: local( 'Source Serif Pro' ),
+		url( '../../fonts/source-serif-pro-v10-latin-regular.woff2' ) format( 'woff2' ),
+		url( '../../fonts/source-serif-pro-v10-latin-regular.woff' ) format( 'woff' );
+}
+
+/* source-serif-pro-700 - latin */
+@font-face {
+	font-family: 'Source Serif Pro';
+	font-style: normal;
+	font-weight: 700;
+	font-display: optional;
+	src: local( 'Source Serif Pro' ),
+		url( '../../fonts/source-serif-pro-v10-latin-700.woff2' ) format( 'woff2' ),
+		url( '../../fonts/source-serif-pro-v10-latin-700.woff' ) format( 'woff' );
+}
+
 $g-font-family-serif: 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;
 
 @mixin g-font-family-serif {
 	font-family: 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;
 }
+
+$font-pre: 'Courier 10 Pitch', courier, monospace;
+$font-code: monaco, consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
 
 h1 {font-size: 1.802em;}
 

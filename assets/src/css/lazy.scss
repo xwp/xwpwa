@@ -1,0 +1,19 @@
+/*!
+Lazy styles.
+
+This stylesheet should contain:
+- elements which are always below the fold
+- @keyframes / animations
+- SVGs / tiny assets which could not be inlined in the HTML
+- styles related to overlays
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------*/
+
+// Variables.
+@import "1-settings/index";
+
+// Mixins & helpers.
+@import "2-tools/index";
