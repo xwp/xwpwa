@@ -19,6 +19,12 @@ h4 {font-size: 1.266em;}
 
 h5 {font-size: 1.125em;}
 
+h1,
+h2,
+h3 {
+	@include g-font-family-serif;
+}
+
 /*
  * Correct some browsers defaulting to bolder.
  */
