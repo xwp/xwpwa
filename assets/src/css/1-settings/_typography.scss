@@ -25,31 +25,14 @@ $g-font-family-sans: Lato, Tahoma, Verdana, Segoe, sans-serif;
 
 @mixin g-font-family-sans {
 	font-family: $g-font-family-sans;
-
-	.fonts-loading & {
-		font-family: Tahoma, Verdana, Segoe, sans-serif;
-		font-weight: 400;
-		font-style: normal;
-		font-size: 0.991166em;
-		letter-spacing: 0.012816em;
-		word-spacing: -0.143183em;
-	}
 }
 
 $g-font-family-serif: 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;
 
 @mixin g-font-family-serif {
 	font-family: 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;
-
-	.fonts-loading & {
-		font-family: Georgia, Times, 'Times New Roman', serif;
-		font-weight: 400;
-		font-style: normal;
-		font-size: 0.978276em;
-		letter-spacing: 0.01805em;
-		word-spacing: -0.039556em;
-	}
 }
+
 h1 {font-size: 1.802em;}
 
 h2 {font-size: 1.602em;}

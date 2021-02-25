@@ -9,7 +9,6 @@ import Fetch from '../../../node_modules/whatwg-fetch/fetch.js';
 import LazyLoad from './LazyLoad';
 import XwpIdleQueue from './IdleQueue';
 import LazyLoadEmbeds from './LazyLoadEmbeds';
-import FontsDetection from './FontsDetection';
 
 // import ServiceWorkerRegistration from './ServiceWorkerRegistration';
 
@@ -21,7 +20,6 @@ import FontsDetection from './FontsDetection';
 		instagram: '.embed-instagram',
 		facebook: '.embed-facebook'
 	} );
-	FontsDetection.init( [ 'Lato', 'Source Serif Pro' ] );
 
 	// ServiceWorkerRegistration.init( '/sw.js' );
 } )();
