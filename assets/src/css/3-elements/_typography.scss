@@ -1,74 +1,74 @@
 /*
- * Variable
- */
+* Variable
+*/
 
 $color-background-pre: $g-color-grey--200;
-$font-pre: "Courier 10 Pitch", courier, monospace;
+$font-pre: 'Courier 10 Pitch', courier, monospace;
 $font-line-height-pre: 1.2;
 $padding-pre: spacer();
 $color-background-ins: $g-color-grey--400;
 $color-border-abbr: $g-color-grey--400;
-$font-code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font-code: monaco, consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
 $font-small: 80%;
 
 
 /*
  * Correct some browsers defaulting to bolder.
  */
- b,
- strong {
-	 font-weight: $bold;
- }
+b,
+strong {
+	font-weight: $bold;
+}
 
- /*
-	* Various normalizations.
-	*/
- dfn,
- cite,
- em,
- i {
-	 font-style: italic;
-	 font-variation-settings: "ital" 1;
- }
+/*
+ * Various normalizations.
+ */
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+	font-variation-settings: "ital" 1;
+}
 
- mark,
- ins {
-	 background: $color-background-ins;
-	 text-decoration: none;
- }
+mark,
+ins {
+	background: $color-background-ins;
+	text-decoration: none;
+}
 
- abbr {
-	 text-decoration: none;
-	 border-bottom: 1px dotted $color-border-abbr;
-	 cursor: help;
- }
+abbr {
+	text-decoration: none;
+	border-bottom: 1px dotted $color-border-abbr;
+	cursor: help;
+}
 
- code,
- kbd,
- var {
-	 font-family: $font-code;
- }
+code,
+kbd,
+var {
+	font-family: $font-code;
+}
 
- small {
-	 font-size: $font-small;
- }
+small {
+	font-size: $font-small;
+}
 
- address {
-	 margin-bottom: spacer();
-	 font-style: normal;
-	 line-height: inherit;
- }
+address {
+	margin-bottom: spacer();
+	font-style: normal;
+	line-height: inherit;
+}
 
- pre {
-	 background: $color-background-pre;
-	 font-family: $font-pre;
-	 line-height: $font-line-height-pre;
-	 margin-bottom: spacer();
-	 max-width: 100%;
-	 overflow: auto;
-	 padding: $padding-pre;
- }
+pre {
+	background: $color-background-pre;
+	font-family: $font-pre;
+	line-height: $font-line-height-pre;
+	margin-bottom: spacer();
+	max-width: 100%;
+	overflow: auto;
+	padding: $padding-pre;
+}
 
- hr {
-	 display: block;
- }
+hr {
+	display: block;
+}
