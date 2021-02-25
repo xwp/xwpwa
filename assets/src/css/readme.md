@@ -4,13 +4,9 @@
 
 To watching the scss files and generate the main.min.css file into `assets/dist/css` run `npm run css`.
 
-Node 8 must be used, by using [NVM](https://github.com/nvm-sh/nvm/blob/master/README.md)  
-`nvm install 8`  
-`nvm use 8`
-
-You may need to install `node-sass` for the version 10 of node with the command:
-`npm rebuild node-sass`
-
+Node 14 must be used. Steps when by using [NVM](https://github.com/nvm-sh/nvm/blob/master/README.md):
+`nvm install 14`  
+`nvm use 14`
 ## Structure of the CSS folder
 
 ### 1-Settings
@@ -56,9 +52,9 @@ This package will be used for @media queries.
 #### Mixins
 
 The location for the scss mixins available.
-A [recommendation](https://csswizardry.com/2016/02/mixins-better-for-performance/) would be to avoid the usage of `@extend` but well using `@mixin`.  
+A [recommendation](https://csswizardry.com/2016/02/mixins-better-for-performance/) would be to avoid the usage of `@extend` but instead using `@mixin`.  
 
-- **clearfix** hack, better to use `display: flow-root;` if [IE11 is not supported](https://caniuse.com/flow-root)
+- **clearfix** hack, better to use `display: flow-root;` if [IE11 support is not required](https://caniuse.com/flow-root)
 - **h-container** create a centered wrapper with min & max width.
   These values are set from the `variables` file.
 - **z-index**
@@ -67,28 +63,26 @@ A [recommendation](https://csswizardry.com/2016/02/mixins-better-for-performance
 - **spacer** a function to return the grid point value, can be used with a multiplier. Like `spacer(2)` or `spacer(.25)`.  
 Used without an argument `spacer()` it will return the default value 1.  
 The goal is to set a vertical and horizontal rhythm.  
-If the design use different values for the spacing (sometimes a multiple of 10 and a multiple of 8 too), the grid point value must be set with the designer.  
+If the design uses different values for the spacing (sometimes a multiple of 10 and a multiple of 8 too), the grid point value must be set with the designer.  
 This value is set in the mixin file.
 
 ---
 
 ### 3-Elements
 
-Some elements have a reset or a style by defaut. Feel free to comment the components that are not used in the theme.  
-For example, if there is no **table** used.
+Some elements have a reset or default style. Feel free to comment the components that are not used in the theme, for example, if there is no **table** used.
 
 #### Reset
 
-The reset is done in that file.  
-The reset has been based on a recent code done by [Andy Bell](https://dev.to/hankchizljaw/a-modern-css-reset-6p3) and Boostrap 5
+The reset is based on a recent code done created by [Andy Bell](https://dev.to/hankchizljaw/a-modern-css-reset-6p3).
 
 #### Body
 
-The body properties are based on the code done by [Andy Bell](https://dev.to/hankchizljaw/a-modern-css-reset-6p3) and Boostrap 5.
+The body properties are based on the code done by [Andy Bell](https://dev.to/hankchizljaw/a-modern-css-reset-6p3).
 
 #### Links
 
-Default style for the link without class, i.e. the one used in a article.  
+Default style for the link without class, i.e. the one used in the content of pages.  
 The variables to style it are in the file.
 
 #### Images
@@ -101,7 +95,7 @@ Transition for lazy images done by JS.
 Default/reset style for form elements: input, select, button, textarea, optgroup.  
 A common border is set for all the elements, the value can be changed with the variables declared at the top of the file.  
 The focus style is set in that file too, with a box-shadow to respect the border-radius if there is one.  
-The button got only a reset and must be style as a component.
+The button element got only a reset and must be styled as a component.
 
 #### Typography tags
 
@@ -110,7 +104,7 @@ Some reset/default style for typographic elements. The file contains the variabl
 #### Tables
 
 Default/reset style to table.  
-If there no tables used in the theme, this file can be commented from the index file.
+If there no tables used in the theme, this file should be removed.
 
 #### Embeds
 
@@ -129,12 +123,12 @@ WordPress Blocks
 Components classes are prefixed with `c-`.  
 The CSS for a plugin can be added in that folder. In that case, there is no prefix.
 
-By default, **Gravity form** is added, but commented to not be added to the CSS file.
+Plug-in specific overrides can be placed here. An example for **Gravity form** is added, but commented out by default, as it is present for example purposes.
 
 #### Button
 
-Default style, secondary & ghost style available. And different sizes: **small** & **large**.  
-The classes can be added on links too.
+Default style, secondary & ghost style available, as size variations for: **small** & **large**.  
+The classes can be added on anchor tags as well.
 
 ---
 
@@ -146,8 +140,9 @@ Layout classes are prefixed with `l-`.
 
 ### Utilities
 
-Using the utilities classes is a choice.  
-The one that you don't use must be commented in the index file, or removed from the file.
+Using the utilities classes is a choice which can improve reuse for content editor-controlled elements which require some type of editorial flexibility.
+
+Unused / not needed utilities should be removed.
 
 #### Background
 
@@ -161,21 +156,21 @@ The `color` classes are generated from that file, with a mixin (imported from th
 The map must use the color variables coming from the color file.  
 The **colors map** and the **color variables** are set as an example and must be updated with the value coming from the design.
 
-The goal of the `color-xxx` classes is to add the color to each text element inside the HTML and not as a CSS property. Like that, we can avoid duplicating value in the CSS file and keep the colors limited.
-The name will be based on the map and the output will be like `color-primary` or `color-grey-100`
+The goal of the `color-xxx` classes is to add the color to each editor controlled text element inside the HTML and not as a CSS property. This can minimise the need for component specific styles where the primary branding colors or variations are used.
+The name will be based on the map and the output classes will go along the lines of: `color-primary` or `color-grey-100`.
 
 #### Text
 
 From the same logic, this file will generate the `text-xxx` classes.  
-Based on a map of the font sized used inside the site, multiple classes will be generated.  
-So a text element will be like that in the HTML:  
+Based on a map of the font sizes used inside the site, multiple classes will be generated.  
+Therefore a text element can be styled using utility classes only:
 `<h1 class="color-primary text-xx-large">Title</h1>`
 
 #### Flow
 
 An utility to set the space between children elements.  
-The goal is to style the context (parent), not the elements (children).
-Could be used in any case: card, article, etc…
+The goal is to style the context (parent), instead of the the (children) elements.
+Could be used in a wide variety of scenarios: cards, articles list, etc…
 
 #### Alignment
 
@@ -192,6 +187,6 @@ Some classes to make some aligments, like center, full-width, text-align.
 
 Hide visually and from screen readers.  
 Hide visually an element (screenreader).  
-Some classes to hide an element based on different breakpoints.  
+Example classes for hiding an element based on different breakpoints, to be used when editorial control is required.
 
 ---
