@@ -140,7 +140,11 @@ The classes can be added on links too.
 
 ### 6-layout
 
-Layout classes are prefixed with `l-`.
+Layout classes are prefixed with `l-`.  
+
+#### Container
+
+Setting the container for the site, using the `$g-site-max-width` variable and local `gutter` variables.
 
 ---
 
