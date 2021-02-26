@@ -6,7 +6,7 @@ const gulp = require('gulp'),
 const scssSourcePath = 'assets/src/css/';
 const outputPath = 'assets/dist/css';
 
-gulp.task('sass', function(){
+gulp.task('build', function(){
 	return gulp.src(scssSourcePath + '*.scss' )
 		.pipe(postcss())
 		.pipe(rename({suffix: '.min', extname: '.css'}))
@@ -17,4 +17,4 @@ gulp.task('watch', function(){
 	gulp.watch(scssSourcePath +  '**/*.scss' , gulp.parallel( 'sass' ));
 })
 
-gulp.task( 'default', gulp.series( 'sass', 'watch' ) );
+gulp.task( 'default', gulp.series( 'build', 'watch' ) );
