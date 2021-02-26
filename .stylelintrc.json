@@ -1,0 +1,26 @@
+{
+	"plugins": [
+		"stylelint-scss"
+	],
+  "extends": "stylelint-config-wordpress",
+  "rules": {
+		"at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "font-weight-notation": null,
+    "function-url-quotes": null,
+    "max-line-length": null,
+    "no-descending-specificity": null,
+    "no-duplicate-selectors": null,
+    "number-leading-zero": null,
+    "selector-type-no-unknown": [ true, { "ignore": ["custom-elements"] } ],
+		"media-feature-name-no-unknown": [
+			true,
+			{
+				"ignoreMediaFeatureNames": [
+					"/query/",
+					"/prefers-reduced-motion/"
+				]
+			}
+		]
+  }
+}

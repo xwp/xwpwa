@@ -50,7 +50,7 @@
       }
 
       // Handle conversion if breakpoint unit is in em
-      @elseif $unit == em {
+      @else if $unit == em {
         $reduce: ($reduce / $base-font-size) * 1em;
       }
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="fonts-loading no-js" lang="en">
+<html class="no-js" lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,22 +39,49 @@
 		<link rel="mask-icon" href="/assets/images/icons/safari-pinned-tab.svg" color="#000000">
 
 	<!-- CSS -->
-		<link rel="stylesheet" href="../dist/css/main.css">
+		<link rel="stylesheet" href="../dist/css/main.min.css">
 		<!-- Lazy Load non-critical stylesheets -->
-		<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Source+Serif+Pro" rel="stylesheet" media="none" onload="if( media!='screen' ) media='screen' ">
+		<link href="../dist/css/lazy.min.css" rel="stylesheet" media="none" onload="if( media!='screen' ) media='screen' ">
 	<!-- CSS:end -->
+
+	<!-- Preload webfonts at regular font-weights -->
+		<link rel="preload" href="../fonts/lato-v17-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="../fonts/source-serif-pro-v10-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
-	<div class="l-header">
-		<h1>PWA Long Name</h1>
-	</div>
+	<div class="l-header center">
 
-	<main>
+	</div>
+	<header class="l-header center">
+
+		<nav class="nav">
+			<p class="nav__logo">XWP scripts</p>
+			<ul class="nav__items">
+				<li class="nav__item">
+					<a class="nav__link is-active" href="#">PWA</a>
+				</li>
+				<li class="nav__item">
+					<a class="nav__line" href="lazy-load">Lazy Loading</a>
+				</li>
+				<li class="nav__item">
+					<a class="nav__link" href="idle-queue">Idle Queue</a>
+				</li>
+				<li class="nav__item">
+					<a class="nav__link" href="lazy-embeds">Third Party Embeds</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<main class="stack center">
+		<h1>PWA Long Name</h1>
 		<h2>Serif font</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias architecto ducimus eaque eius expedita facere harum id ipsa nihil nisi odit omnis porro quae ratione repellat totam, ullam voluptate.</p>
 
 		<p>External image (not cached):</p>
-		<img src="../images/blank.png"
+		<img loading="lazy"
+			class="lazyload"
+			src="../images/blank.png"
 		 	data-src="https://www.placehold.it/512/120"
 			data-srcset="
 				https://www.placehold.it/512x120 512w,
@@ -71,13 +98,13 @@
 			alt="Cat">
 
 		<p>Avatar:</p>
-		<img src="../images/blank.png" data-src="https://0.gravatar.com/avatar/f3c5bdea23e1cce8cd23ecd0b2d773ae?s=100&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D25&amp;r=PG" alt="Gravatar" />
+		<img src="../images/blank.png" data-src="https://0.gravatar.com/avatar/f3c5bdea23e1cce8cd23ecd0b2d773ae?s=100&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D25&amp;r=PG" alt="Gravatar" loading="lazy" class="lazyload" />
 
 		<p>Local image:</p>
-		<img src="../images/blank.png" data-src="/assets/images/icon.png" alt="">
+		<img src="../images/blank.png" data-src="/assets/images/icon.png" alt="" loading="lazy" class="lazyload">
 
 		<p>External image:</p>
-		<img src="../images/blank.png" data-src="http://files.urldocs.com/share/test/test.jpg" alt="Plant">
+		<img src="../images/blank.png" data-src="http://files.urldocs.com/share/test/test.jpg" alt="Plant" loading="lazy" class="lazyload">
 
 	</main>
 

@@ -1,20 +1,20 @@
 const gulp = require('gulp'),
-			sass = require('gulp-sass'),
-			rename = require('gulp-rename'),
-			prefix = require('gulp-autoprefixer');
+			postcss = require('gulp-postcss');
+			rename = require('gulp-rename');
 
 // Paths definitions
-const scssSourcePath = 'assets/src/css/**/*.scss';
+const scssSourcePath = 'assets/src/css/';
 const outputPath = 'assets/dist/css';
 
-gulp.task('sass', function(){
-	return gulp.src(scssSourcePath)
-		.pipe(sass({outputStyle: 'compressed'}))
-		.pipe(prefix())
-		.pipe(rename({suffix: '.min'}))
+gulp.task('build', function(){
+	return gulp.src(scssSourcePath + '*.scss' )
+		.pipe(postcss())
+		.pipe(rename({suffix: '.min', extname: '.css'}))
 		.pipe(gulp.dest(outputPath))
 });
 
-gulp.watch(scssSourcePath, ['sass']);
+gulp.task('watch', function(){
+	gulp.watch(scssSourcePath +  '**/*.scss' , gulp.parallel( 'build' ));
+})
 
-gulp.task('default', [ 'sass' ]);
+gulp.task( 'default', gulp.series( 'build', 'watch' ) );

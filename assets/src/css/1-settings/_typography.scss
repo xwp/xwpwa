@@ -16,37 +16,21 @@ $medium: 500;
 $semi-bold: 600;
 $bold: 700;
 
-//
-// Font families
-// Fallback generated with: https://shtrihstr.github.io/font-fallback/
-//
+/* Self-host webfonts. Tool for
+ * https://google-webfonts-helper.herokuapp.com/fonts
+ */
 
-$g-font-family-sans: Lato, Tahoma, Verdana, Segoe, sans-serif;
+$g-font-family-sans: lato, tahoma, verdana, segoe, sans-serif;
 
 @mixin g-font-family-sans {
 	font-family: $g-font-family-sans;
-
-	.fonts-loading & {
-		font-family: Tahoma, Verdana, Segoe, sans-serif;
-		font-weight: 400;
-		font-style: normal;
-		font-size: 0.991166em;
-		letter-spacing: 0.012816em;
-		word-spacing: -0.143183em;
-	}
 }
 
-$g-font-family-serif: 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;
+$g-font-family-serif: "Source Serif Pro", georgia, times, "Times New Roman", serif;
 
 @mixin g-font-family-serif {
-	font-family: 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;
-
-	.fonts-loading & {
-		font-family: Georgia, Times, 'Times New Roman', serif;
-		font-weight: 400;
-		font-style: normal;
-		font-size: 0.978276em;
-		letter-spacing: 0.01805em;
-		word-spacing: -0.039556em;
-	}
+	font-family: "Source Serif Pro", georgia, times, "Times New Roman", serif;
 }
+
+$font-pre: "Courier 10 Pitch", courier, monospace;
+$font-code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;

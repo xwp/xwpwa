@@ -110,7 +110,7 @@ $_query-context: $query-breakpoints;
     }
   }
   // Validate name and width
-  @elseif type-of($name) == string and type-of($width) == number {
+  @else if type-of($name) == string and type-of($width) == number {
     // Merge name and width into context if forced to or breakpoint does not
     // exist
     @if $force or not query-exists($name) {
@@ -159,7 +159,7 @@ $_query-context: $query-breakpoints;
     @include query-add($name, $width, true);
   }
   // No width given, check if first parameter is a map
-  @elseif type-of($name) == map {
+  @else if type-of($name) == map {
     // Overwrite each existing breakpoint in context
     @each $_name, $_width in $name {
       @if query-exists($_name) {

@@ -6,8 +6,8 @@
 // No support for IE11 https://caniuse.com/?search=flow-root
 @mixin clearfix {
 
-	&::after {
-		content: '';
+	&:after {
+		content: "";
 		display: table;
 		clear: both;
 	}
@@ -21,6 +21,7 @@
 }
 
 %h-container {
+
 	@include h-container;
 }
 
@@ -37,8 +38,10 @@
 //   z-index: z("hills") - 1;
 // }
 @function z($layer) {
+
 	@if not map-has-key($z-layers, $layer) {
-		@warn 'No layer found for `#{$layer}` in $z-layers map. Property omitted.';
+
+		@warn "No layer found for `#{$layer}` in $z-layers map. Property omitted.";
 	}
 
 	@return map-get($z-layers, $layer);
@@ -54,20 +57,29 @@
 // }
 //
 $html-font-size: 16px;
+
 @function stripUnit($value) {
-		@return $value / ($value * 0 + 1);
+
+	@return $value / ($value * 0 + 1);
 }
+
 @function rem($pxValue) {
-		@return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
+
+	@return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
 }
 
 // Create colors classes from a map
-@mixin modifiers($map, $attribute, $prefix: '-', $separator: '--', $base: 'base') {
+@mixin modifiers($map, $attribute, $prefix: "-", $separator: "--", $base: "base") {
+
 	@each $key, $value in $map {
+
 		&#{if($key != $base, #{$prefix}#{$key}, '')} {
-			@if type-of($value) == 'map' {
+
+			@if type-of($value) == "map" {
+
 				@include modifiers($value, $attribute, $separator);
 			}
+
 			@else {
 				#{$attribute}: $value;
 			}
@@ -84,6 +96,8 @@ $html-font-size: 16px;
 // margin-top: spacer(.25); // 4px
 //
 $grid-point: 16px;
+
 @function spacer($number:1) {
+
 	@return rem(stripUnit($grid-point) * $number);
 }
