@@ -14,7 +14,7 @@ gulp.task('build', function(){
 });
 
 gulp.task('watch', function(){
-	gulp.watch(scssSourcePath +  '**/*.scss' , gulp.parallel( 'sass' ));
+	gulp.watch(scssSourcePath +  '**/*.scss' , gulp.parallel( 'build' ));
 })
 
 gulp.task( 'default', gulp.series( 'build', 'watch' ) );
