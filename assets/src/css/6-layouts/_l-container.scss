@@ -10,7 +10,6 @@ $site-gutter-md: spacer(2); // tablet
 	max-width: $g-site-max-width;
 	padding-left: $site-gutter-sm;
 	padding-right: $site-gutter-sm;
-	background: url(image.png) no-repeat #ff0;
 
 	@media (query(min, tablet)) {
 		max-width: calc(2 * #{$site-gutter-md} + #{$g-site-max-width});
