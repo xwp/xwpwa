@@ -1,0 +1,107 @@
+/*
+ * Local variables.
+ */
+
+$form-elements-border-color: $g-color-grey--300;
+$form-elements-border-width: 1px;
+$form-elements-border-style: solid;
+$form-elements-border-radius: $g-border-radius;
+$focus-color: $g-color-grey--500;
+$focus-width: 0 0 0 2px;
+$select-font-size: rem(13px);
+$select-padding: spacer(.25) spacer(.5);
+$select-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+
+/*
+ * Show the overflow in IE / Edge.
+ */
+
+button,
+input {
+	overflow: visible;
+}
+
+/*
+ * Remove default vertical scrollbar in IE 11.
+ */
+textarea {
+	overflow: auto;
+	-webkit-appearance: none;
+}
+
+/*
+ * Correct the odd appearance in Chrome and Safari.
+ */
+[type="search"] {
+	-webkit-appearance: textfield;
+
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-decoration {
+		-webkit-appearance: none;
+	}
+}
+
+::-moz-focus-inner {
+	padding: 0;
+	border-style: none;
+}
+
+/*
+ * Inherit fonts for inputs and buttons
+ */
+input,
+button,
+select,
+optgroup,
+textarea {
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+/*
+ * Set common  border
+ */
+textarea,
+select,
+input {
+	border: $form-elements-border-width $form-elements-border-style $form-elements-border-color;
+	border-radius: $form-elements-border-radius;
+
+	&:focus {
+		outline: 0;
+		box-shadow: $focus-width $focus-color;
+	}
+}
+
+/*
+ * Reset the button to consistent native appearance in all browsers.
+ */
+button {
+	border: 0;
+	-webkit-font-smoothing: inherit;
+	letter-spacing: inherit;
+	background: none;
+	cursor: pointer;
+}
+
+button,
+input:not([type="checkbox"]):not([type="radio"]) {
+	-webkit-appearance: none;
+}
+
+/*
+ * Style form elements.
+ */
+select {
+	font-size: $select-font-size;
+	padding: $select-padding;
+	box-shadow: $select-box-shadow;
+	word-wrap: normal;
+}

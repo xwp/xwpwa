@@ -39,10 +39,16 @@
 		<link rel="mask-icon" href="/assets/images/icons/safari-pinned-tab.svg" color="#000000">
 
 	<!-- CSS -->
-		<link rel="stylesheet" href="../../dist/css/main.css">
+		<link rel="stylesheet" href="../../dist/css/main.min.css">
 		<!-- Lazy Load non-critical stylesheets -->
-		<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Source+Serif+Pro" rel="stylesheet" media="none" onload="if( media!='screen' ) media='screen' ">
+		<!-- Lazy Load non-critical stylesheets -->
+		<link href="../../dist/css/lazy.min.css" rel="stylesheet" media="none" onload="if( media!='screen' ) media='screen' ">
 	<!-- CSS:end -->
+
+	<!-- Preload webfonts at regular font-weights -->
+		<link rel="preload" href="../../fonts/lato-v17-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="../../fonts/source-serif-pro-v10-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+
 	<script>
 		window.xwpQueue = [];
 	</script>
@@ -140,9 +146,6 @@
 				</li>
 				<li>
 					<a href="https://parallax-developer-docs.netlify.com/guides/idle-until-urgent/#using-with-webpack-chunks" target="_blank" rel="noopener noreferrer">Carousel example</a>
-				</li>
-				<li>
-					<a href="https://www.brit.co/" target="_blank" rel="noopener noreferrer">Example usage done by Rebel Mouse</a>
 				</li>
 			</ul>
 

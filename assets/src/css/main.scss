@@ -1,18 +1,33 @@
-// ----------------------------------------
-//
-// PWA main stylesheet
-//
-// ----------------------------------------
+/*!
+Theme Name: XWP
+Author: XWP
+Author URI: https://xwp.co
+Description: Custom theme.
+Version: 1.0.0
+*/
 
-// Helpers and variables. Styleguides 0.x
-@import 'helpers/index';
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------*/
 
-// Resets and defaults. Styleguide 1.x
-@import 'base/index';
+// Variables.
+@import "1-settings/index";
 
-// Components. Styleguide 2.x
-@import 'components/c-logo';
+// Mixins & helpers.
+@import "2-tools/index";
 
-// Layouts. Styleguide 3.x
-@import 'layouts/l-header';
-@import 'layouts/l-main';
+// Elements.
+@import "3-elements/index";
+
+// WordPress Blocks.
+@import "4-blocks/index";
+
+// Components.
+@import "5-components/index";
+
+//  Layouts.
+@import "6-layouts/index";
+
+// Utilities.
+@import "7-utilities/index";
+

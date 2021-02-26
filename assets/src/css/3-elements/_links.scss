@@ -1,0 +1,81 @@
+/*
+ * A elements that don't have a class get default styles
+ * This link will be the one used inside an article
+ */
+
+/*
+ * Local variables.
+ *
+ * As a mixin is used, the properties/variables used can be selected inside.
+ * If an argument is not set, there will be no output inside the CSS file.
+ * The call to the mixin is only an example and can be modified.
+ */
+
+$link-color: $g-color-primary;
+$link-color-visited: $g-color-grey--400;
+$link-color-hover: currentColor;
+$link-color-active: $link-color-hover; // will be used for focus too
+$link-decoration: none;
+$link-decoration-hover: underline;
+
+
+/*
+ * Mixins.
+ *
+ * The goal of using a mixin is to use the `null` argument
+ * to not have a CSS output with properties not used.
+ *
+ */
+
+@mixin link (
+	$color,
+	$color-hover,
+	$color-active,
+	$text-decoration: null,
+	$text-decoration-hover: null,
+	$color-visited: null,
+	$background-color: null,
+	$padding: null) {
+	color: $color;
+	text-decoration: $text-decoration;
+	background-color: $background-color;
+	padding: $padding;
+
+	&:visited {
+		color: $color-visited;
+	}
+
+	&:hover {
+		color: $color-hover;
+		text-decoration: $link-decoration-hover;
+	}
+
+	&:active,
+	&:focus {
+		color: $color-active;
+	}
+}
+
+a:not([class]),
+a.external-link {
+
+	@include link(
+		$link-color,
+		$link-color-hover,
+		$link-color-active,
+		$link-decoration,
+	);
+	transition: color $g-transition-color;
+
+	// &:focus,
+	// &:hover {
+	// 	color: $link-color-hover;
+	// 	text-decoration: $link-decoration-hover;
+	// }
+}
+
+// external link inside an article
+a.external-link:after {
+	content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+	margin: 0 0.5em;
+}

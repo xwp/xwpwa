@@ -134,3 +134,7 @@ The 404 and Offline pages are defined in the manifest and referenced to the cach
  ### 5. Network only
 
  Without setting up a specific caching strategy to an outside domain, any other external domains won't get their assets cached by the service worker.
+
+ ## CSS
+
+ See [CSS readme](https://github.com/xwp/xwpwa/tree/master/assets/src/css/readme.md)

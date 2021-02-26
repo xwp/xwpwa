@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- Titles -->
+	<title>Styleguide</title>
+	<meta name="apple-mobile-web-app-title" content="PWA Name">
+	<meta name="application-name" content="PWA Long Name">
+	<meta name="description" content="All the tools you need to build and deploy your Progressive Web Apps.">
+	<!-- Titles:end -->
+
+	<link rel="manifest" href="/assets/manifest.json">
+
+	<!-- Responsiveness -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Browser shell -->
+		<meta name="theme-color" content="#000000">
+
+	<!-- Add to home screen for iOS -->
+		<meta name="apple-mobile-web-app-title" content="PWA Name">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+		<link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+	<!-- Tile icons for Windows -->
+		<meta name="msapplication-config" content="/assets/images/icons/browserconfig.xml">
+		<meta name="msapplication-TileImage" content="/assets/images/icons/mstile-144x144.png">
+		<meta name="msapplication-TileColor" content="#eff4ff">
+
+	<!-- Favicons -->
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+		<link rel="shortcut icon" href="/assets/images/icons/favicon.ico">
+
+	<!-- Safari pin icon -->
+		<link rel="mask-icon" href="/assets/images/icons/safari-pinned-tab.svg" color="#000000">
+
+	<!-- CSS -->
+		<link rel="stylesheet" href="../dist/css/main.min.css">
+		<!-- Lazy Load non-critical stylesheets -->
+		<!-- CSS -->
+		<link rel="stylesheet" href="../dist/css/main.min.css">
+		<!-- Lazy Load non-critical stylesheets -->
+		<link href="../dist/css/lazy.min.css" rel="stylesheet" media="none" onload="if( media!='screen' ) media='screen' ">
+	<!-- CSS:end -->
+
+	<!-- Preload webfonts at regular font-weights -->
+		<link rel="preload" href="../fonts/lato-v17-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+		<link rel="preload" href="../fonts/source-serif-pro-v10-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body>
+	<div class="l-header">
+		<h1>Styleguide</h1>
+	</div>
+
+	<main class="l-container flow">
+		<h2>Form elements</h2>
+		<form action="" class="flow">
+			<legend>This is the form legend</legend>
+			<textarea name="" id="" cols="30" rows="10"></textarea>
+			<div>
+				<label for="pet-select">Choose a pet:</label>
+				<select name="" id="">
+					<option value="">--Please choose an option--</option>
+					<option value="dog">Dog</option>
+					<option value="cat">Cat</option>
+					<option value="hamster">Hamster</option>
+					<option value="parrot">Parrot</option>
+					<option value="spider">Spider</option>
+					<option value="goldfish">Goldfish</option>
+				</select>
+			</div>
+			<div>
+				<label for="text">input type text</label>
+				<input type="text" id="text">
+			</div>
+			<div>
+				<label for="search">input type search</label>
+				<input type="search" id="search">
+			</div>
+			<div>
+				<label for="date">input type date</label>
+				<input type="date" id="date">
+			</div>
+			<div>
+				<label for="check">input type checkbox</label>
+				<input type="checkbox" id="check">
+			</div>
+			<div>
+				<label for="rad">input type radio</label>
+				<input type="radio" id="rad">
+			</div>
+			<button class="c-button">Submit</button>
+
+		</form>
+
+		<hr>
+
+		<section class="flow">
+			<h2>Buttons</h2>
+			<button type="button" class="c-button">button default</button>
+			<br>
+			<a href="#" class="c-button">button default as link</a>
+			<br>
+			<button type="button" class="c-button c-button--secondary">button secondary</button>
+			<br>
+			<button type="button" class="c-button c-button--ghost">button ghost</button>
+			<br>
+			<button type="button" class="c-button c-button--small">button small</button>
+			<br>
+			<button type="button" class="c-button c-button--large">button large</button>
+			<br>
+
+			<h3>Button selection</h3>
+			<p>When there is more than one button, there is a space between</p>
+			<button type="button" class="c-button">button default</button>
+			<button type="button" class="c-button c-button--secondary">button secondary</button>
+		</section>
+
+		<h2>Table</h2>
+		<table>
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">First</th>
+					<th scope="col">Last</th>
+					<th scope="col">Handle</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td>Mark</td>
+					<td>Otto</td>
+					<td>@mdo</td>
+				</tr>
+				<tr>
+					<th scope="row">2</th>
+					<td>Jacob</td>
+					<td>Thornton</td>
+					<td>@fat</td>
+				</tr>
+				<tr>
+					<th scope="row">3</th>
+					<td colspan="2">Larry the Bird</td>
+					<td>@twitter</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<hr>
+
+		<section class="flow">
+			<h2>Typography</h2>
+			<p>This section has the class <code>flow</code> to set the baseline.</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam ipsa rem, excepturi labore iusto perferendis, eum neque necessitatibus magni eveniet quibusdam tempora quae optio mollitia ducimus soluta aliquid accusamus voluptates.</p>
+			<blockquote>
+				<p>“The only way to get rid of a temptation is to yield to it. Resist it, and your soul grows sick with longing for the things it has forbidden to itself, with desire for what its monstrous laws have made monstrous and unlawful.”</p>
+				<p>"Lorem"</p>
+				<cite>Oscar Wilde, The Picture of Dorian Gray</cite>
+			</blockquote>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem corrupti quis optio omnis. Repudiandae ducimus, eum perspiciatis dolores adipisci sed obcaecati voluptas quo, libero labore amet quod corrupti necessitatibus possimus?</p>
+			<b>[b bold]</b>
+			<strong>[strong bold]</strong>
+			<abbr title="tile">abbr</abbr>
+			<mark>[mark]</mark>
+			<ins>[ins]</ins>
+			<small>[small]</small>
+			<dfn>[dfn]</dfn>
+			<cite>[cite]</cite>
+			<em>[em]</em>
+			<i>[i]</i>
+			<code>[code]</code>
+			<kbd>[kbd]</kbd>
+			<var>[var]</var>
+			<pre>Pre tag: "Courier 10 Pitch", courier, monospace</pre>
+			<address>Address: 10 Point street</address>
+			<hr>
+			<a href="#">this is a link without class, with hover effect properties.</a>
+			<br>
+			<a href="#" class="external-link">this is a external link, with an icon</a>
+		</section>
+
+
+		<hr>
+
+		<section class="align-full">
+			<h2>Align full</h2>
+			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium omnis quia impedit laudantium facere quod nostrum, natus hic adipisci sint ex, dolor perspiciatis dolores, libero illo accusamus. Accusantium, non dicta!</p>
+		</section>
+
+		<hr>
+
+
+
+
+
+
+	</main>
+
+	<script async src="../dist/js/main.js"></script>
+</body>
+</html>
+
+
+

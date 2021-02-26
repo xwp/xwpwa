@@ -1,0 +1,20 @@
+// Gutter to container class
+$site-gutter-sm: spacer(.5); // mobile
+$site-gutter-md: spacer(2); // tablet
+
+.l-container {
+
+	//@include h-container;
+	margin: 0 auto;
+	width: 100%;
+	min-width: $g-site-min-width;
+	max-width: $g-site-max-width;
+	padding-left: $site-gutter-sm;
+	padding-right: $site-gutter-sm;
+
+	@media (query(min, tablet)) {
+		max-width: calc(2 * #{$site-gutter-md} + #{$g-site-max-width});
+		padding-left: $site-gutter-md;
+		padding-right: $site-gutter-md;
+	}
+}

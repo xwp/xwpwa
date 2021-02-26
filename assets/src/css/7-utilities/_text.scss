@@ -1,0 +1,16 @@
+//
+// Font sizes used throughout the site
+// By having a map, we can keep the number of the different font size used low.
+
+$font-sizes: (
+	small: rem(12px),
+	medium: rem(14px),
+	large: rem(16px),
+	x-large: rem(18px),
+	xx-large: rem(20px)
+);
+
+.font {
+
+	@include modifiers($font-sizes, "font-size");
+}

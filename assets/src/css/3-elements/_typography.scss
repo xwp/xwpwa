@@ -1,0 +1,98 @@
+/*
+* Variables
+*/
+
+$color-background-pre: $g-color-grey--200;
+$font-line-height-pre: 1.2;
+$padding-pre: spacer();
+$color-background-ins: $g-color-grey--400;
+$color-border-abbr: $g-color-grey--400;
+$font-small: 80%;
+
+h1 {
+	font-size: rem(32);
+}
+
+h2 {
+	font-size: rem(24);
+}
+
+h3 {
+	font-size: rem(20);
+}
+
+h4 {
+	font-size: rem(16);
+}
+
+h5 {
+	font-size: rem(14);
+}
+
+h1,
+h2,
+h3 {
+
+	@include g-font-family-serif;
+}
+
+/*
+ * Correct some browsers defaulting to bolder.
+ */
+b,
+strong {
+	font-weight: $bold;
+}
+
+/*
+ * Various normalizations.
+ */
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+	font-variation-settings: "ital" 1;
+}
+
+mark,
+ins {
+	background: $color-background-ins;
+	text-decoration: none;
+}
+
+abbr {
+	text-decoration: none;
+	border-bottom: 1px dotted $color-border-abbr;
+	cursor: help;
+}
+
+code,
+kbd,
+var {
+	font-family: $font-code;
+}
+
+small {
+	font-size: $font-small;
+}
+
+address {
+	margin-bottom: spacer();
+	font-style: normal;
+	line-height: inherit;
+}
+
+pre {
+	background: $color-background-pre;
+	font-family: $font-pre;
+	line-height: $font-line-height-pre;
+	margin-bottom: spacer();
+	max-width: 100%;
+	overflow: auto;
+	padding: $padding-pre;
+}
+
+hr {
+	display: block;
+}

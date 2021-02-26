@@ -1,0 +1,94 @@
+/*
+ * Blockquote design.
+ */
+
+/*
+ * Local variables.
+ *
+ * As a mixin is used, the properties/variables used can be selected inside.
+ * If an argument is not set, there will be no output inside the CSS file.
+ */
+
+$-blockquote-color: currentColor;
+$-blockquote-font: $g-font-family-serif;
+$-blockquote-bg: $g-color-secondary;
+$-blockquote-padding: spacer();
+$-blockquote-left-margin: spacer();
+$-blockquote-right-margin: spacer();
+$-blockquote-border-width: 0 0 0 10px;
+$-blockquote-border-color: darken($g-color-secondary, 20);
+$-blockquote-border-style: solid;
+$-blockquote-p-spacing: spacer(.5); // margin between paragraph
+$-blockquote-cite-margin-top: $g-font-family-sans;
+$-blockquote-cite-font-size: rem(14px);
+$-blockquote-cite-font-style: normal; // italic is the default
+$-blockquote-cite-margin-top: spacer(.5);
+
+/*
+ * Mixins.
+ *
+ * The goal of using a mixin is to use the `null` argument
+ * to not have a CSS output with properties not used.
+ *
+ */
+
+@mixin blockquote (
+	$font-family,
+	$background-color: null,
+	$padding: null,
+	$l-margin: null,
+	$r-margin: null,
+	$border-width: null,
+	$border-color: null,
+	$border-style: null,) {
+	font-family: $font-family;
+	background-color: $background-color;
+	padding: $padding;
+	margin-left: $l-margin;
+	margin-right: $r-margin;
+	border-width: $border-width;
+	border-color: $border-color;
+	border-style: $border-style;
+}
+
+@mixin cite (
+	$font-family: null,
+	$font-size: null,
+	$font-style: null,
+	$margin-top: null ) {
+	font-family: $font-family;
+	font-style: $font-style;
+	font-size: $font-size;
+	margin-top: $margin-top;
+}
+
+blockquote {
+
+	@include blockquote(
+		$-blockquote-font,
+		$-blockquote-bg,
+		$-blockquote-padding,
+		$border-width: $-blockquote-border-width,
+		$border-color: $-blockquote-border-color,
+		$border-style: $-blockquote-border-style
+	);
+}
+
+blockquote,
+blockquote > p {
+	color: $-blockquote-color;
+	overflow: hidden;
+
+	cite {
+		display: block;
+
+		@include cite (
+			$font-size: $-blockquote-cite-font-size,
+			$margin-top: $-blockquote-cite-margin-top
+		);
+	}
+}
+
+blockquote > p + p {
+	margin-top: $-blockquote-p-spacing;
+}

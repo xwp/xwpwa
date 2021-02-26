@@ -1,0 +1,103 @@
+// Mixins
+//
+
+// A better solution would be to use display: flow-root;
+// https://rachelandrew.co.uk/archives/2017/01/24/the-end-of-the-clearfix-hack/
+// No support for IE11 https://caniuse.com/?search=flow-root
+@mixin clearfix {
+
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin h-container() {
+	margin: 0 auto;
+	width: 100%;
+	min-width: $g-site-min-width;
+	max-width: $g-site-max-width;
+}
+
+%h-container {
+
+	@include h-container;
+}
+
+// Mixin to manage z-index
+// Read more: https://www.sitepoint.com/better-solution-managing-z-index-sass/
+//
+// .usage {
+//   // ...
+//   z-index: z("hills");
+// }
+
+// .usage-overlay {
+//   // ...
+//   z-index: z("hills") - 1;
+// }
+@function z($layer) {
+
+	@if not map-has-key($z-layers, $layer) {
+
+		@warn "No layer found for `#{$layer}` in $z-layers map. Property omitted.";
+	}
+
+	@return map-get($z-layers, $layer);
+}
+
+//
+// rem
+//
+// transform a value in pixel to rem
+// Usage:
+// .component {
+// 	font-size: rem(14px); // or rem(14)
+// }
+//
+$html-font-size: 16px;
+
+@function stripUnit($value) {
+
+	@return $value / ($value * 0 + 1);
+}
+
+@function rem($pxValue) {
+
+	@return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
+}
+
+// Create colors classes from a map
+@mixin modifiers($map, $attribute, $prefix: "-", $separator: "--", $base: "base") {
+
+	@each $key, $value in $map {
+
+		&#{if($key != $base, #{$prefix}#{$key}, '')} {
+
+			@if type-of($value) == "map" {
+
+				@include modifiers($value, $attribute, $separator);
+			}
+
+			@else {
+				#{$attribute}: $value;
+			}
+		}
+	}
+}
+
+//
+// To follow a grid system for vertical & horizontal baseline
+// https://tanzu.vmware.com/content/built-to-adapt/intro-to-the-8-point-grid-system-2
+//
+// Usage:
+// margin-bottom: spacer(2); // 32px with base 16px, transformed in rem.
+// margin-top: spacer(.25); // 4px
+//
+$grid-point: 16px;
+
+@function spacer($number:1) {
+
+	@return rem(stripUnit($grid-point) * $number);
+}

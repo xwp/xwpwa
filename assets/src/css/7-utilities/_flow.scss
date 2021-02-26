@@ -1,0 +1,15 @@
+//
+// Flow utility
+// See https://every-layout.dev/layouts/stack/ for usage
+//
+
+$flow-space: spacer();
+
+.flow > * {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.flow > * + * {
+	margin-top: $flow-space;
+}
