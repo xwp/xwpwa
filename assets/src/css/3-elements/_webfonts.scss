@@ -8,9 +8,10 @@
 	font-style: normal;
 	font-weight: 400;
 	font-display: optional;
-	src: local( "Lato" ),
-		url( "../../fonts/lato-v17-latin-regular.woff2" ) format( "woff2" ),
-		url( "../../fonts/lato-v17-latin-regular.woff" ) format( "woff" );
+	src:
+		local("Lato"),
+		url("../../fonts/lato-v17-latin-regular.woff2") format("woff2"),
+		url("../../fonts/lato-v17-latin-regular.woff") format("woff");
 }
 
 /* lato-700 - latin */
@@ -19,9 +20,10 @@
 	font-style: normal;
 	font-weight: 700;
 	font-display: optional;
-	src: local( "Lato" ),
-		url( "../../fonts/lato-v17-latin-700.woff2" ) format( "woff2" ),
-		url( "../../fonts/lato-v17-latin-700.woff" ) format( "woff" );
+	src:
+		local("Lato"),
+		url("../../fonts/lato-v17-latin-700.woff2") format("woff2"),
+		url("../../fonts/lato-v17-latin-700.woff") format("woff");
 }
 
 /* source-serif-pro-regular - latin */
@@ -30,9 +32,10 @@
 	font-style: normal;
 	font-weight: 400;
 	font-display: optional;
-	src: local( "Source Serif Pro" ),
-		url( "../../fonts/source-serif-pro-v10-latin-regular.woff2" ) format( "woff2" ),
-		url( "../../fonts/source-serif-pro-v10-latin-regular.woff" ) format( "woff" );
+	src:
+		local("Source Serif Pro"),
+		url("../../fonts/source-serif-pro-v10-latin-regular.woff2") format("woff2"),
+		url("../../fonts/source-serif-pro-v10-latin-regular.woff") format("woff");
 }
 
 /* source-serif-pro-700 - latin */
@@ -41,7 +44,8 @@
 	font-style: normal;
 	font-weight: 700;
 	font-display: optional;
-	src: local( "Source Serif Pro" ),
-		url( "../../fonts/source-serif-pro-v10-latin-700.woff2" ) format( "woff2" ),
-		url( "../../fonts/source-serif-pro-v10-latin-700.woff" ) format( "woff" );
+	src:
+		local("Source Serif Pro"),
+		url("../../fonts/source-serif-pro-v10-latin-700.woff2") format("woff2"),
+		url("../../fonts/source-serif-pro-v10-latin-700.woff") format("woff");
 }

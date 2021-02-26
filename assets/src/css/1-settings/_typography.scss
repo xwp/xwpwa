@@ -20,16 +20,16 @@ $bold: 700;
  * https://google-webfonts-helper.herokuapp.com/fonts
  */
 
-$g-font-family-sans: Lato, Tahoma, Verdana, Segoe, sans-serif;
+$g-font-family-sans: lato, tahoma, verdana, segoe, sans-serif;
 
 @mixin g-font-family-sans {
 	font-family: $g-font-family-sans;
 }
 
-$g-font-family-serif: "Source Serif Pro", Georgia, Times, "Times New Roman", serif;
+$g-font-family-serif: "Source Serif Pro", georgia, times, "Times New Roman", serif;
 
 @mixin g-font-family-serif {
-	font-family: "Source Serif Pro", Georgia, Times, "Times New Roman", serif;
+	font-family: "Source Serif Pro", georgia, times, "Times New Roman", serif;
 }
 
 $font-pre: "Courier 10 Pitch", courier, monospace;

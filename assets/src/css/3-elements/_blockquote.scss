@@ -24,8 +24,6 @@ $-blockquote-cite-font-size: rem(14px);
 $-blockquote-cite-font-style: normal; // italic is the default
 $-blockquote-cite-margin-top: spacer(.5);
 
-
-
 /*
  * Mixins.
  *
@@ -57,7 +55,7 @@ $-blockquote-cite-margin-top: spacer(.5);
 	$font-family: null,
 	$font-size: null,
 	$font-style: null,
-	$margin-top: null){
+	$margin-top: null ) {
 	font-family: $font-family;
 	font-style: $font-style;
 	font-size: $font-size;

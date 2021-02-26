@@ -6,7 +6,7 @@
 // No support for IE11 https://caniuse.com/?search=flow-root
 @mixin clearfix {
 
-	&::after {
+	&:after {
 		content: "";
 		display: table;
 		clear: both;

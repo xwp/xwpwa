@@ -38,7 +38,7 @@ $color-background-input: $g-color-grey--300;
 
 				&:not(.gfield_contains_required) {
 
-					> label::after {
+					> label:after {
 						content: "(optional)";
 						color: rgba(0, 0, 0, 0.5);
 						margin-left: 5px;
@@ -188,7 +188,7 @@ $color-background-input: $g-color-grey--300;
 
 		.ginput_container_consent {
 			display: flex;
-			flex-direction: row;
+			flex-flow: row;
 			align-items: baseline;
 
 			input:not(.button),
@@ -207,7 +207,7 @@ $color-background-input: $g-color-grey--300;
 
 	.ginput_complex {
 		display: flex;
-		flex-direction: row;
+		flex-flow: row;
 		flex-wrap: wrap;
 		width: 100%;
 	}

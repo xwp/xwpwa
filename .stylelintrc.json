@@ -17,7 +17,8 @@
 			true,
 			{
 				"ignoreMediaFeatureNames": [
-					"/query/"
+					"/query/",
+					"/prefers-reduced-motion/"
 				]
 			}
 		]

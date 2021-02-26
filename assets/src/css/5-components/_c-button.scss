@@ -80,7 +80,7 @@ $small-padding: rem(8px) spacer(.5);
 
 	&:hover,
 	&:focus {
-		background-color:$bg-hover;
+		background-color: $bg-hover;
 		transform: $hover-effect;
 	}
 }
@@ -92,7 +92,7 @@ $small-padding: rem(8px) spacer(.5);
 
 	&:hover,
 	&:focus {
-		background-color:$bg-hover;
+		background-color: $bg-hover;
 	}
 }
 
@@ -154,7 +154,8 @@ $small-padding: rem(8px) spacer(.5);
 		$large-font-size,
 		$large-line-height,
 		$large-padding
-	)
+	);
+
 }
 
 .c-button--small {
@@ -163,5 +164,6 @@ $small-padding: rem(8px) spacer(.5);
 		$small-font-size,
 		$small-line-height,
 		$small-padding
-	)
+	);
+
 }

@@ -13,7 +13,7 @@ $site-gutter-md: spacer(2); // tablet
 	padding-right: $site-gutter-sm;
 
 	@media (query(min, tablet)) {
-		max-width: calc(2*#{$site-gutter-md} + #{$g-site-max-width});
+		max-width: calc(2 * #{$site-gutter-md} + #{$g-site-max-width});
 		padding-left: $site-gutter-md;
 		padding-right: $site-gutter-md;
 	}
