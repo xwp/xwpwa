@@ -11,5 +11,6 @@ $font-sizes: (
 );
 
 .font {
-	@include modifiers($font-sizes, 'font-size');
+
+	@include modifiers($font-sizes, "font-size");
 }

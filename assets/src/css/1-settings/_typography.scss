@@ -26,11 +26,11 @@ $g-font-family-sans: Lato, Tahoma, Verdana, Segoe, sans-serif;
 	font-family: $g-font-family-sans;
 }
 
-$g-font-family-serif: 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;
+$g-font-family-serif: "Source Serif Pro", Georgia, Times, "Times New Roman", serif;
 
 @mixin g-font-family-serif {
-	font-family: 'Source Serif Pro', Georgia, Times, 'Times New Roman', serif;
+	font-family: "Source Serif Pro", Georgia, Times, "Times New Roman", serif;
 }
 
-$font-pre: 'Courier 10 Pitch', courier, monospace;
-$font-code: monaco, consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+$font-pre: "Courier 10 Pitch", courier, monospace;
+$font-code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;

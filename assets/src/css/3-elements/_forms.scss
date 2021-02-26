@@ -42,8 +42,8 @@ textarea {
 }
 
 ::-moz-focus-inner {
-  padding: 0;
-  border-style: none;
+	padding: 0;
+	border-style: none;
 }
 
 /*
@@ -99,7 +99,7 @@ input:not([type="checkbox"]):not([type="radio"]) {
 /*
  * Style form elements.
  */
- select {
+select {
 	font-size: $select-font-size;
 	padding: $select-padding;
 	box-shadow: $select-box-shadow;

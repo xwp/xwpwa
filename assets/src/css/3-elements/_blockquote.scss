@@ -43,14 +43,14 @@ $-blockquote-cite-margin-top: spacer(.5);
 	$border-width: null,
 	$border-color: null,
 	$border-style: null,) {
-		font-family: $font-family;
-		background-color: $background-color;
-		padding: $padding;
-		margin-left: $l-margin;
-		margin-right: $r-margin;
-		border-width: $border-width;
-		border-color: $border-color;
-		border-style: $border-style;
+	font-family: $font-family;
+	background-color: $background-color;
+	padding: $padding;
+	margin-left: $l-margin;
+	margin-right: $r-margin;
+	border-width: $border-width;
+	border-color: $border-color;
+	border-style: $border-style;
 }
 
 @mixin cite (
@@ -58,10 +58,10 @@ $-blockquote-cite-margin-top: spacer(.5);
 	$font-size: null,
 	$font-style: null,
 	$margin-top: null){
-		font-family: $font-family;
-		font-style: $font-style;
-		font-size: $font-size;
-		margin-top: $margin-top;
+	font-family: $font-family;
+	font-style: $font-style;
+	font-size: $font-size;
+	margin-top: $margin-top;
 }
 
 blockquote {

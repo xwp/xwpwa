@@ -66,23 +66,23 @@ $small-padding: rem(8px) spacer(.5);
 	$border: null,
 	$border-radius: null,
 	$hover-effect: null) {
-		background-color: $bg;
-		color: $color;
-		font-size: $font-size;
-		font-weight: $font-weight;
-		line-height: $line-height;
-		padding: $padding;
-		text-transform: $text-transform;
-		border: $border;
-		border-radius: $border-radius;
-		text-decoration: none; // when used as a link, to avoid the default underline.
-		transition: $transition;
+	background-color: $bg;
+	color: $color;
+	font-size: $font-size;
+	font-weight: $font-weight;
+	line-height: $line-height;
+	padding: $padding;
+	text-transform: $text-transform;
+	border: $border;
+	border-radius: $border-radius;
+	text-decoration: none; // when used as a link, to avoid the default underline.
+	transition: $transition;
 
-		&:hover,
-		&:focus {
-			background-color:$bg-hover;
-			transform: $hover-effect;
-		}
+	&:hover,
+	&:focus {
+		background-color:$bg-hover;
+		transform: $hover-effect;
+	}
 }
 
 @mixin button-variant($bg, $bg-hover, $color: null, $text-decoration: null) {

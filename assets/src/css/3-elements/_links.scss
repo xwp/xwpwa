@@ -36,21 +36,25 @@ $link-decoration-hover: underline;
 	$color-visited: null,
 	$background-color: null,
 	$padding: null) {
-		color: $color;
-		text-decoration: $text-decoration;
-		background-color: $background-color;
-		padding: $padding;
-		&:visited {
-      color: $color-visited;
-    }
-    &:hover {
-			color: $color-hover;
-			text-decoration: $link-decoration-hover;
-    }
-    &:active, &:focus {
-      color: $color-active;
-    }
+	color: $color;
+	text-decoration: $text-decoration;
+	background-color: $background-color;
+	padding: $padding;
+
+	&:visited {
+		color: $color-visited;
+	}
+
+	&:hover {
+		color: $color-hover;
+		text-decoration: $link-decoration-hover;
+	}
+
+	&:active, &:focus {
+		color: $color-active;
+	}
 }
+
 a:not([class]),
 a.external-link {
 

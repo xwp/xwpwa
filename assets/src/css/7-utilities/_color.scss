@@ -6,19 +6,20 @@
 
 // Text color map
 $colors: (
-  red: $g-color-red,
-  grey: (
-    100: $g-color-grey--100,
-    500: $g-color-grey--500
-  ),
-  primary: (
-    base: $g-color-primary
-  ),
-  secondary: (
-    base: $g-color-secondary
-  )
+	red: $g-color-red,
+	grey: (
+		100: $g-color-grey--100,
+		500: $g-color-grey--500
+	),
+	primary: (
+		base: $g-color-primary
+	),
+	secondary: (
+		base: $g-color-secondary
+	)
 );
 
 .color {
-  @include modifiers($colors, 'color');
+
+	@include modifiers($colors, "color");
 }
