@@ -18,10 +18,12 @@
     ]
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development gulp --gulpfile $(npm root)/undercurrent/src/index.js --cwd $(npm prefix) --workflow theme",
+    "dev": "gulp --gulpfile ./assets/tasks/css.js --cwd ./",
+    "build:css": "gulp --gulpfile ./assets/tasks/css.js build --cwd ./",
+    "format:css": "npm run lint:css -- --fix",
+    "lint:css": "wp-scripts lint-style",
     "build": "cross-env NODE_ENV=production gulp --gulpfile $(npm root)/undercurrent/src/index.js --cwd $(npm prefix) --workflow theme && workbox inject:manifest",
     "icons": "gulp --gulpfile ./assets/tasks/icons.js --cwd ./",
-    "css": "gulp --gulpfile ./assets/tasks/css.js --cwd ./",
     "sw": "npm-watch",
     "sw-inject-manifest": "workbox inject:manifest",
     "server": "node server.js"
@@ -42,33 +44,6 @@
     "last 1 ChromeAndroid version",
     "> 4%"
   ],
-  "stylelint": {
-    "extends": "stylelint-config-xwp/scss",
-    "plugins": [
-      "stylelint-no-unsupported-browser-features"
-    ],
-    "rules": {
-      "media-feature-name-no-unknown": [
-        true,
-        {
-          "ignoreMediaFeatureNames": [
-            "/query/"
-          ]
-        }
-      ],
-      "plugin/no-unsupported-browser-features": [
-        true,
-        {
-          "ignore": [
-            "flexbox",
-            "outline",
-            "viewport-units",
-            "will-change"
-          ]
-        }
-      ]
-    }
-  },
   "devDependencies": {
     "@csstools/postcss-sass": "^4.0.0",
     "express": "^4.16.2",
@@ -82,10 +57,12 @@
     "postcss-color-function": "^4.1.0",
     "postcss-preset-env": "^6.7.0",
     "postcss-scss": "^3.0.4",
+    "stylelint-scss": "^3.19.0",
     "undercurrent": "^0.1.3",
     "workbox-cli": "^2.1.0"
   },
   "dependencies": {
+    "@wordpress/scripts": "^13.0.3",
     "idlize": "^0.1.1",
     "whatwg-fetch": "^2.0.3",
     "workbox-sw": "^2.1.0"
