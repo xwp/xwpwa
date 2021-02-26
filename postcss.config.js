@@ -3,6 +3,7 @@ module.exports = {
 	plugins: [
 		require( '@csstools/postcss-sass' ),
 		require( 'postcss-color-function' ),
+		require( 'postcss-shorthand-expand' ),
 		require( 'postcss-preset-env' )( {
 			stage: 2,
 			features: {

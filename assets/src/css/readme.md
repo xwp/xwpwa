@@ -2,11 +2,12 @@
 
 ## Working with scss files
 
-To watching the scss files and generate the main.min.css file into `assets/dist/css` run `npm run css`.
+To watching the scss files and generate the `main.min.css` file into `assets/dist/css` run `npm run dev`.
 
-Node 14 must be used. Steps when by using [NVM](https://github.com/nvm-sh/nvm/blob/master/README.md):
+Node 14 must be used. Steps when by using [NVM](https://github.com/nvm-sh/nvm/blob/master/README.md):  
 `nvm install 14`  
 `nvm use 14`
+
 ## Structure of the CSS folder
 
 ### 1-Settings
@@ -139,9 +140,6 @@ Layout classes are prefixed with `l-`.
 #### Container
 
 Setting the container for the site, using the `$g-site-max-width` variable and local `gutter` variables.
-#### Container
-
-Setting the container for the site, using the `$g-site-max-width` variable and local `gutter` variables.
 
 ---
 
@@ -197,3 +195,34 @@ Hide visually an element (screenreader).
 Example classes for hiding an element based on different breakpoints, to be used when editorial control is required.
 
 ---
+
+## Post-CSS Plugins
+
+Before rendering the output CSS, some modifications are done with some Post-CSS plugins.
+
+### postcss-sass
+
+To compile and watch CSS files.
+[Documentation](https://github.com/jonathantneal/postcss-sass)
+
+### postcss-color-function
+
+Transform W3C CSS color function to more compatible CSS  
+[Documentation](https://github.com/postcss/postcss-color-function)
+
+### postcss-preset-env
+
+Convert modern CSS into something most browsers can understand, determining the polyfills you need based on your targeted browsers or runtime environments.  
+[Features](http://preset-env.cssdb.org/features)
+[Documentation](https://github.com/csstools/postcss-preset-env)
+
+### postcss-clean
+
+Compression will be handled by [clean-css](https://github.com/jakubpawlowicz/clean-css).  
+[Documentation](https://github.com/leodido/postcss-clean)
+
+### postcss-shorthand-expand
+
+For performance, it would be better to [not use some shorthands properties](https://csswizardry.com/2016/12/css-shorthand-syntax-considered-an-anti-pattern/).  
+This plugin expand them in the output CSS.  
+[Documentation](https://github.com/johno/postcss-shorthand-expand)

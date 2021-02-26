@@ -57,6 +57,7 @@
     "postcss-color-function": "^4.1.0",
     "postcss-preset-env": "^6.7.0",
     "postcss-scss": "^3.0.4",
+    "postcss-shorthand-expand": "^1.0.1",
     "stylelint-scss": "^3.19.0",
     "undercurrent": "^0.1.3",
     "workbox-cli": "^2.1.0"
