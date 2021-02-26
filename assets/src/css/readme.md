@@ -202,7 +202,7 @@ Before rendering the output CSS, some modifications are done with some Post-CSS 
 
 ### postcss-sass
 
-To compile and watch CSS files.
+To compile and watch CSS files.  
 [Documentation](https://github.com/jonathantneal/postcss-sass)
 
 ### postcss-color-function
@@ -213,7 +213,7 @@ Transform W3C CSS color function to more compatible CSS
 ### postcss-preset-env
 
 Convert modern CSS into something most browsers can understand, determining the polyfills you need based on your targeted browsers or runtime environments.  
-[Features](http://preset-env.cssdb.org/features)
+[Features](http://preset-env.cssdb.org/features)  
 [Documentation](https://github.com/csstools/postcss-preset-env)
 
 ### postcss-clean
