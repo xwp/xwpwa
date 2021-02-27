@@ -38,7 +38,7 @@ $color-background-input: $g-color-grey--300;
 
 				&:not(.gfield_contains_required) {
 
-					> label:after {
+					> label::after {
 						content: "(optional)";
 						color: rgba(0, 0, 0, 0.5);
 						margin-left: 5px;

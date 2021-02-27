@@ -46,6 +46,7 @@
   ],
   "devDependencies": {
     "@csstools/postcss-sass": "^4.0.0",
+    "@wordpress/stylelint-config": "^19.0.1",
     "express": "^4.16.2",
     "gulp": "~4.0.2",
     "gulp-postcss": "^9.0.0",

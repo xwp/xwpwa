@@ -2,12 +2,40 @@
 
 ## Working with scss files
 
-To watching the scss files and generate the `main.min.css` file into `assets/dist/css` run `npm run dev`.
-
 Node 14 must be used. Steps when by using [NVM](https://github.com/nvm-sh/nvm/blob/master/README.md):  
 `nvm install 14`  
-`nvm use 14`
+`nvm use 14`  
 
+### Watching scss files
+
+To watch the scss files and generate the `main.min.css` file into `assets/dist/css` run `npm run dev`.
+
+### Building CSS file
+
+`npm run build`
+
+### Fix linting errors
+
+Fix simple kind of errors, like:
+
+```bash
+Expected double colon  
+pseudo-element notation
+```
+
+`npm run format:css`
+
+### Running the linter
+
+The linter configuration [@wordpress/stylelint-config](https://developer.wordpress.org/block-editor/packages/packages-stylelint-config/) is compliant with the [WordPress CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).  
+
+A [rule](https://github.com/humanmade/coding-standards/issues/193) has been added to write code with the BEM notation.
+
+If the CSS file of a plugin is not following the coding practice (like Gravity Forms), the linting can be disabled inside `.stylelintignore`.
+
+`npm run lint:css`
+
+---
 ## Structure of the CSS folder
 
 ### 1-Settings
