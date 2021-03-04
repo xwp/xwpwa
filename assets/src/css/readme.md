@@ -226,31 +226,31 @@ Example classes for hiding an element based on different breakpoints, to be used
 
 ## Post-CSS Plugins
 
-Before rendering the output CSS, some modifications are done with some Post-CSS plugins.
+The CSS is output using several Post-CSS plugins:
 
 ### postcss-sass
 
-To compile and watch CSS files.  
+Compile SASS, using the dart-sass implementation as a PostCSS plugin. 
 [Documentation](https://github.com/jonathantneal/postcss-sass)
 
 ### postcss-color-function
 
-Transform W3C CSS color function to more compatible CSS  
+Transform W3C CSS color function to more broadly compatible CSS  
 [Documentation](https://github.com/postcss/postcss-color-function)
 
 ### postcss-preset-env
 
-Convert modern CSS into something most browsers can understand, determining the polyfills you need based on your targeted browsers or runtime environments.  
+Converts modern CSS into something the browsers can understand, determining the polyfills you need based on your targeted browsers or runtime environments.  
 [Features](http://preset-env.cssdb.org/features)  
 [Documentation](https://github.com/csstools/postcss-preset-env)
 
 ### postcss-clean
 
-Compression will be handled by [clean-css](https://github.com/jakubpawlowicz/clean-css).  
+Minification is handled by [clean-css](https://github.com/jakubpawlowicz/clean-css).  
 [Documentation](https://github.com/leodido/postcss-clean)
 
 ### postcss-shorthand-expand
 
-For performance, it would be better to [not use some shorthands properties](https://csswizardry.com/2016/12/css-shorthand-syntax-considered-an-anti-pattern/).  
-This plugin expand them in the output CSS.  
+For improved performance through better compression, it is be better to [avoid using some shorthands properties](https://csswizardry.com/2016/12/css-shorthand-syntax-considered-an-anti-pattern/).  
+This plugin expands them in the output CSS.  
 [Documentation](https://github.com/johno/postcss-shorthand-expand)
