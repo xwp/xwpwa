@@ -1,2 +1,3 @@
 /assets/dist/css/*.css
 /assets/src/css/2-tools/scss-query/*
+/assets/src/css/5-components/_gravity-forms.scss

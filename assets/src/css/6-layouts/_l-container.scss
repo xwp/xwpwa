@@ -3,9 +3,8 @@ $site-gutter-sm: spacer(.5); // mobile
 $site-gutter-md: spacer(2); // tablet
 
 .l-container {
-
-	//@include h-container;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 	width: 100%;
 	min-width: $g-site-min-width;
 	max-width: $g-site-max-width;
